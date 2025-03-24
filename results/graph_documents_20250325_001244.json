@@ -1,0 +1,4281 @@
+[
+  {
+    "nodes": [
+      {
+        "id": "论文字下乡",
+        "type": "Text",
+        "properties": {}
+      },
+      {
+        "id": "文字的发生",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "空间阻隔",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Social_context",
+        "properties": {}
+      },
+      {
+        "id": "面对面的社会",
+        "type": "Description",
+        "properties": {}
+      },
+      {
+        "id": "时间上的阻隔",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "个人的今昔之隔",
+        "type": "Aspect_of_time阻隔",
+        "properties": {}
+      },
+      {
+        "id": "社会的世代之隔",
+        "type": "Aspect_of_time阻隔",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "论文字下乡",
+        "target": "文字的发生",
+        "type": "DISCUSSES",
+        "properties": {}
+      },
+      {
+        "source": "文字的发生",
+        "target": "空间阻隔",
+        "type": "INVOLVES",
+        "properties": {}
+      },
+      {
+        "source": "论文字下乡",
+        "target": "乡土社会",
+        "type": "DESCRIBES",
+        "properties": {}
+      },
+      {
+        "source": "乡土社会",
+        "target": "面对面的社会",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "论文字下乡",
+        "target": "时间上的阻隔",
+        "type": "DISCUSSES",
+        "properties": {}
+      },
+      {
+        "source": "时间上的阻隔",
+        "target": "个人的今昔之隔",
+        "type": "INVOLVES",
+        "properties": {}
+      },
+      {
+        "source": "时间上的阻隔",
+        "target": "社会的世代之隔",
+        "type": "INVOLVES",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在上一篇“论文字下乡”里，我说起了文字的发生是在人和人传情达意的过程中受到了空间和时间的阻隔的情境里。可是我在那一篇里只就空间阻隔的一点说了些话。乡土社会是个面对面的社会，有话可以当面说明白，不必求助于文字。这一层意思容易明白，但是关于时间阻隔上怎样说法呢？在本文中，我想申引这一层意思了。\no 所谓时间上的阻隔有两方面，一方面是个人的今昔之隔，一方面是社会的世代之隔。让我先从前一方面说起。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "人的生活",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "其他动物",
+        "type": "Animal",
+        "properties": {}
+      },
+      {
+        "id": "学习能力",
+        "type": "Ability",
+        "properties": {}
+      },
+      {
+        "id": "生理反应",
+        "type": "Response",
+        "properties": {}
+      },
+      {
+        "id": "小白老鼠",
+        "type": "Animal",
+        "properties": {}
+      },
+      {
+        "id": "迷宫",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "习惯",
+        "type": "Habit",
+        "properties": {}
+      },
+      {
+        "id": "词",
+        "type": "Symbol",
+        "properties": {}
+      },
+      {
+        "id": "概念",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "人的生活",
+        "target": "学习能力",
+        "type": "HAS",
+        "properties": {}
+      },
+      {
+        "source": "人的生活",
+        "target": "习惯",
+        "type": "HAS",
+        "properties": {}
+      },
+      {
+        "source": "小白老鼠",
+        "target": "迷宫",
+        "type": "LEARNS_FROM",
+        "properties": {}
+      },
+      {
+        "source": "人的生活",
+        "target": "词",
+        "type": "USES_FOR",
+        "properties": {}
+      },
+      {
+        "source": "人的生活",
+        "target": "概念",
+        "type": "USES_FOR",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "人的生活和其他动物所不同的，是在他富于学习的能力。他的行为方式并不固执地受着不学而能的生理反应所支配。所谓学就是在出生之后以一套人为的行为方式作模型，把本能的那一套方式加以改造的过程。学的方法是“习”。习是指反复地做，靠时间中的磨练，使一个人惯于一种新的做法。因之，学习必须打破个人今昔之隔。这是靠了我们人类的一种特别发达的能力，时间中的桥梁，记忆。在动物的学习过程中，我们也可以说它们有记忆，但是它们的“记忆”是在简单的生理水准上。一个小白老鼠在迷宫里学得了捷径，它所学得的是一套新的生理反应。和人的学习不相同的是它们并不靠一套象征体系的。人固然有很多习惯，在本质上是和小白老鼠走迷宫一般的，但是他却时常多一个象征体系帮他的忙。所谓象征体系中最重要的是“词”。我们不断的在学习时说着话，把具体的情境抽象成一套能普遍应用的概念，概念必然是用词来表现的，于是我们靠着词，使我们从特殊走上普遍，在个别情境中搭下了桥梁；又使我们从当前走到今后，在片刻情境中搭下了桥梁。从这方面看去，一个动物和时间的接触，可以说是一条直线的，而人和时间的接触，靠了概念，也就是词，却比一条直线来得复杂。他有能力闭了眼睛置身于“昔日”的情境中，人的",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "他",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "昔日的情境",
+        "type": "Time_period",
+        "properties": {}
+      },
+      {
+        "id": "人的当前",
+        "type": "State",
+        "properties": {}
+      },
+      {
+        "id": "过去",
+        "type": "Time_period",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "他",
+        "target": "昔日的情境",
+        "type": "CLOSED_EYES_TRAVEL_TIME_PERIOD",
+        "properties": {}
+      },
+      {
+        "source": "人的当前",
+        "target": "过去",
+        "type": "CONTAINS_PROJECTIONS_FROM_PAST",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "杂。他有能力闭了眼睛置身于“昔日”的情境中，人的“当前”中包含着从“过去”拔萃出来的投影，时间的选择累积。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "依本能而活动的动物",
+        "type": "Animal",
+        "properties": {}
+      },
+      {
+        "id": "人",
+        "type": "Human",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "依本能而活动的动物",
+        "target": "没有时间上阻隔的问题",
+        "type": "HAS_NO",
+        "properties": {}
+      },
+      {
+        "source": "人",
+        "target": "有时间上阻隔的问题",
+        "type": "HAS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在一个依本能而活动的动物不会发生时间上阻隔的问题，他的寿命是一联串的“当前”，谁也不能剪断时间，象是一条水，没有刀割得断。但是在人却不然，人的当前是整个靠记忆所保留下来的“过去”的累积。如果记忆消失了、遗忘了，我们的“时间”就可说是阻隔了。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "Memory",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Learning",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Way",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Current_Life",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Society",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Mice",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Abstract_Ability",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Symbolic_System",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Cultural_Accumulation",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "History",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Memory",
+        "target": "Learning",
+        "type": "LEARNING_FROM",
+        "properties": {}
+      },
+      {
+        "source": "Learning",
+        "target": "Way",
+        "type": "FOLLOWING",
+        "properties": {}
+      },
+      {
+        "source": "Current_Life",
+        "target": "Past_Experience",
+        "type": "NEEDS",
+        "properties": {}
+      },
+      {
+        "source": "Way",
+        "target": "Society",
+        "type": "BELONG_TO",
+        "properties": {}
+      },
+      {
+        "source": "Mice",
+        "target": "Learning",
+        "type": "LEARNING_FROM",
+        "properties": {}
+      },
+      {
+        "source": "Abstract_Ability",
+        "target": "Symbolic_System",
+        "type": "RELY_ON",
+        "properties": {}
+      },
+      {
+        "source": "Cultural_Accumulation",
+        "target": "Society",
+        "type": "BELONG_TO",
+        "properties": {}
+      },
+      {
+        "source": "History",
+        "target": "Cultural_Accumulation",
+        "type": "COMPRISING",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 人之所以要有记忆，也许并不是因为他的脑子是个自动的摄影箱。人有此能力是事实，人利用此能力，发展此能力，还是因为他“当前”的生活必需有着“过去”所传下来的办法。我曾说人的学习是向一套已有的方式的学习。惟有学会了这套方式才能在人群中生活下去。这套方式并不是每个人个别的创制，而是社会的遗业。小白老鼠并不向别的老鼠学习，每只老鼠都得自己在具体情境里，从“试验错误”的过程中，得到个别的经验。它们并不能互相传递经验，互相学习，人靠了他的抽象能力和象征体系，不但累积了自己的经验，而且可以累积别人的经验。上边所谓那套传下来的办法，就是社会共同的经验的累积，也就是我们常说的文化。文化是依赖象征体系和个人的记忆而维持着的社会共同经验。这样说来，每个人的“当前”，不但包括他个人“过去”的投影，而且是整个民族的“过去”的投影。历史对于个人并不是点缀的饰物，而是实用的，不能或缺的生活基础。人不能离开社会生活，就不能不学习文化。文化得靠记忆，不能靠本能，所以人在记忆力上不能不力求发展。我们不但要在个人的今昔之间筑通桥梁，而且在社会的世代之间也得筑通桥梁，不然就没有了文化，也没有了我们现在所能享受的生活。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "人的生活",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "时间",
+        "type": "Time",
+        "properties": {}
+      },
+      {
+        "id": "词",
+        "type": "Word",
+        "properties": {}
+      },
+      {
+        "id": "语言",
+        "type": "Language",
+        "properties": {}
+      },
+      {
+        "id": "文字",
+        "type": "Text",
+        "properties": {}
+      },
+      {
+        "id": "上帝",
+        "type": "God",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "人的生活",
+        "target": "时间",
+        "type": "关联",
+        "properties": {}
+      },
+      {
+        "source": "词",
+        "target": "人的生活",
+        "type": "桥梁",
+        "properties": {}
+      },
+      {
+        "source": "语言",
+        "target": "人",
+        "type": "造成了",
+        "properties": {}
+      },
+      {
+        "source": "上帝",
+        "target": "词",
+        "type": "创造了",
+        "properties": {}
+      },
+      {
+        "source": "上帝",
+        "target": "有",
+        "type": "开始",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我说了这许多话，也许足够指明了人的生活和时间的关联了。在这关联中，词是最主要的桥梁。有人说，语言造成了人，那是极对的。圣经上也有上帝说了什么，什么就有了，“说”是“有”的开始。这在物质宇宙中尽管可以不对，在文化中是对的。没有象征体系也就没有概念，人的经验也就不能或不易在时间里累积，如要生活也不能超过禽兽。\no 但是词却不一定要文。文是用眼睛可以看得到的符号，就是字。词不一定是刻出来或写出来的符号，也可以是用声音说出来的符号，语言。一切文化中不能没有“词”，可是不一定有“文字”。我这样说是因为我想说明的乡土社会，大体上，是没有“文字”的社会。在上篇，我从空间格局中说到了乡下人没有文字的需要，在这里我是想从时间格局中说明同一结果。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "发展记忆",
+        "type": "Memory",
+        "properties": {}
+      },
+      {
+        "id": "文化动物",
+        "type": "Culture",
+        "properties": {}
+      },
+      {
+        "id": "本能",
+        "type": "Instinct",
+        "properties": {}
+      },
+      {
+        "id": "生活需要",
+        "type": "Need",
+        "properties": {}
+      },
+      {
+        "id": "眼睛接触的外界",
+        "type": "External_world",
+        "properties": {}
+      },
+      {
+        "id": "注意的对象",
+        "type": "Focus",
+        "properties": {}
+      },
+      {
+        "id": "生活的需要",
+        "type": "Need",
+        "properties": {}
+      },
+      {
+        "id": "无关的生活",
+        "type": "Irrelevant_life",
+        "properties": {}
+      },
+      {
+        "id": "记忆",
+        "type": "Memory",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "发展记忆",
+        "target": "生活需要",
+        "type": "DEPENDS_ON",
+        "properties": {}
+      },
+      {
+        "source": "文化动物",
+        "target": "本能",
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": "生活需要",
+        "target": "注意的对象",
+        "type": "DETERMINES",
+        "properties": {}
+      },
+      {
+        "source": "眼睛接触的外界",
+        "target": "注意的对象",
+        "type": "IS_FOCUSED_ON",
+        "properties": {}
+      },
+      {
+        "source": "无关的生活",
+        "target": "记忆",
+        "type": "IGNORED_BY",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我说过我们要发展记忆，那是因为我们生活中有此需要。没有文化的动物中，能以本能来应付生活，就不必有记忆。我这样说，其实也包含了另一项意思，就是人在记忆上发展的程度是依他们生活需要而决定的。我们每个人，每一刻，所接触的外界是众多复杂，但是并不尽入我们的感觉，我们有所选择。和我们眼睛所接触的外界我们并不都看见，我们只看见我们所注意的，我们的视线有焦点，焦点依着我们的注意而移动。注意的对象由我们选择，选择的根据是我们生活的需要。对于我们生活无关的，我们不关心，熟视无睹。我们的记忆也是如此，我们并不记取一切的过去，只记取一切过去中极小的一部分。我说记取，其实不如说过后回忆为妥当。“记”带有在当前为了将来有用而加以认取的意思，“忆”是为了当前有关而会想到过去经验。事实上，在当前很难预测将来之用，大多是出于当前的需要而追忆过去。有时这过程非常吃力，所以成为“苦忆”。可是无论如何记忆并非无所为的，而是实用的，是为了生活。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "现代都市",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "泥土",
+        "type": "Resource",
+        "properties": {}
+      },
+      {
+        "id": "井",
+        "type": "Location",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "人",
+        "target": "乡土社会",
+        "type": "LIVE_IN",
+        "properties": {}
+      },
+      {
+        "source": "人",
+        "target": "现代都市",
+        "type": "LIVE_IN",
+        "properties": {}
+      },
+      {
+        "source": "人",
+        "target": "泥土",
+        "type": "DEPEND_ON",
+        "properties": {}
+      },
+      {
+        "source": "人",
+        "target": "井",
+        "type": "MOVE_FROM",
+        "properties": {}
+      },
+      {
+        "source": "祖先们",
+        "target": "乡土社会",
+        "type": "LIVE_IN",
+        "properties": {}
+      },
+      {
+        "source": "子孙们",
+        "target": "乡土社会",
+        "type": "DESCENDANT_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在一个乡土社会中生活的人所需记忆的范围和生活在现代都市的人是不同的。乡土社会是一个生活很安定的社会。我已说过，向泥土讨生活的人是不能老是移动的。在一个地方出生的就在这地方生长下去，一直到死。极端的乡土社会是老子所理想的社会，“鸡犬相闻，老死不相往来。”不但个人不常抛井离乡，而且每个人住的地方常是他的父母之邦。“生于斯，死于斯”的结果必是世代的黏着。这种极端的乡土社会固然不常实现，但是我们的确有历世不移的企图，不然为什么死在外边的人，一定要把棺材运会故乡，葬在祖茔上呢？一生取给于这块泥土，死了，骨肉还得回入这块泥土。\no 历世不移的结果，人不但在熟人中长大，而在熟悉的地方上生长大。熟悉的地方可以包括极长时间的人和土的混合。祖先们在这地方混熟了，他们的经验也必然就是子孙们所会得到的经验。时间的悠久是从谱系上说的，从每个人可能得到经验说，却是同一方式的反覆重演。同一戏台上演着同一的戏，这个班子里演员所需要记得的，也只有一套戏文。他们个别的经验，就等于世代的经验。经验无需不断累积，只需老是保存。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "小学",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "日记",
+        "type": "Activity",
+        "properties": {}
+      },
+      {
+        "id": "老师",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "我",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "晨起",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "上课",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "游戏",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "睡觉",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "定型生活",
+        "type": "Lifestyle",
+        "properties": {}
+      },
+      {
+        "id": "习惯",
+        "type": "Habit",
+        "properties": {}
+      },
+      {
+        "id": "工作节奏",
+        "type": "Routine",
+        "properties": {}
+      },
+      {
+        "id": "记忆",
+        "type": "Memory",
+        "properties": {}
+      },
+      {
+        "id": "秦亡汉兴",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "指头上的结",
+        "type": "Symbol",
+        "properties": {}
+      },
+      {
+        "id": "文字的原始方式",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "外在象征",
+        "type": "Symbol",
+        "properties": {}
+      },
+      {
+        "id": "联想作用",
+        "type": "Function",
+        "properties": {}
+      },
+      {
+        "id": "变动环境",
+        "type": "Environment",
+        "properties": {}
+      },
+      {
+        "id": "声音来说词",
+        "type": "Communication",
+        "properties": {}
+      },
+      {
+        "id": "绳打结",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "刀刻图",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "笔写字",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "都市",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "陌生面孔",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "姓名录",
+        "type": "Tool",
+        "properties": {}
+      },
+      {
+        "id": "通信簿",
+        "type": "Tool",
+        "properties": {}
+      },
+      {
+        "id": "身份证",
+        "type": "Document",
+        "properties": {}
+      }
+    ],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 我记得在小学里读书时，老师逼着我记日记，我执笔苦思，结果只写下“同上”两字。那是真情，天天是“晨起，上课，游戏，睡觉”，有何可记的呢？老师下令不准“同上”，小学生们只有扯谎了。\no 在定型生活中长大的有着深入生理基础的习惯帮着我们“日出而起，日入而息”的工作节奏。记忆都是多余的。“不知老之将至”就是描写“忘时”的生活。秦亡汉兴，没有关系。乡土社会中不怕忘，而且忘得舒服。只有在轶出于生活常轨的事，当我怕忘记时，方在指头上打一个结。\no 指头上的结是文字的原始方式，目的就是用外在的象征，利用联想作用，帮助人的记忆。在一个常常变动的环境中，我们感觉到自己记忆力不够时，方需要这些外在的象征。从语言变到文字，也就是从用声音来说词，变到用绳打结，用刀刻图，用笔写字，是出于我们生活从定型到不定型的过程中。在都市中生活，一天到晚接触着陌生面孔的人才需要在袋里藏着本姓名录、通信簿。在乡土社会中黏着相片的身份证，是毫无意义的。在一个村子里可以有一打以上的“王大哥”，绝不会因之认错了人。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 在一个每代的生活等于开映同一部影片的社会中，历史也是多余的，有的只是“传奇”。一说到来历就得从“开天辟地”说起；不从这开始，下文不是只有“寻常”的当前了么？都市社会里有新闻；在乡土社会，“新闻”是希奇古怪，荒诞不经的意思。在都市社会里有名人，乡土社会里是“人怕出名，猪怕壮”。不为人先，不为人后，做人就得循规蹈矩。这种社会用不上常态曲线，而是一个模子里印出来的一套。\no 在这种社会里，语言是足够传递世代间的经验了。当一个人碰着生活上的问题时，他必然能在一个比他年长的人那里问得到解决这问题的有效办法，因为大家在同一环境里，走同一道路，他先走，你后走；后走的所踏的是先走的人的脚印，口口相传，不会有遗漏。那里用得着文字？时间里没有阻隔，拉得十分紧，全部文化可以在亲子之间传授无缺。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "Chinese_Society",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "Face-To-Face_Contact",
+        "type": "Interaction",
+        "properties": {}
+      },
+      {
+        "id": "Repeated_Life_Pattern",
+        "type": "Pattern",
+        "properties": {}
+      },
+      {
+        "id": "Language_Without_Text",
+        "type": "Condition",
+        "properties": {}
+      },
+      {
+        "id": "Hierarchical_Structure",
+        "type": "Structure",
+        "properties": {}
+      },
+      {
+        "id": "Written_Language",
+        "type": "Text",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Chinese_Society",
+        "target": "Face-To-Face_Contact",
+        "type": "HAS_INTERACTION",
+        "properties": {}
+      },
+      {
+        "source": "Chinese_Society",
+        "target": "Repeated_Life_Pattern",
+        "type": "FOLLOWS_PATTERN",
+        "properties": {}
+      },
+      {
+        "source": "Chinese_Society",
+        "target": "Language_Without_Text",
+        "type": "HAS_CONDITION",
+        "properties": {}
+      },
+      {
+        "source": "Written_Language",
+        "target": "Chinese_Society",
+        "type": "NOT_WIDELY_USED_IN",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 这样说，中国如果是乡土社会，怎么会有文字的呢？我的回答是中国社会从基层上看去是乡土性，中国的文字并不是在基层上发生。最早的文字就是庙堂性的，一直到目前还不是我们乡下人的东西。我们的文字另有它发生的背境，我在本文所需要指出的是在这基层上，有语言而无文字。不论在空间和时间的格局上，这种乡土社会，在面对面的亲密接触中，在反覆地在同一生活定型中生活的人们，并不是愚到字都不认得，而是没有用字来帮助他们在社会中生活的需要。我同时也等于说，如果中国社会乡土性的基层发生了变化，也只有发生了变化之后，文字才能下乡。\n* 乡土中国第四章：差序格局",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土中国第四章：差序格局",
+        "type": "Chapter",
+        "properties": {}
+      },
+      {
+        "id": "私",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "各人自扫门前雪，莫管他人屋上霜",
+        "type": "Proverb",
+        "properties": {}
+      },
+      {
+        "id": "公家的",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "苏州城里的水道",
+        "type": "Place",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "私",
+        "target": "各人自扫门前雪，莫管他人屋上霜",
+        "type": "EXPRESSEDBY",
+        "properties": {}
+      },
+      {
+        "source": "公家的",
+        "target": "苏州城里的水道",
+        "type": "ASSOCIATEDWITH",
+        "properties": {}
+      },
+      {
+        "source": "格兰亨姆的公律",
+        "target": "自私心",
+        "type": "DRIVENBY",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "* 乡土中国第四章：差序格局\no 在乡村工作者看来，中国乡下老最大的毛病是“私”。说起私，我们就会想到“各人自扫门前雪，莫管他人屋上霜”的俗语。谁也不敢否认这俗语多少是中国人的信条。其实抱有这种态度的并不只是乡下人，就是所谓城里人，何尝不是如此。扫清自己门前雪的还算是了不起的有公德的人，普通人家把垃圾在门口的街道上一倒，就完事了。苏州人家后门常通一条河，听起来是最美丽也没有了，文人笔墨里是中国的威尼思，可是我想天下没有比苏州城里的水道更脏的了。什么东西可以向这种出路本来不太畅通的小河沟里一倒，有不少人家根本就不必有厕所。明知人家在这河里洗衣洗菜，毫不觉得有什么需要自制的地方。为什么呢？——这种小河是公家的。\no 一说是公家的，差不多就是说大家可以占一点便宜的意思，有权利而没有义务了。小到两三家合住的院子，公共的走廊上照例是尘灰堆积，满院生了荒草，谁也不想去拔拔清楚，更难以插足的自然是厕所。没有一家愿意去管“闲事”，谁看不惯，谁就得白服侍人，半声谢意都得不到。于是象格兰亨姆的公律，坏钱驱逐好钱一般，公德心就在这里被自私心驱走。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "私的毛病",
+        "type": "Disorder",
+        "properties": {}
+      },
+      {
+        "id": "愚和病",
+        "type": "Disorder",
+        "properties": {}
+      },
+      {
+        "id": "外国人舆论",
+        "type": "Opinion",
+        "properties": {}
+      },
+      {
+        "id": "贪污无能",
+        "type": "Characteristic",
+        "properties": {}
+      },
+      {
+        "id": "南洋华侨",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "西洋人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "中国人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "群己、人我的界线",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "社会结构的格局",
+        "type": "Structure",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "私的毛病",
+        "target": "中国人",
+        "type": "PREVALENT_IN",
+        "properties": {}
+      },
+      {
+        "source": "外国人舆论",
+        "target": "贪污无能",
+        "type": "ATTACK_ON",
+        "properties": {}
+      },
+      {
+        "source": "贪污无能",
+        "target": "中国人",
+        "type": "ATTRIBUTED_TO",
+        "properties": {}
+      },
+      {
+        "source": "南洋华侨",
+        "target": "西洋人",
+        "type": "ADMIRED_BY",
+        "properties": {}
+      },
+      {
+        "source": "中国人",
+        "target": "西洋人",
+        "type": "CONTRASTED_WITH",
+        "properties": {}
+      },
+      {
+        "source": "群己、人我的界线",
+        "target": "社会结构的格局",
+        "type": "RELATED_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 从这些事来说，私的毛病在中国实在比了愚和病更普遍得多，从上到下似乎没有不害这毛病的。现在已成了外国舆论一致攻击我们的把柄了。所谓贪污无能，并不是每个人绝对的能力问题，而是相对的，是从个人对公家的服务和责任上说的。中国人并不是不善经营，只要看南洋那些华侨在商业上的成就，西洋人谁不侧目？中国人更不是无能，对于自家的事，抓起钱来，拍起马来，比哪一个国家的人能力都大。因之这里所谓“私”的问题却是个群己、人我的界线怎样划法的问题。我们传统的划法，显然是和西洋的划法不同。因之，如果我们要讨论私的问题就得把整个社会结构的格局提出来考虑一下了。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "捆柴",
+        "type": "Analogy",
+        "properties": {}
+      },
+      {
+        "id": "西洋家庭",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "朋友",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "他",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "妻",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "未成年的孩子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "中国家庭",
+        "type": "Family",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋社会",
+        "target": "团体",
+        "type": "HAS_STRUCTURE",
+        "properties": {}
+      },
+      {
+        "source": "捆柴",
+        "target": "西洋社会",
+        "type": "REPRESENTS",
+        "properties": {}
+      },
+      {
+        "source": "朋友",
+        "target": "他",
+        "type": "IS",
+        "properties": {}
+      },
+      {
+        "source": "他",
+        "target": "西洋家庭",
+        "type": "BELONGS_TO",
+        "properties": {}
+      },
+      {
+        "source": "妻",
+        "target": "他",
+        "type": "IS_SPOUSE_OF",
+        "properties": {}
+      },
+      {
+        "source": "未成年的孩子",
+        "target": "他",
+        "type": "IS_CHILD_OF",
+        "properties": {}
+      },
+      {
+        "source": "中国家庭",
+        "target": "团体",
+        "type": "HAS_STRUCTURE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 西洋的社会有些象我们在田里捆柴，几根稻草束成一把，几把束成一扎，几扎束成一捆，几捆束成一挑。每一根柴在整个挑里都属于一定的捆、扎、把。每一根柴也可以找到同把、同扎、同捆的柴，分扎得清楚不会乱的。在社会，这些单位就是团体。我说西洋社会组织象捆柴就是想指明：他们常常由若干人组成一个个的团体。团体是有一定界限的，谁是团体里的人，谁是团体外的人，不能模糊，一定分得清楚。在团体里的人是一伙，对于团体的关系是相同的，如果同一团体中有组别或等级的分别，那也是先规定的。我用捆柴来比拟，有一点不太合，就是一个人可以参加好几个团体，而好几扎柴里都有某一根柴当然是不可能的，这是人和柴不同的地方。我用这譬喻是在想具体一些使我们看到社会生活中人和人的关系的一种格局。我们不妨称之为团体格局。\no 家庭在西洋是一种界线分明的团体。如果有一位朋友写信给你说他将要“带了他的家庭”一起来看你，他很知道要和他一同来的是那几个人。在中国，这句话是模糊得很。在英美，家庭包括他和他的妻以及未成年的孩子。如果他只和他太太一起来，就不会用“家庭”。在我们中国“阖第光临”虽则常见，但是很少人能说得出这个“第”字究竟应当包括些什么人。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "家",
+        "type": "Word",
+        "properties": {}
+      },
+      {
+        "id": "家里的",
+        "type": "Phrase",
+        "properties": {}
+      },
+      {
+        "id": "家门",
+        "type": "Phrase",
+        "properties": {}
+      },
+      {
+        "id": "自家人",
+        "type": "Phrase",
+        "properties": {}
+      },
+      {
+        "id": "社会单位",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "西洋格局",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "社会结构",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "柴",
+        "type": "Metaphor",
+        "properties": {}
+      },
+      {
+        "id": "石头",
+        "type": "Metaphor",
+        "properties": {}
+      },
+      {
+        "id": "波纹",
+        "type": "Metaphor",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "家",
+        "target": "社会单位",
+        "type": "REPRESENTS",
+        "properties": {}
+      },
+      {
+        "source": "家里的",
+        "target": "家",
+        "type": "DEFINES",
+        "properties": {}
+      },
+      {
+        "source": "家门",
+        "target": "家",
+        "type": "DEFINES",
+        "properties": {}
+      },
+      {
+        "source": "自家人",
+        "target": "家",
+        "type": "DEFINES",
+        "properties": {}
+      },
+      {
+        "source": "社会结构",
+        "target": "西洋格局",
+        "type": "COMPARES_WITH",
+        "properties": {}
+      },
+      {
+        "source": "社会单位",
+        "target": "家",
+        "type": "IS_EXAMPLE_OF",
+        "properties": {}
+      },
+      {
+        "source": "石头",
+        "target": "西洋格局",
+        "type": "REPRESENTS",
+        "properties": {}
+      },
+      {
+        "source": "波纹",
+        "target": "社会结构",
+        "type": "REPRESENTS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 提到了我们的用字，这个“家”字可以说最能伸缩自如了。“家里的”可以指自己的太太一个人，“家门”可以指叔伯侄子一大批，“自家人”可以包罗任何要拉入自己的圈子，表示亲热的人物。自家人的范围是因时因地可伸缩，大到数不清，真是天下可成一家。\no 为什么我们这个最基本的社会单位的名词会这样不清不楚呢？在我看来却表示了我们的社会结构本身和西洋的格局不相同的，我们的格局不是一捆一捆扎清楚的柴，而是好象把一块石头丢在水面上所发生的一圈圈推出去的波纹。每个人都是他社会影响所推出去的圈子的中心。被圈子的波纹所推及的就发生联系。每个人在某一时间某一地点所动用的圈子是不一定相同的。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "同心圆波纹性质",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "亲属关系",
+        "type": "Social_relation",
+        "properties": {}
+      },
+      {
+        "id": "生育和婚姻事实",
+        "type": "Fact",
+        "properties": {}
+      },
+      {
+        "id": "网络",
+        "type": "Structure",
+        "properties": {}
+      },
+      {
+        "id": "蜘蛛网",
+        "type": "Metaphor",
+        "properties": {}
+      },
+      {
+        "id": "中心",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "己",
+        "type": "Self_reference",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "同心圆波纹性质",
+        "target": "亲属关系",
+        "type": "REPRESENTATION_OF",
+        "properties": {}
+      },
+      {
+        "source": "生育和婚姻事实",
+        "target": "亲属关系",
+        "type": "BASIS_OF",
+        "properties": {}
+      },
+      {
+        "source": "网络",
+        "target": "蜘蛛网",
+        "type": "ANALOGY_TO",
+        "properties": {}
+      },
+      {
+        "source": "中心",
+        "target": "己",
+        "type": "CENTER_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我们社会中最重要的亲属关系就是这种丢石头形成同心圆波纹的性质。亲属关系是根据生育和婚姻事实所发生的社会关系。从生育和婚姻所结成的网络，可以一直推出去包括无穷的人，过去的、现在的、和未来的人物。我们俗语里有“一表三千里”，就是这个意思，其实三千里也不过指其广袤的意思而已。这个网络象个蜘蛛的网，有一个中心，就是自己。我们每个人都有这么一个以亲属关系布出去的网，但是没有一个网所罩住的人是相同的。在一个社会里的人可以用同一个体系来记认他们的亲属，所同的只是这体系罢了。体系是抽象的格局，或是范畴性的有关概念。当我们用这体系来认取具体的亲亲戚戚时，各人所认的就不同了。我们在亲属体系里都有父母，可是我的父母却不是你的父母。再进一步说，天下没有两个人所认取的亲属可以完全相同的。兄弟两人固然有相同的父母了，但是各人有各人的妻子儿女。因之，以亲属关系所联系成的社会关系的网络来说，是个别的，每一个网络有个“己”作为中心，各个网络的中心都不同。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "亲属关系",
+        "type": "Relationship",
+        "properties": {}
+      },
+      {
+        "id": "地缘关系",
+        "type": "Relationship",
+        "properties": {}
+      },
+      {
+        "id": "保甲制度",
+        "type": "System",
+        "properties": {}
+      },
+      {
+        "id": "团体格局性",
+        "type": "Structure",
+        "properties": {}
+      },
+      {
+        "id": "传统结构",
+        "type": "Structure",
+        "properties": {}
+      },
+      {
+        "id": "中心势力",
+        "type": "Power",
+        "properties": {}
+      },
+      {
+        "id": "街坊",
+        "type": "Neighborhood",
+        "properties": {}
+      },
+      {
+        "id": "喜事",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "生孩子",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "丧事",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "生活上的互助机构",
+        "type": "Organization",
+        "properties": {}
+      },
+      {
+        "id": "贾家的大观园",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "姑表林黛玉",
+        "type": "Relative",
+        "properties": {}
+      },
+      {
+        "id": "姨表薛宝钗",
+        "type": "Relative",
+        "properties": {}
+      },
+      {
+        "id": "宝琴",
+        "type": "Relative",
+        "properties": {}
+      },
+      {
+        "id": "岫云",
+        "type": "Relative",
+        "properties": {}
+      },
+      {
+        "id": "苏秦",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 在我们乡土社会里，不但亲属关系如此，地缘关系也是如此。现代的保甲制度是团体格局性的，但是这和传统的结构却格格不相入。在传统结构中，每一家以自己的地位做中心，周围划出一个圈子，这个圈子是“街坊”。有喜事要请酒，生了孩子要送红蛋，有丧事要出来助殓，抬棺材，是生活上的互助机构。可是这不是一个固定的团体，而是一个范围。范围的大小也要依着中心的势力厚薄而定。有势力的人家的街坊可以遍及全村，穷苦人家的街坊只是比邻的两三家。这和我们的亲属圈子一般的。象贾家的大观园里，可以住着姑表林黛玉，姨表薛宝钗，后来更多了，什么宝琴，岫云，凡是拉得上亲戚的，都包容得下。可是势力一变，树倒猢狲散，缩成一小团。到极端时，可以象苏秦潦倒归来，“妻不以为夫，嫂不以为叔。”中国传统结构中的差序格局具有这种伸缩能力。在乡下，家庭可以很小，而一到有钱的地主和官僚阶层，可以大到象个小国。中国人也特别对世态炎凉有感触，正因为这富于伸缩的社会圈子会因中心势力的变化而大小。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "资格",
+        "type": "Qualification",
+        "properties": {}
+      },
+      {
+        "id": "权利",
+        "type": "Right",
+        "properties": {}
+      },
+      {
+        "id": "中国社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "己",
+        "type": "Self",
+        "properties": {}
+      },
+      {
+        "id": "差序",
+        "type": "Sequence",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋社会",
+        "target": "团体",
+        "type": "HAS_MEMBER",
+        "properties": {}
+      },
+      {
+        "source": "资格",
+        "target": "走出这个团体",
+        "type": "LEADS_TO",
+        "properties": {}
+      },
+      {
+        "source": "西洋社会",
+        "target": "权利",
+        "type": "CONCERNS",
+        "properties": {}
+      },
+      {
+        "source": "中国社会",
+        "target": "己",
+        "type": "CENTERS_AROUND",
+        "properties": {}
+      },
+      {
+        "source": "己",
+        "target": "一圈圈推出去",
+        "type": "RESULTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "一圈圈推出去",
+        "target": "愈推愈远",
+        "type": "LEADS_TO",
+        "properties": {}
+      },
+      {
+        "source": "一圈圈推出去",
+        "target": "愈推愈薄",
+        "type": "LEADS_TO",
+        "properties": {}
+      },
+      {
+        "source": "中国社会",
+        "target": "人伦",
+        "type": "EMPHASIZES",
+        "properties": {}
+      },
+      {
+        "source": "人伦",
+        "target": "差序",
+        "type": "RESULTS_IN",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在孩子成年了住在家里都得给父母膳宿费的西洋社会里，大家承认团体的界限。在团体里的有一定的资格。资格取消了就得走出这个团体。在他们不是人情冷热的问题，而是权利问题。在西洋社会里争的是权利，而在我们却是攀关系、讲交情。\no 以“己”为中心，象石子一般投入水中，和别人所联系成的社会关系，不象团体中的分子一般大家立在一个平面上的，而是象水的波纹一般，一圈圈推出去，愈推愈远，也愈推愈薄。在这里我们遇到了中国社会结构的基本特性了。我们儒家最考究的是人伦，伦是什么呢？我的解释就是从自己推出去的和自己发生社会关系的那一群人里所发生的一轮轮波纹的差序。“释名”于沦字下也说“伦也，水文相次有伦理也。”潘光旦先生曾说：凡是有“仑”作公分母的意义都相通，“共同表示的是条理，类别，秩序的一番意思。”（见潘光旦《说伦字》《社会研究》第十九期）",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "伦",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "礼记祭统",
+        "type": "Text",
+        "properties": {}
+      },
+      {
+        "id": "鬼神",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "君臣",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "父子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "贵贱",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "亲疏",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "爵赏",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "夫妇",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "政事",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "长幼",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "上下",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "差序",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "礼记大传",
+        "type": "Text",
+        "properties": {}
+      },
+      {
+        "id": "亲亲也",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "尊尊也",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "长长也",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "男女有别",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "己",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "水纹波浪",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "修身",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "孝弟",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "犯上者",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "作乱者",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "中庸",
+        "type": "Text",
+        "properties": {}
+      }
+    ],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 伦重在分别，在礼记祭统里所讲的十伦，鬼神、君臣、父子、贵贱、亲疏、爵赏、夫妇、政事、长幼、上下，都是指差等。“不失其伦”是在别父子、远近、亲疏。伦是有差等的次序。在我们现在读来，鬼神、君臣、父子、夫妇等具体的社会关系，怎能和贵贱、亲疏、远近、上下等抽象的相对地位相提并论？其实在我们传统的社会结构里最基本的概念，这个人和人来往所构成的网络中的纲纪，就是一个差序，也就是伦。礼记大传里说：“亲亲也、尊尊也、长长也、男女有别，此其不可得与民变革者也。”意思是这个社会结构的架格是不能变的，变的只是利用这架格所做的事。\no 孔子最注重的就是水纹波浪向外扩张的推字。他先承认一个己，推己及人的己，对于这己，得加以克服于礼，克己就是修身。顺着这同心圆的伦常，就可向外推了。“本立而道生。”“其为人也孝弟，而好犯上者鲜矣，不好犯上而好作乱者，未之有也。”从己到家，由家到国，由国到天下，是一条通路。中庸里把五伦作为天下之达道。因为在这种社会结构里，从己到天下是一圈一圈推出去的，所以孟子说他“善推而已矣”。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "自我主义",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "个人主义",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "宪法观念",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "杨朱",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "孔子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "耶稣",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "北辰",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "自我主义",
+        "target": "杨朱",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "个人主义",
+        "target": "团体",
+        "type": "OPPOSES",
+        "properties": {}
+      },
+      {
+        "source": "宪法观念",
+        "target": "个人",
+        "type": "RELATES_TO",
+        "properties": {}
+      },
+      {
+        "source": "团体",
+        "target": "个人",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "杨朱",
+        "target": "自我主义",
+        "type": "REPRESENTS",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "自我主义",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "耶稣",
+        "target": "超于个人的团体",
+        "type": "RELATES_TO",
+        "properties": {}
+      },
+      {
+        "source": "北辰",
+        "target": "孔子",
+        "type": "USED_IN_ILLUSTRATION",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在这种富于伸缩性的网络里，随时随地是有一个“己”作中心的。这并不是个人主义，而是自我主义。个人是对团体而说的，是分子对团体。在个人主义下，一方面是平等观念，指在同一团体中各分子的地位相等，个人不能侵犯大家的权利；一方面是宪法观念，指团体不能抹煞个人，只能在个人们所愿意交出的一分权利上控制个人。这些观念必须先假定了团体的存在。在我们中国传统思想里是没有这一套的，因为我们所有的是自我主义，一切价值是以“己”作为中心的主义。\no 自我主义并不限于拔一毛而利天下不为的杨朱，连儒家都该包括在内。杨朱和孔子不同的是杨朱忽略了自我主义的相对性和伸缩性。他太死心眼儿一口咬了一个自己不放；孔子是会推己及人的，可是尽管放之于四海，中心还是在自己。子曰：“为政以德，譬如北辰，居是所，而众星拱之。”这是很好的一个差序格局的譬喻，自己总是中心，象四季不移的北斗星，所有其他的人，随着他转动。孔子并不象耶稣，耶稣是有超于个人的团体的，他有他的天国，所以他可以牺牲自己去成全天国。孔子呢？不然。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "子贡",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "孔子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "耶稣",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "杨朱",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "墨翟",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "德",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "怨",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "家",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "党",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "国",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "天下",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "子贡",
+        "target": "孔子",
+        "type": "SAID_TO",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "耶稣",
+        "type": "COMPARED_WITH",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "杨朱",
+        "type": "COMPARED_WITH",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "墨翟",
+        "type": "COMPARED_WITH",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "德",
+        "type": "PRACTICED",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "怨",
+        "type": "RESPONDED_TO",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "家",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "党",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "国",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "孔子",
+        "target": "天下",
+        "type": "RELATED_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 子贡曰：“如有博施于民，而能济众何如？可谓仁乎？”子曰：“何事于仁，必也圣乎！尧舜其犹病诸？夫仁者己欲立而立人，己欲达而达人，能近取譬，可谓仁之方也已。”\no 孔子的道德系统里绝不肯离开差序格局的中心，“君子求诸己，小人求诸人。”因之，他不能象耶稣一样普爱天下，甚至而爱他的仇敌，还要为杀死他的人求上帝的饶赦——这些不是从自我中心出发的。孔子呢？或曰：“以德报怨，何如？”子曰：“何以报德？以直报怨，以德报德。”这是差序层次，孔子是决不放松的。孔子并不象杨朱一般以小己来应付一切情境，他把这道德范围依着需要而推广或缩小。他不象耶稣或中国的墨翟，一放不能收。\no 我们一旦明白这个能放能收，能伸能缩的社会范围，我们就可以明白中国传统社会中的私的问题了。我常常觉得：“中国传统社会里一个人为了自己可以牺牲家，为了家可以牺牲党，为了党可以牺牲国，为了国可以牺牲天下。”这和“大学”的：\no 古之欲明明德于天下者，先治其国，欲治其国者，先齐其家，欲齐其家时，先修其身……身修而后家齐，家齐而后国治，国治而后天下平。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "条理",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "内向和外向的路线",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "正面和反面的说法",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "差序的推进形式",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "群己界线",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "西洋权利义务分得清清楚楚的社会",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "为自己可以牺牲家，为大家可以牺牲族",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "事实上的公式",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "小团体谋利益争权利",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "差序格局公和私相对而言",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "现代国家观念",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "条理",
+        "target": "内向和外向的路线",
+        "type": "包含",
+        "properties": {}
+      },
+      {
+        "source": "条理",
+        "target": "正面和反面的说法",
+        "type": "包含",
+        "properties": {}
+      },
+      {
+        "source": "条理",
+        "target": "差序的推进形式",
+        "type": "体现",
+        "properties": {}
+      },
+      {
+        "source": "差序的推进形式",
+        "target": "群己界线",
+        "type": "影响",
+        "properties": {}
+      },
+      {
+        "source": "西洋权利义务分得清清楚楚的社会",
+        "target": "条理",
+        "type": "对比",
+        "properties": {}
+      },
+      {
+        "source": "为自己可以牺牲家，为大家可以牺牲族",
+        "target": "事实上的公式",
+        "type": "是",
+        "properties": {}
+      },
+      {
+        "source": "小团体谋利益争权利",
+        "target": "事实上的公式",
+        "type": "包含",
+        "properties": {}
+      },
+      {
+        "source": "差序格局公和私相对而言",
+        "target": "为自己可以牺牲家，为大家可以牺牲族",
+        "type": "体现",
+        "properties": {}
+      },
+      {
+        "source": "现代国家观念",
+        "target": "差序格局公和私相对而言",
+        "type": "对比",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在条理上是相通的，不同的只是内向和外向的路线，正面和反面的说法，这是种差序的推进形式，把群己的界线弄成了相对性，也可以说是模糊两可了。这和西洋把权利和义务分得清清楚楚的社会，大异其趣。\no 为自己可以牺牲家，为大家可以牺牲族……这是一个事实上的公式。在这种公式里，你如果说他私么？他是不能承认的，因为当他牺牲族时，他可以为了家，家在他看来是公的。当他牺牲国家为他小团体谋利益，争权利时，他也是为公，为了小团体的公。在差序格局里，公和私是相对而言的，站在任何一圈里，向内看也可以说是公的。其实当西洋的外交家在国际会议里为了自己国家争利益，不惜牺牲世界和平和别国合法利益时，也是这样的。所不同的是，他们把国家看成了一个超过一切小组织的团体，为这个团体，上下双方都可以牺牲，但不能牺牲它来成全别种团体。这是现代国家观念，乡土社会中是没有的。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "国家",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "人民",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "革命",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "宪法",
+        "type": "Document",
+        "properties": {}
+      },
+      {
+        "id": "法律",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "国会",
+        "type": "Institution",
+        "properties": {}
+      },
+      {
+        "id": "传统社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "天下",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "皇帝之家",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "群",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "己",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "社会道德",
+        "type": "Morality",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋社会",
+        "target": "国家",
+        "type": "HAS_GROUP",
+        "properties": {}
+      },
+      {
+        "source": "人民",
+        "target": "国家",
+        "type": "MEMBER_OF",
+        "properties": {}
+      },
+      {
+        "source": "革命",
+        "target": "西洋社会",
+        "type": "OCCURRED_IN",
+        "properties": {}
+      },
+      {
+        "source": "宪法",
+        "target": "西洋社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "法律",
+        "target": "西洋社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "国会",
+        "target": "西洋社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "传统社会",
+        "target": "群",
+        "type": "HAS_GROUP",
+        "properties": {}
+      },
+      {
+        "source": "天下",
+        "target": "传统社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "皇帝之家",
+        "target": "传统社会",
+        "type": "HAS_GROUP",
+        "properties": {}
+      },
+      {
+        "source": "己",
+        "target": "群",
+        "type": "MEMBER_OF",
+        "properties": {}
+      },
+      {
+        "source": "社会道德",
+        "target": "己",
+        "type": "APPLIES_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在西洋社会里，国家这个团体是一个明显的也是惟一特出的群己界线。在国家里做人民的无所逃于这团体之外，象一根柴捆在一束里，他们不能不把国家弄成个为每个分子谋利益的机构，于是他们有革命、有宪法、有法律、有国会等等。在我们传统里群的极限是模糊不清的“天下”，国是皇帝之家，界线从来就是不清不楚的，不过是从自己这个中心里推出去的社会势力里的一圈而已。所以可以着手的，具体的只有己，克己就成了社会生活中最重要的德性，他们不会去克群，使群不致侵略个人的权利。在这种差序格局中，不发生这问题的。\no 在差序格局中，社会关系是逐渐从一个一个人推出去的，是私人关系的增加，社会范围是一根根私人联系所构成的网络，因之，我们传统社会里所有的社会道德也只在私人联系中发生意义。——这一点，我将留在下篇里再提出来讨论了。\n* 乡土中国第五章：维系着私人的道德",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土中国第五章：维系着私人的道德",
+        "type": "Chapter",
+        "properties": {}
+      },
+      {
+        "id": "差序格局",
+        "type": "Pattern",
+        "properties": {}
+      },
+      {
+        "id": "团体格局",
+        "type": "Pattern",
+        "properties": {}
+      },
+      {
+        "id": "公民的观念",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "国家",
+        "type": "Entity",
+        "properties": {}
+      },
+      {
+        "id": "部落形态",
+        "type": "Structure",
+        "properties": {}
+      },
+      {
+        "id": "游牧经济",
+        "type": "Economy",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "土地",
+        "type": "Resource",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡土中国第五章：维系着私人的道德",
+        "target": "差序格局",
+        "type": "DESCRIBES",
+        "properties": {}
+      },
+      {
+        "source": "差序格局",
+        "target": "团体格局",
+        "type": "CONTRASTSWITH",
+        "properties": {}
+      },
+      {
+        "source": "公民的观念",
+        "target": "国家",
+        "type": "DEPENDSON",
+        "properties": {}
+      },
+      {
+        "source": "部落形态",
+        "target": "团体格局",
+        "type": "ISAFORMOF",
+        "properties": {}
+      },
+      {
+        "source": "游牧经济",
+        "target": "部落形态",
+        "type": "CHARACTERIZES",
+        "properties": {}
+      },
+      {
+        "source": "团体",
+        "target": "生活相倚赖的一群人",
+        "type": "ISAFORMOF",
+        "properties": {}
+      },
+      {
+        "source": "乡土社会",
+        "target": "土地",
+        "type": "USESFORLIVING",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "* 乡土中国第五章：维系着私人的道德\no 中国乡土社会的基层机构是一种我所谓“差序格局”，是一个“一根根私人联系所构成的网络”。这种格局和现代西洋的“团体格局”是不同的。在团体格局里个人间的联系靠着一个共同的架子；先有了这架子，每个人结上这架子，而互相发生关联。“公民”的观念不能不先有个“国家”。这种结构很可能是从初民民族的“部落”形态中传下来的。部落形态在游牧经济中很显著的是“团体格局”的。生活相倚赖的一群人不能单独地、零散的在山林里求生。在他们，“团体”是生活的前提。可是在一个安居的乡土社会，每个人可以在土地上自食其力的生活时，只在偶然的和临时的非常状态下才感觉到伙伴的需要。在他们，和别人发生关系是后起和次要的，而且他们在不同的场合下需要着不同程度的结合，并不显著的需要一个经常的和广被的团体。因之他们的社会采取了“差序格局”。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "社会结构格局",
+        "type": "Social_structure",
+        "properties": {}
+      },
+      {
+        "id": "道德观念",
+        "type": "Moral_concept",
+        "properties": {}
+      },
+      {
+        "id": "行为规范",
+        "type": "Behavioral_code",
+        "properties": {}
+      },
+      {
+        "id": "行为者的信念",
+        "type": "Belief_of_actor",
+        "properties": {}
+      },
+      {
+        "id": "社会的制裁",
+        "type": "Social_sanction",
+        "properties": {}
+      },
+      {
+        "id": "人和人的关系",
+        "type": "Human_relationships",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "实在",
+        "type": "Reality",
+        "properties": {}
+      },
+      {
+        "id": "神",
+        "type": "God",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "社会结构格局",
+        "target": "道德观念",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "道德观念",
+        "target": "行为规范",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "道德观念",
+        "target": "行为者的信念",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "道德观念",
+        "target": "社会的制裁",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "人和人的关系",
+        "target": "道德观念",
+        "type": "FORMS_PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "团体",
+        "target": "实在",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "实在",
+        "target": "神",
+        "type": "SYMBOLIZES",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 社会结构格局的差别引起了不同的道德观念。道德观念是在社会里生活的人自觉应当遵守社会行为规范的信念。它包括着行为规范，行为者的信念和社会的制裁。它的内容是人和人关系的行为规范，是依着该社会的格局而决定的。从社会观点说，道德是社会对个人的制裁力，使他们合于规定下的形式行事，用以维持该社会的生存和绵续。\no 在“团体格局”中，道德的基本观念建筑在团体和个人的关系上。团体是个超于个人的“实在”，不是有形的东西。我们不能具体的拿出一个有形体的东西来说这是团体。它是一束人和人的关系，是一个控制各个人行为的力量，是一种组成分子生活所倚赖的对象，是先于任何个人而又不能脱离个人的共同意志……这种“实在”只能用有形的东西去象征它、表示它。在“团体格局”的社会中才发生笼罩万有的神的观念。团体对个人的关系就象征在神对于信徒的关系中，是个有赏罚的裁判者，是个公正的维持者，是个全能的保护者。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋的团体格局社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "宗教观念",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "道德观念",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "行为规范",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "神",
+        "type": "Deity",
+        "properties": {}
+      },
+      {
+        "id": "个人在神前的平等",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "神对每个个人的公道",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "耶稣",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "童贞女",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "生育他的父母",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "基督教神话",
+        "type": "Mythology",
+        "properties": {}
+      },
+      {
+        "id": "亲子间个别的和私人的联系",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "公有团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "无私的神",
+        "type": "Deity",
+        "properties": {}
+      },
+      {
+        "id": "人子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "天父",
+        "type": "Deity",
+        "properties": {}
+      },
+      {
+        "id": "美国独立宣言",
+        "type": "Document",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋的团体格局社会",
+        "target": "宗教观念",
+        "type": "HAS_CONCEPT",
+        "properties": {}
+      },
+      {
+        "source": "宗教观念",
+        "target": "道德观念",
+        "type": "SUPPORTS",
+        "properties": {}
+      },
+      {
+        "source": "宗教观念",
+        "target": "行为规范",
+        "type": "SUPPORTS",
+        "properties": {}
+      },
+      {
+        "source": "神",
+        "target": "个人在神前的平等",
+        "type": "SYMBOLIZES",
+        "properties": {}
+      },
+      {
+        "source": "神",
+        "target": "神对每个个人的公道",
+        "type": "SYMBOLIZES",
+        "properties": {}
+      },
+      {
+        "source": "耶稣",
+        "target": "童贞女",
+        "type": "BIRTHED_BY",
+        "properties": {}
+      },
+      {
+        "source": "耶稣",
+        "target": "生育他的父母",
+        "type": "DENIES_PARENTAL_RELATIONSHIP_WITH",
+        "properties": {}
+      },
+      {
+        "source": "基督教神话",
+        "target": "耶稣是童贞女所生的",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "亲子间个别的和私人的联系",
+        "target": "被否定了",
+        "type": "DENIED_BY",
+        "properties": {}
+      },
+      {
+        "source": "无私的神",
+        "target": "公有团体",
+        "type": "REPRESENTS",
+        "properties": {}
+      },
+      {
+        "source": "人子",
+        "target": "天父",
+        "type": "SYMBOLIZES",
+        "properties": {}
+      },
+      {
+        "source": "美国独立宣言",
+        "target": "全人类生来都平等",
+        "type": "CONTAINS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我们如果要了解西洋的“团体格局”社会中的道德体系，决不能离开他们的宗教观念的。宗教的虔诚和信赖不但是他们道德观念的来源，而且是支持行为规范的力量，是团体的象征。在象征着团体的神的观念下，有着两个重要的派生观念：一是每个个人在神前的平等，一是神对每个个人的公道。\no 耶稣称神是父亲，是个和每一个人共同的父亲，他甚至当着众人的面否认了生育他的父母。为了要贯彻这“平等”，基督教的神话中，耶稣是童贞女所生的。亲子间个别的和私人的联系在这里被否定了。其实这并不是“无稽之谈”，而是有力的象征，象征着“公有”的团体，团体的代表——神，必须是无私的。每个“人子”，耶稣所象征的“团体构成分子”，在私有的父亲外必须有一个更重要的与人相共的是“天父”，就是团体。——这样每个个人人格上的平等才能确立，每个团体分子和团体的关系是相等的。团体不能为任何个人所私有。在这基础上才发生美国独立宣言中开宗明义的话：“全人类生来都平等，他们都有天赋不可夺的权利。”",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "上帝",
+        "type": "God",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "牧师",
+        "type": "Minister",
+        "properties": {}
+      },
+      {
+        "id": "官吏",
+        "type": "Minister",
+        "properties": {}
+      },
+      {
+        "id": "代理者",
+        "type": "Agent",
+        "properties": {}
+      },
+      {
+        "id": "人民",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "权利",
+        "type": "Right",
+        "properties": {}
+      },
+      {
+        "id": "宪法",
+        "type": "Constitution",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "上帝",
+        "target": "代理者",
+        "type": "EXECUTE_WILL",
+        "properties": {}
+      },
+      {
+        "source": "牧师",
+        "target": "代理者",
+        "type": "EXECUTE_WILL",
+        "properties": {}
+      },
+      {
+        "source": "官吏",
+        "target": "代理者",
+        "type": "EXECUTE_POWER",
+        "properties": {}
+      },
+      {
+        "source": "人民",
+        "target": "政府",
+        "type": "ORGANIZE_GOVERNMENT",
+        "properties": {}
+      },
+      {
+        "source": "政府",
+        "target": "人民",
+        "type": "GUARANTEE_RIGHTS",
+        "properties": {}
+      },
+      {
+        "source": "宪法",
+        "target": "政府",
+        "type": "COMPLEMENT_OFFICIAL_CONCEPT",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 可是上帝是在冥冥之中，正象征团体无形的实在；但是在执行团体的意志时，还得有人来代理。“代理者”Minister是团体格局的社会中一个基本的概念。执行上帝意志的牧师是Minister，执行团体权力的官吏也是Minister，都是“代理者”，而不是神或团体的本身。这上帝和牧师、国家和政府的分别是不容混淆的。在基督教历史里，人们一度再度的要求直接和上帝交通，反抗“代理者”不能真正代理上帝的意旨。同样的，实际上是相通的，也可以说是一贯的，美国独立宣言可以接下去说：“人类为了保障这些权利，所以才组织政府，政府的适当力量，需由受治者的同意中产生出来；假如任何种政体有害于这些目标，人民即有改革或废除任何政体之权。这些真理，我们认为是不证自明的。”\no 神对每个个人是公道的，是一视同仁的，是爱的；如果代理者违反了这些“不证自明的真理”，代理者就失去了代理的资格。团体格局的道德体系中于是发生了权利的概念。人对人得互相尊重权利，团体对个人也必须保障这些个人的权利，防止团体代理人滥用权力，于是发生了宪法。宪法观念是和西洋公务观念相配合的。国家可以要求人民的服务，但是国家也得保证不侵害人民的权利，在公道和爱护的范围内行使权力。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "团体格局",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "差序格局",
+        "type": "Group",
+        "properties": {}
+      },
+      {
+        "id": "道德体系",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "克己复礼",
+        "type": "Behavior",
+        "properties": {}
+      },
+      {
+        "id": "壹是皆以修身为本",
+        "type": "Principle",
+        "properties": {}
+      },
+      {
+        "id": "私人联系",
+        "type": "Relationship",
+        "properties": {}
+      },
+      {
+        "id": "孝",
+        "type": "Ethic",
+        "properties": {}
+      },
+      {
+        "id": "弟",
+        "type": "Ethic",
+        "properties": {}
+      },
+      {
+        "id": "仁",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "忠信",
+        "type": "Behavior",
+        "properties": {}
+      },
+      {
+        "id": "为人谋而不忠乎",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "与朋友交而不信乎",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "主忠信,无友不如己者",
+        "type": "Principle",
+        "properties": {}
+      },
+      {
+        "id": "弟子入则孝,出则悌,谨而信,泛爱众,而亲仁",
+        "type": "Behavior",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "团体格局",
+        "target": "差序格局",
+        "type": "COMPARATIVE",
+        "properties": {}
+      },
+      {
+        "source": "道德体系",
+        "target": "克己复礼",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "道德体系",
+        "target": "壹是皆以修身为本",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "差序格局",
+        "target": "私人联系",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "孝",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "弟",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "忠信",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "为人谋而不忠乎",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "与朋友交而不信乎",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "主忠信,无友不如己者",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "私人联系",
+        "target": "弟子入则孝,出则悌,谨而信,泛爱众,而亲仁",
+        "type": "CONTAINS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我说了不少关于“团体格局”中道德体系的话，目的是在陪衬出“差序格局”中道德体系的特点来。从它们的差别上看去，很多地方是刚刚相反的。在以自己作中心的社会关系网络中，最主要的自然是“克己复礼”，“壹是皆以修身为本。”——这是差序格局中道德体系的出发点。\no 从己向外推以构成的社会范围是一根根私人联系，每根绳子被一种道德要素维持着。社会范围是从“己”推出去的，而推的过程里有着各种路线，最基本的是亲属：亲子和同胞，相配的道德要素是孝和弟。“孝弟也者其为仁之本欤。”向另一路线推是朋友，相配的是忠信。“为人谋而不忠乎，与朋友交而不信乎？”“主忠信，无友不如己者。”孔子曾总结说：“弟子入则孝，出则悌，谨而信，泛爱众，而亲仁。”\no 在这里我得一提这比较复杂的观念“仁”。依我以上所说的，在差序格局中并没有一个超乎私人关系的道德观念，这种超己的观念必须在团体格局中才能发生。孝、弟、忠、信都是私人关系中的道德要素。但是孔子却常常提到那个仁字。论语中对于仁字的解释最多，但是也最难捉摸。一方面他一再的要给仁字明白的解释，而另一方面却又有“子罕言利，与命与仁。”孔子屡次对于这种道德要素“欲说还止”。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "司马牛",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "子曰",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "仁者其言也訒",
+        "type": "Definition",
+        "properties": {}
+      },
+      {
+        "id": "其言也訒，斯谓之仁己乎",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "为之难，言之得无訒乎",
+        "type": "Response",
+        "properties": {}
+      },
+      {
+        "id": "我未见好仁者",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "孟武伯",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "子路",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "求也",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "赤也",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "千乘之国可使治其赋",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "千室之邑，百乘之家，可使之为宰",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "束带立于朝，可使与宾客言",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "恭则不侮",
+        "type": "Definition",
+        "properties": {}
+      },
+      {
+        "id": "宽则得众",
+        "type": "Definition",
+        "properties": {}
+      },
+      {
+        "id": "信则人任焉",
+        "type": "Definition",
+        "properties": {}
+      },
+      {
+        "id": "敏则有功",
+        "type": "Definition",
+        "properties": {}
+      },
+      {
+        "id": "惠则足以使人",
+        "type": "Definition",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "司马牛",
+        "target": "子曰",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "仁者其言也訒",
+        "target": "子曰",
+        "type": "DEFINE",
+        "properties": {}
+      },
+      {
+        "source": "其言也訒，斯谓之仁己乎",
+        "target": "子曰",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "为之难，言之得无訒乎",
+        "target": "子曰",
+        "type": "ANSWER",
+        "properties": {}
+      },
+      {
+        "source": "我未见好仁者",
+        "target": "子曰",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "孟武伯",
+        "target": "问",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "子路仁乎",
+        "target": "孟武伯",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "不知也",
+        "target": "子曰",
+        "type": "ANSWER",
+        "properties": {}
+      },
+      {
+        "source": "求也何如",
+        "target": "孟武伯",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "由也，千乘之国，可使治其赋也，不知其仁也",
+        "target": "子曰",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "赤也何如",
+        "target": "孟武伯",
+        "type": "ASK",
+        "properties": {}
+      },
+      {
+        "source": "求也，千室之邑，百乘之家，可使之为宰也，不知其仁也",
+        "target": "子曰",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "赤也，束带立于朝，可使与宾客言，不知其仁也",
+        "target": "子曰",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "能行五者于天下为仁矣",
+        "target": "孔子",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "恭则不侮",
+        "target": "孔子",
+        "type": "DEFINE",
+        "properties": {}
+      },
+      {
+        "source": "宽则得众",
+        "target": "孔子",
+        "type": "DEFINE",
+        "properties": {}
+      },
+      {
+        "source": "信则人任焉",
+        "target": "孔子",
+        "type": "DEFINE",
+        "properties": {}
+      },
+      {
+        "source": "敏则有功",
+        "target": "孔子",
+        "type": "DEFINE",
+        "properties": {}
+      },
+      {
+        "source": "惠则足以使人",
+        "target": "孔子",
+        "type": "DEFINE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 司马牛问仁。子曰，“仁者其言也訒。”曰，“其言也訒，斯谓之仁己乎？”子曰，“为之难，言之得无訒乎？”\no 子曰：“我未见好仁者。……盖有之矣，我未之见也。”\no 孟武伯问，“子路仁乎？”子曰：“不知也。”又问。子曰，“由也，千乘之国，可使治其赋也，不知其仁也。”“求也何如？”子曰，“求也，千室之邑，百乘之家，可使之为宰也，不知其仁也。”“赤也何如？”子曰，“赤也，束带立于朝，可使与宾客言，不知其仁也。”\no 孔子有不少次数说“不够说是仁”，但是当他积极的说明仁字是什么时，他却退到了“克己复礼为仁”，“恭宽信敏惠”这一套私人间的道德要素了。他说：“能行五者于天下为仁矣。——恭则不侮，宽则得众，信则人任焉，敏则有功，惠则足以使人。”",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "孔子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Social_structure",
+        "properties": {}
+      },
+      {
+        "id": "中国乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "仁",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "孝弟忠信",
+        "type": "Morality_element",
+        "properties": {}
+      },
+      {
+        "id": "天下归仁",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "天下",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "公务",
+        "type": "Behavior",
+        "properties": {}
+      },
+      {
+        "id": "忠",
+        "type": "Morality_element",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "孔子",
+        "target": "仁",
+        "type": "DISCUSSED",
+        "properties": {}
+      },
+      {
+        "source": "团体",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "仁",
+        "target": "天下归仁",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "仁",
+        "target": "孝弟忠信",
+        "type": "DERIVED_FROM",
+        "properties": {}
+      },
+      {
+        "source": "天下归仁",
+        "target": "天下",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "公务",
+        "target": "忠",
+        "type": "NOT_FOUND_IN",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 孔子的困难是在“团体”组合并不坚强的中国乡土社会中并不容易具体的指出一个笼罩性的道德观念来。仁这个观念只是逻辑上的总合，一切私人关系中道德要素的共相，但是因为在社会形态中综合私人关系的“团体”的缺乏具体性，只有一个广被的“天下归仁”的天下，这个和“天下”相配的“仁”也不能比“天下”观念更为清晰。所以凡是要具体说明时，还得回到“孝弟忠信”那一类的的道德要素。正等于要说明“天下”时，还得回到“父子、昆弟、朋友”这些具体的伦常关系。\no 不但在我们传统道德系统中没有一个象基督教里那种“爱”的观念——不分差序的兼爱；而且我们也很不容易找到个人对于团体的道德要素。在西洋团体格局的社会中，公务，履行义务，是一个清楚明白的行为规范。而在中国传统中是没有的。现在我们有时把“忠”字抬出来放在这位置里，但是忠字的意义，在论语中并不如此。我在上面所引“为人谋而不忠乎”一句中的忠，是“忠恕”的注解，是“对人之诚”。“主忠信”的忠，可以和衷字相通，是由衷之意。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "子张问曰",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "令尹子文",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "旧令尹之政",
+        "type": "Policy",
+        "properties": {}
+      },
+      {
+        "id": "新令尹",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "忠",
+        "type": "Virtue",
+        "properties": {}
+      },
+      {
+        "id": "君子之仕也，行其义也。",
+        "type": "Statement",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "子张问曰",
+        "target": "令尹子文",
+        "type": "ASKED_ABOUT",
+        "properties": {}
+      },
+      {
+        "source": "令尹子文",
+        "target": "旧令尹之政",
+        "type": "PASSED_ON_TO",
+        "properties": {}
+      },
+      {
+        "source": "旧令尹之政",
+        "target": "新令尹",
+        "type": "RECEIVED_FROM",
+        "properties": {}
+      },
+      {
+        "source": "忠",
+        "target": "子张问曰",
+        "type": "DESCRIBED_BY",
+        "properties": {}
+      },
+      {
+        "source": "君子之仕也，行其义也。",
+        "target": "忠臣",
+        "type": "RELATED_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 子张问曰：“令尹子文三仕为令尹，无喜色，三已之，无愠色。旧令尹之政，必以告新令尹。何如？”子曰：“忠矣。”这个忠字虽则近于“忠于职务”的忠字，但是并不包含对于团体的“矢忠”。其实，在论语中，忠字甚至并不是君臣关系间的道德要素。君臣之间以“义”相结合。“君子之仕也，行其义也。”所以“忠臣”的观念可以说是后起的，而忠君并不是个人与团体的道德要素，而依旧是对君私人间的关系。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "团体道德",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "公私冲突",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "君王",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "私人间的道德",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "舜",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "执之而已矣",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "然则舜不禁与？",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "夫舜恶得而禁之，夫有所受之也。",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "然则舜如之何？",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "舜视弃天下，犹弃敝屣也。窃负而逃，遵海滨而处，终身诉然，乐而忘天下。",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "万章",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "象",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "封之也，或曰放焉。",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "有庳之人奚罪焉",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "仁人固如是乎？在他人则诛之，在弟则封之？",
+        "type": "Question",
+        "properties": {}
+      }
+    ],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 团体道德的缺乏，在公私的冲突里更看得清楚。就是负有政治责任的君王，也得先完成他私人间的道德。孟子《尽心上篇》有：桃应问，“舜为天子，皋陶为士，（上鼓下盲）叟杀人，则如之何？”孟子曰：“执之而已矣。”“然则舜不禁与？”曰：“夫舜恶得而禁之，夫有所受之也。”“然则舜如之何？”曰：“舜视弃天下，犹弃敝屣也。窃负而逃，遵海滨而处，终身诉然，乐而忘天下。”——这是说舜做了皇帝，不能用对其他国民一样的态度去对待他的父亲。孟子所回答的是这种冲突的理想解决法，他还是想两全，所以想出逃到海滨不受法律所及的地方去的办法。他这样回答是可以的，因为所问的也并非事实问题。另一个地方，孟子所遇到的问题，却更表现了道德标准的缺乏普遍性了。万章问曰：“象日以杀舜为事，立为天子，则放之，何也？”孟子曰：“封之也，或曰放焉。”完章曰：“象至不仁，封之有庳，有庳之人奚罪焉，仁人固如是乎？在他人则诛之，在弟则封之？”孟子的回答是“身为天子，弟为匹夫，可谓亲爱之乎？”",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "差序格局",
+        "type": "Social structure",
+        "properties": {}
+      },
+      {
+        "id": "私人关系网络",
+        "type": "Relationship network",
+        "properties": {}
+      },
+      {
+        "id": "道德要素",
+        "type": "Moral element",
+        "properties": {}
+      },
+      {
+        "id": "传统道德",
+        "type": "Traditional morality",
+        "properties": {}
+      },
+      {
+        "id": "价值标准",
+        "type": "Value standard",
+        "properties": {}
+      },
+      {
+        "id": "差序的人伦",
+        "type": "Hierarchical kinship",
+        "properties": {}
+      },
+      {
+        "id": "中国道德和法律",
+        "type": "Moral and legal system",
+        "properties": {}
+      },
+      {
+        "id": "施对象",
+        "type": "Recipient of action",
+        "properties": {}
+      },
+      {
+        "id": "自己",
+        "type": "Self",
+        "properties": {}
+      },
+      {
+        "id": "朋友",
+        "type": "Friend",
+        "properties": {}
+      },
+      {
+        "id": "父亲",
+        "type": "Father",
+        "properties": {}
+      },
+      {
+        "id": "贪污",
+        "type": "Bribery",
+        "properties": {}
+      },
+      {
+        "id": "团体格局",
+        "type": "Social structure",
+        "properties": {}
+      },
+      {
+        "id": "兼善",
+        "type": "Mutual benefit",
+        "properties": {}
+      },
+      {
+        "id": "孟子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "墨家",
+        "type": "Philosophical school",
+        "properties": {}
+      },
+      {
+        "id": "爱无差等",
+        "type": "Universal love",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "差序格局",
+        "target": "私人关系网络",
+        "type": "CONSTITUTES",
+        "properties": {}
+      },
+      {
+        "source": "私人关系网络",
+        "target": "道德要素",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "传统道德",
+        "target": "差序的人伦",
+        "type": "BASED_ON",
+        "properties": {}
+      },
+      {
+        "source": "中国道德和法律",
+        "target": "施对象",
+        "type": "APPLIED_TO",
+        "properties": {}
+      },
+      {
+        "source": "中国道德和法律",
+        "target": "自己",
+        "type": "APPLIED_TO",
+        "properties": {}
+      },
+      {
+        "source": "朋友",
+        "target": "父亲",
+        "type": "RELATIONSHIP",
+        "properties": {}
+      },
+      {
+        "source": "朋友",
+        "target": "贪污",
+        "type": "ENGAGED_IN",
+        "properties": {}
+      },
+      {
+        "source": "父亲",
+        "target": "贪污",
+        "type": "ENGAGED_IN",
+        "properties": {}
+      },
+      {
+        "source": "朋友",
+        "target": "能干",
+        "type": "SELF_JUSTIFICATION",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 一个差序格局的社会，是由无数私人关系搭成的网络。这网络的每一个结附着一种道德要素，因之，传统的道德里不另找出一个笼统性的道德观念来，所有的价值标准也不能超脱于差序的人伦而存在了。\no 中国的道德和法律，都因之得看所施的对象和“自己”的关系而加以程度上的伸缩。我见过不少痛骂贪污的朋友，遇到他的父亲贪污时，不但不骂，而且代他讳隐。更甚的，他还可以向父亲要贪污得来的钱，同时骂别人贪污。等到自己贪污时，还可以“能干”两字来自解。这在差序社会里可以不觉得是矛盾；因为在这种社会中，一切普遍的标准并不发生作用，一定要问清了，对象是谁，和自己是什么关系之后，才能决定拿出什么标准来。\no 团体格局的社会里，在同一团体的人是“兼善”的，就是“相同”的。孟子最反对的就是那一套。他说“夫物之不齐，物之情也，子比而同之，是乱天下也。”墨家的“爱无差等”，和儒家的人伦差序，恰恰相反，所以孟子要骂他无父无君了。\n* 乡土中国第六章：家族",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "群己的关系",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "社会结构的格局",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "差序格局",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "团体格局",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "中国乡土社会",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "家庭",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "氏族",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "邻里",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "街坊",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "村落",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "团体",
+        "type": "Social_entity",
+        "properties": {}
+      },
+      {
+        "id": "社会圈子",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "差序格局",
+        "target": "社会结构的格局",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "团体格局",
+        "target": "社会结构的格局",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "家庭",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "氏族",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "邻里",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "街坊",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "村落",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "团体",
+        "target": "中国乡土社会",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "社会圈子",
+        "target": "差序格局",
+        "type": "PART_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "我曾在以上两章中，从群己的关系上讨论到社会结构的格局。我也在那章里提出了若干概念，比如“差序格局”和“团体格局”。我知道这些生疏的名词会引起读者的麻烦，但是为了要标明一些在已有社会学辞汇里所没有确当名词来指称的概念，我不能不写下这些新的标记。这些标记并没有使我完全满意，而且也有容易引起误会的地方。譬如有一位朋友看过我那一章的分析之后，曾摇头说，他不能同意我说中国乡土社会里没有团体。他举出了家庭、氏族、邻里、街坊、村落，这些不是团体是什么？显然我们用同一名词指着不同的实体。我为了要把结构不同的两类“社群”分别出来，所以把团体一词加以较狭的意义，只指由团体格局中所形成的社群，用以和差序格局中所形成的社群相区别；后者称之作“社会圈子”，把社群来代替普通所谓团体。社群是一切有组织的人群。在那位朋友所列举的各种社群中，大体上都属于我所谓社会圈子的性质。在这里我可以附带说明，我并不是说中国乡土社会中没有“团体”，一切社群都属于社会圈子性质，譬如钱会，即是赊，显然是属团体格局的；我在这个分析中只想从主要的格局说，在中国乡土社会中，差序格局和社会圈子的组织是比较的重要。同样的，在西洋现代社会中差序格局同样存在的，但比较上不",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋现代社会",
+        "type": "Social structure",
+        "properties": {}
+      },
+      {
+        "id": "差序格局",
+        "type": "Social structure",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋现代社会",
+        "target": "差序格局",
+        "type": "EXISTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "差序格局",
+        "target": "西洋现代社会",
+        "type": "IS_PRESENT_BUT_LESS_SIGNIFICANT",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "，在西洋现代社会中差序格局同样存在的，但比较上不重要罢了。这两种格局本是社会结构的基本形式，在概念上可以分得清，在事实上常常可以并存的，可以看得到的不过各有偏胜罢了。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "两种格局和两种组织",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "社会结构",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "中国乡土社会基本社群",
+        "type": "Social_group",
+        "properties": {}
+      },
+      {
+        "id": "大家庭",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "扩大了的家庭",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "小家族",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "十多个孩子的家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "公婆儿媳四个人的家",
+        "type": "Family",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "两种格局和两种组织",
+        "target": "社会结构",
+        "type": "DIFFERENCE",
+        "properties": {}
+      },
+      {
+        "source": "区别",
+        "target": "社会结构",
+        "type": "HELPS_UNDERSTANDING",
+        "properties": {}
+      },
+      {
+        "source": "大家庭",
+        "target": "家庭",
+        "type": "EXTENSION",
+        "properties": {}
+      },
+      {
+        "source": "扩大了的家庭",
+        "target": "家庭",
+        "type": "EXTENSION",
+        "properties": {}
+      },
+      {
+        "source": "小家族",
+        "target": "家庭",
+        "type": "EXTENSION",
+        "properties": {}
+      },
+      {
+        "source": "十多个孩子的家",
+        "target": "大家庭",
+        "type": "EXAMPLE",
+        "properties": {}
+      },
+      {
+        "source": "公婆儿媳四个人的家",
+        "target": "小家族",
+        "type": "EXAMPLE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在概念上把这两种格局和两种组织区别出来并不是多余的，因为这个区别确可帮助我们对于社会结构上获得许多更切实的了解，免除种种混淆。在这里我将接着根据这套概念去看中国乡土社会中基本社群，“家”的性质。\no 我想在这里提出来讨论的是我们乡土社会中的基本社群，这社群普通被称为“大家庭”的。我在《江村经济》中把它称作“扩大了的家庭”Expanded family。这些名词的主体是“家庭”，在家庭上加一个小或大的形容词来说明中国和西洋性质上相同的“家庭”形式上的分别。可是我现在看来却觉得这并不妥当，比较确当的应该称中国乡土社会基本社群作“小家族”。\no 我提出这新名词来的原因是在想从结构的原则上去说明中西社会里“家”的区别。我们普通所谓大家庭和小家庭的差别决不是在大小上，不是在这社群所包括的人数上，而是在结构上。一个有十多个孩子的家并不构成“大家庭”的条件，一个只有公婆儿媳四个人的家却不能称之为“小家庭”。在数目上说，前者比后者为多，但在结构上说，后者却比前者复杂，两者所用的原则不同。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "家庭",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "亲子",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "生育社群",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "个人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "孩子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "父母",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "学校",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "国家",
+        "type": "Community",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "家庭",
+        "target": "亲子",
+        "type": "STRUCTURE",
+        "properties": {}
+      },
+      {
+        "source": "家庭",
+        "target": "生育社群",
+        "type": "FUNCTION",
+        "properties": {}
+      },
+      {
+        "source": "个人",
+        "target": "孩子",
+        "type": "PARENT_OF",
+        "properties": {}
+      },
+      {
+        "source": "父母",
+        "target": "孩子",
+        "type": "PARENT_OF",
+        "properties": {}
+      },
+      {
+        "source": "家庭",
+        "target": "夫妇",
+        "type": "RELATIONSHIP",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "经济的事务",
+        "type": "COOPERATE_ON",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "感情的事务",
+        "type": "COOPERATE_ON",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "两性的事务",
+        "type": "COOPERATE_ON",
+        "properties": {}
+      },
+      {
+        "source": "家庭",
+        "target": "学校",
+        "type": "FUNCTION",
+        "properties": {}
+      },
+      {
+        "source": "家庭",
+        "target": "国家",
+        "type": "FUNCTION",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 家庭这概念在人类学上有明确的界说：这是个亲子所构成的生育社群。亲子指它的结构，生育指它的功能。亲子是双系的，兼指父母双方；子女限于配偶所出生的孩子。这社群的结合是为了子女的生和育。在由个人来担负孩子生育任务的社会里，这种社群是不会少的。但是生育的功能，就每个个别的家庭说，是短期的，孩子们长成了也就脱离了他们的父母的抚育，去经营他们自己的生育儿女的事务，一代又一代。家庭这社群因之是暂时性的。从这方面说，家庭这社群和普通的社群不完全一样。学校、国家这些社群并不是暂时，虽则事实上也不是永久的，但是都不是临时性的，因为它们所具的功能是长期性的。家庭既以生育为它的功能，在开始时就得准备结束。抚育孩子的目的就在结束抚育。关于这一层意思我在“生育制度”一书中有详细的讨论。\no 但是在任何文化中，家庭这社群总是赋有生育之外其他的功能。夫妇之间的合作并不因儿女长成而结束。如果家庭不变质，限于亲子所构成的社群，在它形成伊始，以及儿女长成之后，有一段期间只是夫妇的结合。夫妇之间固然经营着经济的，感情的，两性的合作，但是所经营的事务受着很大的限制，凡是需要较多人合作的事务就得由其他社群来经营了。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "西洋家庭",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "中国乡土社会中的家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "社群",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "亲子",
+        "type": "Kinship",
+        "properties": {}
+      },
+      {
+        "id": "单系的路线",
+        "type": "Lineage",
+        "properties": {}
+      },
+      {
+        "id": "五世同堂的家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "氏族",
+        "type": "Clan",
+        "properties": {}
+      },
+      {
+        "id": "小家族",
+        "type": "Clan",
+        "properties": {}
+      },
+      {
+        "id": "大家族",
+        "type": "Clan",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "西洋家庭",
+        "target": "社群",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "中国乡土社会中的家",
+        "target": "社群",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "亲子",
+        "target": "中国乡土社会中的家",
+        "type": "CONSTITUTES",
+        "properties": {}
+      },
+      {
+        "source": "单系的路线",
+        "target": "中国乡土社会中的家",
+        "type": "FOLLOWS",
+        "properties": {}
+      },
+      {
+        "source": "父系原则",
+        "target": "中国乡土社会中的家",
+        "type": "APPLIES_TO",
+        "properties": {}
+      },
+      {
+        "source": "五世同堂的家",
+        "target": "中国乡土社会中的家",
+        "type": "IS_A_PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "氏族",
+        "target": "小家族",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "小家族",
+        "target": "大家族",
+        "type": "IS_A_PART_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在西洋，家庭是团体性的社群，这一点我在上面已经说明有严格的团体界限。因为这缘故，这个社群能经营的事务也很少，主要的是生育儿女。可是在中国乡土社会中，家并没有严格的团体界限，这社群里的分子可以依需要，沿亲属差序向外扩大。构成这个我所谓社圈的分子并不限于亲子。但是在结构上扩大的路线却有限制。中国的家扩大的路线是单系的，就是只包括父系这一方面；除少数例外，家并不能同时包括媳妇和女婿。在父系原则下女婿和结了婚的女儿都是外家人。在父系方面却可以扩大得很远，五世同堂的家，可以包括五代之内所有父系方面的亲属。\no 这种根据单系亲属原则所组成的社群，在人类学中有个专门名称，叫氏族。我们的家在结构上是一个氏族。但是和普通我们所谓族也不完全相同，因为我们所谓族是由许多家所组成，是一个社群的社群。因之，我在这里提了这个“小家族”的名词。小家族和大家族在结构原则上是相同的，不相同是在数量、在大小上。——这是我不愿用大家庭，而用小家族的原因。一字的相差，却说明了这社群的结构性质。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "Family",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "Household",
+        "type": "Household",
+        "properties": {}
+      },
+      {
+        "id": "Kinship",
+        "type": "Kinship",
+        "properties": {}
+      },
+      {
+        "id": "Parent-Child_Relationship",
+        "type": "Parent-child relationship",
+        "properties": {}
+      },
+      {
+        "id": "Clan",
+        "type": "Clan",
+        "properties": {}
+      },
+      {
+        "id": "Tribe",
+        "type": "Tribe",
+        "properties": {}
+      },
+      {
+        "id": "Society_Circle",
+        "type": "Society circle",
+        "properties": {}
+      },
+      {
+        "id": "Small_Family",
+        "type": "Small family",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Family",
+        "target": "Household",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "Kinship",
+        "target": "Parent-Child_Relationship",
+        "type": "BASEDON",
+        "properties": {}
+      },
+      {
+        "source": "Family",
+        "target": "Clan",
+        "type": "DERIVEDFROM",
+        "properties": {}
+      },
+      {
+        "source": "Clan",
+        "target": "Tribe",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "Family",
+        "target": "Society_Circle",
+        "type": "PARTOF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 家族在结构上包括家庭，最小的家族也可以等于家庭。因为亲属的结构的基础是亲子关系，父母子的三角。家族是从家庭基础上推出来的。但是包括在家族中的家庭只是社会圈子中的一轮，不能说它不存在，但也不能说它自成一个独立的单位，不是一个团体。\no 形态上的差异，也引起了性质上的变化。家族虽则包括生育的功能，但不限于生育的功能。依人类学上的说法，氏族是一个事业组织，再扩大就可以成为一个部落。氏族和部落赋有政治、经济、宗教等复杂的功能。我们的家也正是这样。我的假设是中国乡土社会采取了差序格局，利用亲属的伦常去组合社群，经营各种事业，使这基本的家，变成氏族性了。一方面我们可以说在中国乡土社会中，不论政治、经济、宗教等功能都可以利用家族来担负，另一方面也可以说，为了要经营这许多事业，家的结构不能限于亲子的小组合，必须加以扩大。而且凡是政治、经济、宗教等事物都需要长期绵续性的，这个基本社群决不能象西洋的家庭一般是临时的。家必需是绵续的，不因个人的长成而分裂，不因个人的死亡而结束，于是家的性质变成了族。氏族本是长期的，和我们的家一般。我称我们这种社群作小家族，也表示了这种长期性在内，和家庭的临时性相对照。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "中国的家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "事业组织",
+        "type": "Organization",
+        "properties": {}
+      },
+      {
+        "id": "夫妇两人",
+        "type": "Couple",
+        "properties": {}
+      },
+      {
+        "id": "兄弟伯叔",
+        "type": "Relatives",
+        "properties": {}
+      },
+      {
+        "id": "大家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "生育社群",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "西洋家庭团体",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "夫妇",
+        "type": "Couple",
+        "properties": {}
+      },
+      {
+        "id": "子女",
+        "type": "Children",
+        "properties": {}
+      },
+      {
+        "id": "政治",
+        "type": "Function",
+        "properties": {}
+      },
+      {
+        "id": "经济",
+        "type": "Function",
+        "properties": {}
+      },
+      {
+        "id": "宗教",
+        "type": "Function",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "中国的家",
+        "target": "事业组织",
+        "type": "IS",
+        "properties": {}
+      },
+      {
+        "source": "中国的家",
+        "target": "夫妇两人",
+        "type": "CAN_BE",
+        "properties": {}
+      },
+      {
+        "source": "夫妇两人",
+        "target": "生育事务",
+        "type": "OPERATE",
+        "properties": {}
+      },
+      {
+        "source": "兄弟伯叔",
+        "target": "大家",
+        "type": "CAN_BE_PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "生育社群",
+        "target": "政治",
+        "type": "CARRY_OUT",
+        "properties": {}
+      },
+      {
+        "source": "生育社群",
+        "target": "经济",
+        "type": "CARRY_OUT",
+        "properties": {}
+      },
+      {
+        "source": "生育社群",
+        "target": "宗教",
+        "type": "CARRY_OUT",
+        "properties": {}
+      },
+      {
+        "source": "西洋家庭团体",
+        "target": "夫妇",
+        "type": "IS_AXIS_OF",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "西洋家庭团体",
+        "type": "AXIS_OF",
+        "properties": {}
+      },
+      {
+        "source": "子女",
+        "target": "西洋家庭团体",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "西洋家庭团体",
+        "target": "子女",
+        "type": "CAN_BE_PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "两性之间感情",
+        "type": "CONDENSE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 中国的家是一个事业组织，家的大小是依着事业的大小而决定。如果事业小，夫妇两人的合作已够应付，这个家也可以小得等于家庭；如果事业大，超过了夫妇两人所能担负时，兄弟伯叔全可以集合在一个大家里。这说明了我们乡土社会中家的大小变异可以很甚。但不论大小上差别到什么程度，结构原则上却是一贯的、单系的差序格局。\no 以生育社群来担负其他很多的功能，使这社群中各分子的关系的内容也发生了变化。在西洋家庭团体中，夫妇是主轴，夫妇共同经营生育事务，子女在这团体中是配角，他们长成了就离开这团体。在他们，政治、经济、宗教等功能有其他团体来担负，不在家庭的分内。夫妇成为主轴，两性之间的感情是凝合的力量。两性感情的发展，使他们的家庭成了获取生活上安慰的中心。我在《美国人性格》一书中曾用“生活堡垒”一词去形容它。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土社会中的家",
+        "type": "Family",
+        "properties": {}
+      },
+      {
+        "id": "绵续性的事业社群",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "父子之间",
+        "type": "Relationship",
+        "properties": {}
+      },
+      {
+        "id": "婆媳之间",
+        "type": "Relationship",
+        "properties": {}
+      },
+      {
+        "id": "夫妇",
+        "type": "Couple",
+        "properties": {}
+      },
+      {
+        "id": "家法",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "相敬",
+        "type": "Behavior",
+        "properties": {}
+      },
+      {
+        "id": "三从四德",
+        "type": "Standard",
+        "properties": {}
+      },
+      {
+        "id": "负责和服从",
+        "type": "Responsibility",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡土社会中的家",
+        "target": "绵续性的事业社群",
+        "type": "IS_A",
+        "properties": {}
+      },
+      {
+        "source": "绵续性的事业社群",
+        "target": "父子之间",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "绵续性的事业社群",
+        "target": "婆媳之间",
+        "type": "INCLUDES",
+        "properties": {}
+      },
+      {
+        "source": "夫妇",
+        "target": "相敬",
+        "type": "HAS",
+        "properties": {}
+      },
+      {
+        "source": "家法",
+        "target": "乡土社会中的家",
+        "type": "APPLIES_TO",
+        "properties": {}
+      },
+      {
+        "source": "三从四德",
+        "target": "女子",
+        "type": "APPLIES_TO",
+        "properties": {}
+      },
+      {
+        "source": "负责和服从",
+        "target": "亲子间",
+        "type": "APPLIES_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在我们的乡土社会中，家的性质在这方面有着显著的差别。我们的家既是个绵续性的事业社群，它的主轴是在父子之间，在婆媳之间，是纵的，不是横的。夫妇成了配轴。配轴虽则和主轴一样并不是临时性的，但是这两轴却都被事业的需要而排斥了普通的感情。我所谓普通的感情是和纪律相对照的。一切事业都不能脱离效率的考虑。求效率就得讲纪律；纪律排斥私情的宽容。在中国的家庭里有家法，在夫妇间得相敬，女子有着三从四德的标准，亲子间讲究负责和服从。这些都是事业社群里的特色。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "大户人家",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "书香门第",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "乡村",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "夫妇",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "男子汉",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "妇人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "孩子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "茶馆",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "烟铺",
+        "type": "Place",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "夫妇",
+        "target": "乡村",
+        "type": "LIVE_IN",
+        "properties": {}
+      },
+      {
+        "source": "男子汉",
+        "target": "茶馆",
+        "type": "FIND_CONSOOLATION",
+        "properties": {}
+      },
+      {
+        "source": "妇人",
+        "target": "烟铺",
+        "type": "FIND_CONSOOLATION",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "不但在大户人家，书香门第，男女有着阃内阃外的隔离，就是在乡村里，夫妇之间感情的淡漠也是日常可见的现象。我在乡间调查时特别注意过这问题，后来我又因疏散下乡，和农家住在一所房子里很久，更使我认识了这事实。我所知道的乡下夫妇大多是“用不着多说话的”，“实在没有什么话可说的”。一早起各人忙着各人的事，没有工夫说闲话。出了门，各做各的。妇人家如果不下田，留在家里带孩子。工做完了，男子们也不常留在家里，男子汉如果守着老婆，没出息。有事在外，没事也在外。茶馆，烟铺，甚至街头巷口，是男子们找感情上安慰的消遣场所。在那些地方，大家有说有笑，热热闹闹的。回到家，夫妇间合作顺利，各人好好的按着应做的事各做各的。做得好，没事，也没话；合作得不对劲，闹一场，动手动脚，说不上亲热。这些观察使我觉得西洋的家和我们乡下的家，在感情生活上实在不能并论。乡下，有说有笑，有情有意的是在同性和同年龄的集团中，男的和男的在一起，女的和女的在一起，孩子们又在一起，除了工作和生育事务上，性别和年龄组间保持着很大的距离。这决不是偶然的，在我看来，这是把生育之外的许多功能拉入了这社群中去之后所引起的结果。中国人在感情上，尤其是在两性间的矜持和保留意见，不肯",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "人在感情上",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "两性间的矜持和保留意见",
+        "type": "Emotion",
+        "properties": {}
+      },
+      {
+        "id": "西洋人一般的在表面上流露情感",
+        "type": "Behavior",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "人在感情上",
+        "target": "两性间的矜持和保留意见",
+        "type": "HAS_CHARACTERISTIC",
+        "properties": {}
+      },
+      {
+        "source": "两性间的矜持和保留意见",
+        "target": "西洋人一般的在表面上流露情感",
+        "type": "OPPOSITE_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "人在感情上，尤其是在两性间的矜持和保留意见，不肯象西洋人一般的在表面上流露，也是在这种社会圜局中养成的性格。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "John Doe",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "Jane Smith",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "John Doe",
+        "target": "Jane Smith",
+        "type": "MET",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "*",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  }
+]

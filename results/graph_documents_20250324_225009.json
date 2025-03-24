@@ -1,0 +1,1783 @@
+[
+  {
+    "nodes": [
+      {
+        "id": "乡土中国第一章：乡土社会",
+        "type": "Chapter",
+        "properties": {}
+      },
+      {
+        "id": "中国社会的基层是乡土性的",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "从这基层上曾长出一层比较上和乡土基层不完全相同的社会",
+        "type": "Observation",
+        "properties": {}
+      },
+      {
+        "id": "近百年来更在东西方接触边缘上发生了一种很特殊的社会",
+        "type": "Observation",
+        "properties": {}
+      },
+      {
+        "id": "土头土脑的乡下人",
+        "type": "Group",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡土中国第一章：乡土社会",
+        "target": "中国社会的基层是乡土性的",
+        "type": "CONTAINS",
+        "properties": {}
+      },
+      {
+        "source": "中国社会的基层是乡土性的",
+        "target": "土头土脑的乡下人",
+        "type": "DESCRIBES",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "* 乡土中国第一章：乡土社会\no 基层上看去，中国社会是乡土性的。我说中国社会的基层是乡土性的，那是因为我考虑到从这基层上曾长出一层比较上和乡土基层不完全相同的社会，而且在近百年来更在东西方接触边缘上发生了一种很特殊的社会。这些社会的特性我们暂时不提，将来再说。我们不妨先集中注意那些被称为土头土脑的乡下人。他们才是中国社会的基层。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡下人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "泥土",
+        "type": "Material",
+        "properties": {}
+      },
+      {
+        "id": "种地",
+        "type": "Activity",
+        "properties": {}
+      },
+      {
+        "id": "中原去的人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "内蒙",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "西伯利亚",
+        "type": "Location",
+        "properties": {}
+      },
+      {
+        "id": "中国人",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡下人",
+        "target": "泥土",
+        "type": "依赖",
+        "properties": {}
+      },
+      {
+        "source": "种地",
+        "target": "乡下人",
+        "type": "谋生办法",
+        "properties": {}
+      },
+      {
+        "source": "中原去的人",
+        "target": "内蒙",
+        "type": "迁移",
+        "properties": {}
+      },
+      {
+        "source": "中国人",
+        "target": "西伯利亚",
+        "type": "居住",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我们说乡下人土气，虽则似乎带着几分藐视的意味，但这个土字却用得很好。土字的基本意义是指泥土。乡下人离不了泥土，因为在乡下住，种地是最普通的谋生办法。在我们这片远东大陆上，可能在很古的时候住过些还不知道种地的原始人，那些人的生活怎样，对于我们至多只有一些好奇的兴趣罢了。以现在的情形来说，这片大陆上最大多数的人是拖泥带水下田讨生活的了。我们不妨缩小一些范围来看，三条大河的流域已经全是农业区。而且，据说凡是从这个农业老家里迁移到四围边地上去的子弟，也老是很忠实地守着这直接向土里去讨生活的传统。最近我遇着一位到内蒙旅行回来的美国朋友，他很奇怪的问我：你们中原去的人，到了这最适宜于放牧的草原，依旧锄地播种，一家家划着小小的一方地，种植起来；真象是向土里一钻，看不到其他利用这片地的方法了。我记得我的老师史禄国先生也告诉过我，远在西伯利亚，中国人住下了，不管天气如何，还是要下些种子，试试看能不能种地。——这样说来，我们的民族确是和泥土分不开的了。从土里长出过光荣的历史，自然也会受到土的束缚，现在很有些飞不上天的样子。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "泥土",
+        "type": "Thing",
+        "properties": {}
+      },
+      {
+        "id": "城里人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "乡下人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "神",
+        "type": "God",
+        "properties": {}
+      },
+      {
+        "id": "土地",
+        "type": "Land",
+        "properties": {}
+      },
+      {
+        "id": "奶妈",
+        "type": "Nanny",
+        "properties": {}
+      },
+      {
+        "id": "红纸包裹着的东西",
+        "type": "Thing",
+        "properties": {}
+      },
+      {
+        "id": "灶上",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "波兰人",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "城里人",
+        "target": "土气",
+        "type": "HAVE",
+        "properties": {}
+      },
+      {
+        "source": "乡下人",
+        "target": "土地",
+        "type": "DEPEND_ON",
+        "properties": {}
+      },
+      {
+        "source": "神",
+        "target": "土地",
+        "type": "SYMBOLIZE",
+        "properties": {}
+      },
+      {
+        "source": "奶妈",
+        "target": "红纸包裹着的东西",
+        "type": "GIVE",
+        "properties": {}
+      },
+      {
+        "source": "红纸包裹着的东西",
+        "target": "土气",
+        "type": "REPRESENT",
+        "properties": {}
+      },
+      {
+        "source": "波兰人",
+        "target": "类似风俗",
+        "type": "HAVE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 靠种地谋生的人才明白泥土的可贵。城里人可以用土气来藐视乡下人，但是乡下，“土”是他们的命根。在数量上占着最高地位的神，无疑的是“土地”。“土地”这位最近于人性的神，老夫老妻白首偕老的一对，管着乡间一切的闲事。他们象征着可贵的泥土。我初次出国时，我的奶妈偷偷的把一包用红纸裹着的东西，塞在我箱子底下。后来，她又避了人和我说，假如水土不服，老是想家时，可以把红纸包裹着的东西煮一点汤吃。这是一包灶上的泥土。——我在《一曲难忘》的电影里看到了东欧农业国家的波兰也有这类似的风俗，使我更领略了“土”在我们这种文化里所占和所应当占的地位了。\no 农业和游牧或工业不同，它是直接取资于土地的。游牧的人可以逐水草而居，飘忽无定；做工业的人可以择地而居，迁移无碍；而种地的人却搬不动地，长在土里的庄稼行动不得，侍候庄稼的老农也因之象是半身插入了土里，土气是因为不流动而发生的。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "张北一带研究语言的朋友",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "粘着在土地上的人",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "粘着在土地上的人",
+        "target": "张北一带研究语言的朋友",
+        "type": "MET",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 直接靠农业来谋生的人是粘着在土地上的。我遇见过一位在张北一带研究语言的朋友。我问他说在这一带的语言中有没有受蒙古语的影响。他摇了摇头，不但语言上看不出什么影响，其他方面也很少。他接着说：“村子里几百年来老是这几个姓，我从墓碑上去重构每家的家谱，清清楚楚的，一直到现在还是那些人。乡村里的人口似乎是附着在土上的，一代一代的下去，不太有变动。”——这结论自然应当加以条件的，但是大体上说，这是乡土社会的特性之一。我们很可以相信，以农为生的人，世代定居是常态，迁移是变态。大旱大水，连年兵乱，可以使一部分农民抛井离乡；即使象抗战这样大事件所引起基层人口的流动，我相信还是微乎其微的。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "中国乡村人口",
+        "type": "Population",
+        "properties": {}
+      },
+      {
+        "id": "过剩的人口",
+        "type": "Population",
+        "properties": {}
+      },
+      {
+        "id": "土地",
+        "type": "Resource",
+        "properties": {}
+      },
+      {
+        "id": "老树",
+        "type": "Tree",
+        "properties": {}
+      },
+      {
+        "id": "种子",
+        "type": "Seed",
+        "properties": {}
+      },
+      {
+        "id": "家族殖民地",
+        "type": "Colony",
+        "properties": {}
+      },
+      {
+        "id": "孤魂",
+        "type": "Soul",
+        "properties": {}
+      },
+      {
+        "id": "路毙尸体",
+        "type": "Corpse",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "中国乡村人口",
+        "target": "过剩的人口",
+        "type": "EXCEEDS",
+        "properties": {}
+      },
+      {
+        "source": "过剩的人口",
+        "target": "土地",
+        "type": "FINDSSURVIVAL",
+        "properties": {}
+      },
+      {
+        "source": "种子",
+        "target": "家族殖民地",
+        "type": "FORMS",
+        "properties": {}
+      },
+      {
+        "source": "种子",
+        "target": "孤魂",
+        "type": "FINDSSURVIVAL",
+        "properties": {}
+      },
+      {
+        "source": "种子",
+        "target": "路毙尸体",
+        "type": "FINDSSURVIVAL",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 当然，我并不是说中国乡村人口是固定的。这是不可能的，因为人口在增加，一块地上只要几代的繁殖，人口就到了饱和点；过剩的人口自得宣泄出外，负起锄头去另辟新地。可是老根是不常动的。这些宣泄出外的人，象是从老树上被风吹出去的种子，找到土地的生存了，又形成一个小小的家族殖民地，找不到土地的也就在各式各样的运命下被淘汰了，或是“发迹”了。我在广西靠近瑶山的区域里还看见过这类从老树上吹出来的种子，拼命在垦地。在云南，我看见过这类种子所长成的小村落，还不过是两三代的事；我在那里也看见过找不着地的那些“孤魂”，以及死了给狗吃的路毙尸体。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o 不流动是从人和空间的关系上说的，从人和人在空间的排列关系上说就是孤立和隔膜。孤立和隔膜并不是以个人为单位的，而是以一处住在的集团为单位的。本来，从农业本身来看，许多人群居在一处是无需的。耕种活动里分工的程度很浅，至多在男女间有一些分工，好象女的插秧，男的锄地等。这种合作与其说是为了增加效率，不如说是因为在某一时间男的忙不过来，家里人出来帮帮忙罢了。耕种活动中既不向分工专业方面充分发展，农业本身也就没有聚集许多人住在一起的需要了。我们看见乡下有大小不同的聚居社区，也可以想到那是出于农业本身以外的原因了。\no 乡下最小的社区可以只有一户人家。夫妇和孩子聚居于一处有着两性和抚育上的需要。无论在什么性质的社会里，除了军队、学校这些特殊的团体外，家庭总是最基本的抚育社群。在中国乡下这种只有一户人家的小社区是不常见的。在四川的山区种梯田的地方，可能有这类情形，大多的农民是聚村而居。这一点对于我们乡土社会的性质很有影响。美国的乡下大多是一户人家自成一个单位，很少屋沿相接的邻舍。这是他们早年拓殖时代，人少地多的结果，同时也保持了他们个别负责，独来独往的精神。我们中国很少类似的情形。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "中国农民",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "小农经营",
+        "type": "Practice",
+        "properties": {}
+      },
+      {
+        "id": "安全保卫",
+        "type": "Security",
+        "properties": {}
+      },
+      {
+        "id": "土地平等继承",
+        "type": "Inheritance",
+        "properties": {}
+      },
+      {
+        "id": "三家村",
+        "type": "Village",
+        "properties": {}
+      },
+      {
+        "id": "大村",
+        "type": "Village",
+        "properties": {}
+      },
+      {
+        "id": "孤立、隔膜",
+        "type": "Condition",
+        "properties": {}
+      },
+      {
+        "id": "地方性",
+        "type": "Characteristic",
+        "properties": {}
+      },
+      {
+        "id": "熟悉社会",
+        "type": "Society",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "中国农民",
+        "target": "小农经营",
+        "type": "ENGAGES_IN",
+        "properties": {}
+      },
+      {
+        "source": "中国农民",
+        "target": "水利合作",
+        "type": "REQUIRES",
+        "properties": {}
+      },
+      {
+        "source": "中国农民",
+        "target": "安全保卫",
+        "type": "FOR",
+        "properties": {}
+      },
+      {
+        "source": "中国农民",
+        "target": "土地平等继承",
+        "type": "UNDER",
+        "properties": {}
+      },
+      {
+        "source": "三家村",
+        "target": "大村",
+        "type": "CAN_BE",
+        "properties": {}
+      },
+      {
+        "source": "孤立、隔膜",
+        "target": "乡土社会的生活",
+        "type": "CHARACTERIZED_BY",
+        "properties": {}
+      },
+      {
+        "source": "地方性",
+        "target": "乡土社会的生活",
+        "type": "RESTRICTED_TO",
+        "properties": {}
+      },
+      {
+        "source": "熟悉社会",
+        "target": "乡土社会的生活",
+        "type": "TYPIFIED_BY",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 中国农民聚村而居的原因大致说来有下列几点：一、每家所耕的面积小，所谓小农经营，所以聚在一起住，住宅和农场不会距离得过分远。二、需要水利的地方，他们有合作的需要，在一起住，合作起来比较方便。三、为了安全，人多了容易保卫。四、土地平等继承的原则下，兄弟分别继承祖上的遗业，使人口在一地方一代一代的积起来，成为相当大的村落。\no 无论出于什么原因，中国乡土社区的单位是村落，从三家村起可以到几千户的大村。我在上文所说的孤立、隔膜是以村与村之间的关系而说的。孤立和隔膜并不是绝对的，但是人口的流动率小，社区间的往来也必然疏少。我想我们很可以说，乡土社会的生活是富于地方性的。地方性是指他们活动范围有地域上的限制。在区域间接触少，生活隔离，各自保持着孤立的社会圈子。\no 乡土社会在地方性的限制下成了生于斯、死于斯的社会。常态的生活是终老是乡。假如在一个村子里的人都是这样的话，在人和人的关系上也就发生了一种特色，每个孩子都是在人家眼中看着长大的，在孩子眼里周围的人也是从小就看惯的。这是一个“熟悉”的社会，没有陌生人的社会。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "Gemeinschaft",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "Gesellschaft",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "有机的团结",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "机械的团结",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "礼俗社会",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "法理社会",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "土地所囿住的乡民",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Gemeinschaft",
+        "target": "土地所囿住的乡民",
+        "type": "属于",
+        "properties": {}
+      },
+      {
+        "source": "Gesellschaft",
+        "target": "法理社会",
+        "type": "等同于",
+        "properties": {}
+      },
+      {
+        "source": "有机的团结",
+        "target": "礼俗社会",
+        "type": "等同于",
+        "properties": {}
+      },
+      {
+        "source": "机械的团结",
+        "target": "法理社会",
+        "type": "等同于",
+        "properties": {}
+      },
+      {
+        "source": "熟悉的社会中的个人",
+        "target": "从心所欲而不逾规矩的自由",
+        "type": "获得",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在社会学里，我们常分出两种不同性质的社会，一种并没有具体目的，只是因为在一起生长而发生的社会，一种是为了要完成一件任务而结合的社会。用Tonnies的话说：前者是Gemeinschaft，后者是Gesellschaft，用Durkheim的话说：前者是“有机的团结”，后者是“机械的团结”。用我们自己的话说，前者是礼俗社会，后者是法理社会。——我以后还要详细分析这两种社会的不同。在这里我想说明的是生活上被土地所囿住的乡民，他们平素所接触的是生而与俱的人物，正象我们的父母兄弟一般，并不是由于我们选择得来的关系，而是无须选择，甚至先我而在的一个生活环境。\no 熟悉是从时间里、多方面、经常的接触中所发生的亲密的感觉。这感觉是无数次的小磨擦里陶炼出来的结果。这过程是论语第一句里的“习”字。“学”是和陌生的最初接触，“习”是陶炼，“不亦悦乎”是描写熟悉之后的亲密感觉。在一个熟悉的社会中，我们会得到从心所欲而不逾规矩的自由。这和法律所保障的自由不同。规矩不是法律，规矩是“习”出来的礼俗。从俗即是从心。换一句话说，社会和个人在这里通了家。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "我们大家",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "这一类的话",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "现代社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "陌生人组成的社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "讲个明白",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "画个押，签个字",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "信用",
+        "type": "Trust",
+        "properties": {}
+      },
+      {
+        "id": "契约",
+        "type": "Contract",
+        "properties": {}
+      },
+      {
+        "id": "规矩",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "西洋商人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "中国人",
+        "type": "People",
+        "properties": {}
+      },
+      {
+        "id": "信用是天生的",
+        "type": "Statement",
+        "properties": {}
+      },
+      {
+        "id": "磁器",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "祖父",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "接到了大批磁器",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "一文不要的交了来",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "不能及早寄出",
+        "type": "Reason",
+        "properties": {}
+      },
+      {
+        "id": "土气",
+        "type": "Feature",
+        "properties": {}
+      },
+      {
+        "id": "直接有赖于泥土的生活",
+        "type": "Life",
+        "properties": {}
+      },
+      {
+        "id": "植物一般的在一个地方生下根",
+        "type": "Metaphor",
+        "properties": {}
+      },
+      {
+        "id": "从容地去摸熟每个人的生活",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "母亲对于她的儿女一般",
+        "type": "Metaphor",
+        "properties": {}
+      }
+    ],
+    "relationships": [],
+    "source_document": {
+      "page_content": "o “我们大家是熟人，打个招呼就是了，还用得着多说么？”——这一类的话已经成了我们现代社会的阻碍。现代社会是个陌生人组成的社会，各人不知道各人的底细，所以得讲个明白；还要怕口说无凭，画个押，签个字。这样才发生法律。在乡土社会中法律是无从发生的。“这不是见外了么？”乡土社会里从熟悉得到信任。这信任并非没有根据的，其实最可靠也没有了，因为这是规矩。西洋的商人到现在还时常说中国人的信用是天生的，类于神话的故事真多：说是某人接到了大批磁器，还是他祖父在中国时订的货，一文不要的交了来，还说着许多不能及早寄出的抱歉话。——乡土社会的信用并不是对契约的重视，而是发生于对一种行为的规矩熟悉到不加思索时的可靠性。\no 这自是“土气”的一种特色。因为只有直接有赖于泥土的生活才会象植物一般的在一个地方生下根，从容地去摸熟每个人的生活，象母亲对于她的儿女一般。陌生人对于婴孩的话是无法懂的，但是在做母亲的人听来都清清楚楚，还能听出没有用字音表达的意思来。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "熟悉蚂蚁搬家的意义",
+        "type": "Knowledge",
+        "properties": {}
+      },
+      {
+        "id": "开沟",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "蚂蚁搬家",
+        "type": "Event",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会的特性",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "孝",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "心安",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "陌生人面前",
+        "type": "Context",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会习俗",
+        "type": "Practice",
+        "properties": {}
+      },
+      {
+        "id": "土气",
+        "type": "Term",
+        "properties": {}
+      },
+      {
+        "id": "衣锦荣归",
+        "type": "Concept",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "熟悉蚂蚁搬家的意义",
+        "target": "开沟",
+        "type": "INFLUENCES",
+        "properties": {}
+      },
+      {
+        "source": "熟悉蚂蚁搬家的意义",
+        "target": "蚂蚁搬家",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "乡土社会的特性",
+        "target": "心安",
+        "type": "INFLUENCES",
+        "properties": {}
+      },
+      {
+        "source": "孝",
+        "target": "心安",
+        "type": "RELATED_TO",
+        "properties": {}
+      },
+      {
+        "source": "乡土社会习俗",
+        "target": "陌生人面前",
+        "type": "INCOMPATIBLE_WITH",
+        "properties": {}
+      },
+      {
+        "source": "土气",
+        "target": "衣锦荣归",
+        "type": "OPPOSITE_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 不但对人，他们对物也是“熟悉”的。一个老农看见蚂蚁在搬家了，会忙着去田里开沟，他熟悉蚂蚁搬家的意义。从熟悉里得来的认识是个别的，并不是抽象的普遍原则。在熟悉的环境里生长的人，不需要这种原则，他只要在接触所及的范围之内知道从手段到目的间的个别关联。在乡土社会中生长的人似乎不太追求这笼罩万有的真理。我读论语时，看到孔子在不同人面前说着不同的话来解释“孝”的意义时，我感觉到这乡土社会的特性了。孝是什么？孔子并没有抽象的加以说明，而是列举具体的行为，因人而异的答覆了他的学生。最后甚至归结到心安两字。做子女的得在日常接触中去摸熟父母的性格，然后去承他们的欢，做到自己的心安。这说明了乡土社会中人和人相处的基本办法。\no 这种办法在一个陌生人面前是无法应用的。在我们社会的激速变迁中，从乡土社会进入现在社会的过程中，我们在乡土社会中所养成的生活方式处处产生了流弊。陌生人所组成的现代社会是无法用乡土社会的习俗来应付的。于是，土气成了骂人的词汇，“乡”也不再是衣锦荣归的去处了。\n* 乡土中国第二章：文字下乡",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土中国第二章：文字下乡",
+        "type": "Chapter",
+        "properties": {}
+      },
+      {
+        "id": "乡下人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "城里人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "小姐",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "狗",
+        "type": "Animal",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡下人",
+        "target": "城里人",
+        "type": "对比",
+        "properties": {}
+      },
+      {
+        "source": "小姐",
+        "target": "乡下人",
+        "type": "对比",
+        "properties": {}
+      },
+      {
+        "source": "狗",
+        "target": "城里人",
+        "type": "关系",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "* 乡土中国第二章：文字下乡\no 乡下人在城里人眼睛里是“愚”的。我们当然记得不少提倡乡村工作的朋友们，把愚和病贫联结起来去作为中国乡村的症侯。关于病和贫我们似乎还有客观的标准可说，但是说乡下人“愚”，却是凭什么呢？乡下人在马路上听见背后汽车连续的按喇叭，慌了手脚，东避也不是，西躲又不是，司机拉住闸车，在玻璃窗里，探出半个头，向着那土老头儿，啐了一口：“笨蛋！”——如果这是愚，真冤枉了他们。我曾带了学生下乡，田里长着包谷，有一位小姐，冒充着内行，说：“今年麦子长得这么高。”旁边的乡下朋友，虽则没有啐她一口，但是微微的一笑，也不妨译作“笨蛋”。乡下人没有见过城里的世面，因之而不明白怎样应付汽车，那是知识问题，不是智力问题，正等于城里人到了乡下，连狗都不会赶一般。如果我们不承认郊游的仕女们一听见狗吠就变色是“白痴”，自然没有理由说乡下人不知道“靠左边走”或“靠右边走”等时常会因政令而改变的方向是因为他们“愚不可及”了。“愚”在什么地方呢？",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡村工作的朋友",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "乡下人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "文盲",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "不识字的人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "教授的孩子们",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "小学生",
+        "type": "Person",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡村工作的朋友",
+        "target": "乡下人",
+        "type": "SAID",
+        "properties": {}
+      },
+      {
+        "source": "文盲",
+        "target": "不识字的人",
+        "type": "DEFINITION",
+        "properties": {}
+      },
+      {
+        "source": "我",
+        "target": "文字下乡的运动",
+        "type": "SUPPORT",
+        "properties": {}
+      },
+      {
+        "source": "教员们",
+        "target": "教授的孩子们",
+        "type": "TEACH",
+        "properties": {}
+      },
+      {
+        "source": "教员们",
+        "target": "小学生",
+        "type": "TEACH",
+        "properties": {}
+      },
+      {
+        "source": "教员们",
+        "target": "家长",
+        "type": "IN_FRONT_OF",
+        "properties": {}
+      },
+      {
+        "source": "教员们",
+        "target": "教授的孩子们",
+        "type": "PRAISE",
+        "properties": {}
+      },
+      {
+        "source": "我",
+        "target": "教授的孩子们",
+        "type": "COMPARE",
+        "properties": {}
+      },
+      {
+        "source": "我",
+        "target": "乡下孩子",
+        "type": "COMPARE",
+        "properties": {}
+      },
+      {
+        "source": "乡下孩子",
+        "target": "小学生",
+        "type": "EQUAL",
+        "properties": {}
+      },
+      {
+        "source": "教授的孩子们",
+        "target": "智力高",
+        "type": "ATTRIBUTE",
+        "properties": {}
+      },
+      {
+        "source": "我",
+        "target": "骄傲",
+        "type": "HAVE",
+        "properties": {}
+      },
+      {
+        "source": "乡下孩子",
+        "target": "反应灵敏",
+        "type": "ATTRIBUTE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 其实乡村工作的朋友说乡下人愚那是因为他们不识字，我们称之曰“文盲”，意思是白生了眼睛，连字都不识。这自然是事实。我决不敢反对文字下乡的运动，可是如果说不识字就是愚，我心里总难甘服。“愚”如果是智力的不足或缺陷，识字不识字并非愚不愚的标准。智力是学习的能力。如果一个人没有机会学习，不论他有没有学习的能力还是学不到什么的。我们是不是说乡下人不但不识字，而且识字的能力都不及人呢？\no 说到这里我记起了疏散在乡下时的事来了。同事中有些孩子送进了乡间的小学，在课程上这些孩子样样比乡下孩子学得快、成绩好。教员们见面时总在家长面前夸奖这些孩子们有种、聪明。这等于说教授们的孩子智力高。我对于这些恭维自然是私心窃喜。穷教授别的已经全被剥夺，但是我们还有别种人所望尘莫及的遗传。但是有一天，我在田野里看放学回来的小学生们捉蚱蜢，那些“聪明”而有种的孩子，扑来扑去，屡扑屡失，而那些乡下孩子却反应灵敏，一扑一得。回到家来，刚才一点骄傲似乎又没有了着落。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡下孩子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "教授们的孩子",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "蚱蜢",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "田野",
+        "type": "Place",
+        "properties": {}
+      },
+      {
+        "id": "认字",
+        "type": "Activity",
+        "properties": {}
+      },
+      {
+        "id": "书籍",
+        "type": "Object",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡下孩子",
+        "target": "认字",
+        "type": "PERFORMS",
+        "properties": {}
+      },
+      {
+        "source": "教授们的孩子",
+        "target": "认字",
+        "type": "PERFORMS",
+        "properties": {}
+      },
+      {
+        "source": "乡下孩子",
+        "target": "田野",
+        "type": "ACTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "教授们的孩子",
+        "target": "田野",
+        "type": "ACTS_IN",
+        "properties": {}
+      },
+      {
+        "source": "教授们的孩子",
+        "target": "蚱蜢",
+        "type": "PERFORMS",
+        "properties": {}
+      },
+      {
+        "source": "乡下孩子",
+        "target": "蚱蜢",
+        "type": "PERFORMS",
+        "properties": {}
+      },
+      {
+        "source": "田野",
+        "target": "蚱蜢",
+        "type": "LOCATED_IN",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 乡下孩子在教室里认字认不过教授们的孩子，和教授们的孩子在田野里捉蚱蜢捉不过乡下孩子，在意义上是相同的。我并不责备自己孩子蚱蜢捉得少，第一是我们无需用蚱蜢来加菜，（云南乡下蚱蜢是下饭的，味道很近于苏州的虾干）第二是我的孩子并没有机会练习。教授们的孩子穿了鞋袜，为了体面，不能不择地而下足，弄污了回家来会挨骂，于是在他们捉蚱蜢时不免要有些顾忌，动作不活灵了。这些也许还在其次，他们日常并不在田野里跑惯，要分别草和虫，须费一番眼力，蚱蜢的保护色因之易于生效。——我为自己孩子所做的辩护是不是同样也可以用之于乡下孩子在认字上的“愚”呢？我想是很适当的，乡下孩子不象教授们的孩子到处看见书籍，这不是他们日常所混熟的环境。教授们的孩子并不见得一定是遗传上有什么特别善于识字的能力，显而易见的却是有着易于识字的环境。这样说来，乡下人是否在智力上比不上城里人，至少还是个没有结论的题目。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡村工作的朋友们",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "乡下人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "城市生活所需的知识",
+        "type": "Knowledge",
+        "properties": {}
+      },
+      {
+        "id": "城市里的人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "文字的用处",
+        "type": "Topic",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡村工作的朋友们",
+        "target": "乡下人",
+        "type": "SAY",
+        "properties": {}
+      },
+      {
+        "source": "乡下人",
+        "target": "城市生活所需的知识",
+        "type": "LACK_OF",
+        "properties": {}
+      },
+      {
+        "source": "城市里的人",
+        "target": "城市生活所需的知识",
+        "type": "HAVE_MORE",
+        "properties": {}
+      },
+      {
+        "source": "乡下人",
+        "target": "文字的用处",
+        "type": "DISCUSS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 这样看来，乡村工作的朋友们说乡下人愚，显然不是指他们智力不及人，而是说他们知识不及人了。这一点，依我们上面所说的，还是不太能自圆其说。至多是说，乡下人在城市生活所需的知识上是不及城市里人多，这是正确的。我们是不是也因之可以说乡下多文盲是因为乡下本来无需文字眼睛呢？说到这里，我们应当讨论一下文字的用处了。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "乡土社会",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "Face To Face Group",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "归有光的项脊轩记",
+        "type": "Text",
+        "properties": {}
+      },
+      {
+        "id": "老是那些人",
+        "type": "People",
+        "properties": {}
+      },
+      {
+        "id": "脚声",
+        "type": "Sound",
+        "properties": {}
+      },
+      {
+        "id": "面对面的社群",
+        "type": "Social",
+        "properties": {}
+      },
+      {
+        "id": "谁呀",
+        "type": "Question",
+        "properties": {}
+      },
+      {
+        "id": "大声的我",
+        "type": "Response",
+        "properties": {}
+      },
+      {
+        "id": "贵姓大名",
+        "type": "Formality",
+        "properties": {}
+      },
+      {
+        "id": "足声",
+        "type": "Sound",
+        "properties": {}
+      },
+      {
+        "id": "声气",
+        "type": "Sound",
+        "properties": {}
+      },
+      {
+        "id": "气味",
+        "type": "Scent",
+        "properties": {}
+      },
+      {
+        "id": "社交上姓名的不常上口",
+        "type": "Behavior",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "乡土社会",
+        "target": "Face To Face Group",
+        "type": "IS",
+        "properties": {}
+      },
+      {
+        "source": "归有光的项脊轩记",
+        "target": "老是那些人",
+        "type": "DESCRIBES",
+        "properties": {}
+      },
+      {
+        "source": "归有光的项脊轩记",
+        "target": "脚声",
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": "面对面的社群",
+        "target": "老是那些人",
+        "type": "KNOWS",
+        "properties": {}
+      },
+      {
+        "source": "面对面的社群",
+        "target": "脚声",
+        "type": "IDENTIFIES",
+        "properties": {}
+      },
+      {
+        "source": "谁呀",
+        "target": "大声的我",
+        "type": "ANSWERS",
+        "properties": {}
+      },
+      {
+        "source": "贵姓大名",
+        "target": "社交上姓名的不常上口",
+        "type": "INDICATES",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我在上一篇里说明了乡土社会的一个特点就是这种社会的人是在熟人里长大的。用另一句话来说，他们生活上互相合作的人都是天天见面的。在社会学上我们称之作Face to face group，直译起来是面对面的社群。归有光的项脊轩记里说，他日常接触的老是那些人，所以日子久了可以用脚声来辨别来者是谁。在“面对面的社群里”甚至可以不必见面而知道对方是谁。我们自己虽说是已经多少在现代都市里住过一时了，但是一不留心，乡土社会里所养成的习惯还是支配着我们。你不妨试一试，如果有人在你门上敲着要进来，你问“谁呀！”门外的人十之八九回答你一个大声的“我”。这是说，你得用声气辨人。在面对面的社群里一起生活的人是不必通名报姓的。很少太太会在门外用姓名来回答丈夫的发问。但是我们因为久习于这种“我呀！”“我呀！”的回答，也很有时候用到了门内人无法辨别你声音的场合。我有一次，久别家乡回来，在电话里听到了一个无法辨别的“我呀”时，的确闹了一个笑话。\no “贵姓大名”是因为我们不熟悉而用的。熟悉的人大可不必如此，足声、声气、甚至气味，都可以是足够的“报名”。我们社交上姓名的不常上口也就表示了我们原本是在熟人中生活的，是个乡土社会。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "结绳记事",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "铜钱",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "文字",
+        "type": "Method",
+        "properties": {}
+      },
+      {
+        "id": "情书",
+        "type": "Object",
+        "properties": {}
+      },
+      {
+        "id": "悲剧",
+        "type": "Event",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "结绳记事",
+        "target": "文字",
+        "type": "EVOLUTIONARY_STEP",
+        "properties": {}
+      },
+      {
+        "source": "铜钱",
+        "target": "文字",
+        "type": "EXAMPLE_OF",
+        "properties": {}
+      },
+      {
+        "source": "情书",
+        "target": "悲剧",
+        "type": "CAUSE",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 文字发生之初是“结绳记事”，需要结绳来记事是为了在空间和时间中人和人的接触发生了阻碍。我们不能当面讲话，才需要找一些东西来代话。在广西的瑶山里，部落有急，就派了人送一枚铜钱到别的部落里去，对方接到了这记号，立刻派人来救。这是“文字”，一种双方约好代表一种意义的记号。如果是面对面可以直接说话时，这种被预先约好的意义所拘束的记号，不但多余，而且有时会词不达意引起误会的。在十多年前青年们讲恋爱，受着直接社交的限制，通行着写情书，很多悲剧是因情书的误会而发生的。有这种经验的人必能痛悉文字的限制。\no 文字所能传的情、达的意是不完全的。这不完全是出于“间接接触”的原因。我们所要传达的情意是和当时当地的外局相配合的。你用文字把当时当地的情意记了下来，如果在异时异地的圜局中去看，所会引起的反映很难尽合于当时当地的圜局中可能引起的反应。文字之成为传情达意的工具常有这个无可补救的缺陷。于是在利用文字时，我们要讲究文法，讲究艺术。文法和艺术就在减少文字的“走样”。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "说话",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "文法",
+        "type": "Rule",
+        "properties": {}
+      },
+      {
+        "id": "手指",
+        "type": "Body_part",
+        "properties": {}
+      },
+      {
+        "id": "完整句子",
+        "type": "Sentence",
+        "properties": {}
+      },
+      {
+        "id": "写作",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "电话",
+        "type": "Device",
+        "properties": {}
+      },
+      {
+        "id": "书信文告",
+        "type": "Communication_tool",
+        "properties": {}
+      },
+      {
+        "id": "传真技术",
+        "type": "Technology",
+        "properties": {}
+      },
+      {
+        "id": "文字",
+        "type": "Writing",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "说话",
+        "target": "文法",
+        "type": "FOLLOWS",
+        "properties": {}
+      },
+      {
+        "source": "说话",
+        "target": "辅助表情",
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": "手指",
+        "target": "说话",
+        "type": "INSTRUMENTS",
+        "properties": {}
+      },
+      {
+        "source": "完整句子",
+        "target": "写作",
+        "type": "REQUIRED",
+        "properties": {}
+      },
+      {
+        "source": "文字",
+        "target": "写作",
+        "type": "USED_IN",
+        "properties": {}
+      },
+      {
+        "source": "电话",
+        "target": "书信文告",
+        "type": "REPLACES",
+        "properties": {}
+      },
+      {
+        "source": "广播",
+        "target": "书信文告",
+        "type": "REPLACES",
+        "properties": {}
+      },
+      {
+        "source": "传真技术",
+        "target": "文字",
+        "type": "THREATENS",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 在说话时，我们可以不注意文法。并不是说话时没有文法，而是因为我们有着很多辅助表情来补充传达情意的作用。我们可以用手指指着自己而在话里吃去一个我字。在写作时却不能如此。于是我们得尽量的依着文法去写成完整的句子了。不合文法的字词难免引起人家的误会，所以不好。说话时我们如果用了完整的句子，不但显得迂阔，而且可笑。这是从书本上学外国语的人常会感到的痛苦。\no 文字是间接的说话，而且是个不太完善的工具。当我们有了电话，广播的时候，书信文告的地位已经大受影响。等到传真的技术发达之后，是否还用得到文字，是很成问题的。\no 这样说来，在乡土社会里不用文字绝不能说是“愚”的表现了。面对面的往来是直接接触，为什么舍此比较完善的语言而采取文字呢？",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "面对面社群",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "语言",
+        "type": "Symbol_system",
+        "properties": {}
+      },
+      {
+        "id": "声音",
+        "type": "Sound",
+        "properties": {}
+      },
+      {
+        "id": "象征体系",
+        "type": "Symbol_system",
+        "properties": {}
+      },
+      {
+        "id": "意义",
+        "type": "Meaning",
+        "properties": {}
+      },
+      {
+        "id": "个人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "对方",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "语言史",
+        "type": "History",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "面对面社群",
+        "target": "语言",
+        "type": "TOOL",
+        "properties": {}
+      },
+      {
+        "source": "语言",
+        "target": "声音",
+        "type": "EXPRESSION",
+        "properties": {}
+      },
+      {
+        "source": "语言",
+        "target": "象征体系",
+        "type": "IS",
+        "properties": {}
+      },
+      {
+        "source": "意义",
+        "target": "附着",
+        "type": "VERB",
+        "properties": {}
+      },
+      {
+        "source": "个人",
+        "target": "表达",
+        "type": "NEED",
+        "properties": {}
+      },
+      {
+        "source": "表达",
+        "target": "对方",
+        "type": "TO",
+        "properties": {}
+      },
+      {
+        "source": "象征",
+        "target": "多数人共认的意义",
+        "type": "INCLUDE",
+        "properties": {}
+      },
+      {
+        "source": "社会",
+        "target": "语言",
+        "type": "HAS",
+        "properties": {}
+      },
+      {
+        "source": "社群",
+        "target": "相同经验",
+        "type": "HAVE",
+        "properties": {}
+      },
+      {
+        "source": "语言",
+        "target": "群体",
+        "type": "IN",
+        "properties": {}
+      },
+      {
+        "source": "社群",
+        "target": "语言",
+        "type": "USE",
+        "properties": {}
+      },
+      {
+        "source": "语言",
+        "target": "简单化",
+        "type": "TENDS_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我还想在这里推进一步说，在面对面社群里，连语言本身都是不得已而采取的工具。语言本是用声音来表达的象征体系。象征是附着意义的事物或动作。我说“附着”是因为“意义”是靠联想作用加上去的，并不是事物或动作本身具有的性质。这是社会的产物，因为只有在人和人需要配合行为的时候，个人才需要有所表达；而且表达的结果必须使对方明白所要表达的意义。所以象征是包括多数人共认的意义，也就是这一事物或动作会在多数人中引起相同的反应。因之，我们绝不能有个人的语言，只能有社会的语言。要使多数人能对同一象征具有同一意义，他们必须有着相同的经历，就是说在相似的环境中接触和使用同一象征，因为在象征上附着了同一意义。因此在每个特殊的生活团体中，必有他们特殊的语言，有许多别种语言所无法翻译的字句。\no 语言只能在一个社群所有相同经验的一层上发生。群体愈大，包括的人所有的经验愈繁杂，发生语言的一层共同基础也必然愈有限，于是语言也就愈趋于简单化。这在语言史上看得很清楚的。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "特殊语言",
+        "type": "Language",
+        "properties": {}
+      },
+      {
+        "id": "亲密社群",
+        "type": "Community",
+        "properties": {}
+      },
+      {
+        "id": "象征体系",
+        "type": "Symbolic_system",
+        "properties": {}
+      },
+      {
+        "id": "声音",
+        "type": "Sound",
+        "properties": {}
+      },
+      {
+        "id": "表情",
+        "type": "Expression",
+        "properties": {}
+      },
+      {
+        "id": "动作",
+        "type": "Action",
+        "properties": {}
+      },
+      {
+        "id": "眉毛一皱",
+        "type": "Gesture",
+        "properties": {}
+      },
+      {
+        "id": "嘴角向下一斜",
+        "type": "Gesture",
+        "properties": {}
+      },
+      {
+        "id": "面上的皮肤一紧",
+        "type": "Gesture",
+        "properties": {}
+      },
+      {
+        "id": "用手指在头发里一插",
+        "type": "Gesture",
+        "properties": {}
+      },
+      {
+        "id": "头一沉",
+        "type": "Gesture",
+        "properties": {}
+      },
+      {
+        "id": "没有办法",
+        "type": "Meaning",
+        "properties": {}
+      },
+      {
+        "id": "失望",
+        "type": "Meaning",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "特殊语言",
+        "target": "亲密社群",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "象征体系",
+        "target": "特殊语言",
+        "type": "USES",
+        "properties": {}
+      },
+      {
+        "source": "声音",
+        "target": "象征体系",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "表情",
+        "target": "象征体系",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "动作",
+        "target": "象征体系",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "眉毛一皱",
+        "target": "表情",
+        "type": "INSTANCE_OF",
+        "properties": {}
+      },
+      {
+        "source": "嘴角向下一斜",
+        "target": "表情",
+        "type": "INSTANCE_OF",
+        "properties": {}
+      },
+      {
+        "source": "面上的皮肤一紧",
+        "target": "表情",
+        "type": "INSTANCE_OF",
+        "properties": {}
+      },
+      {
+        "source": "用手指在头发里一插",
+        "target": "动作",
+        "type": "INSTANCE_OF",
+        "properties": {}
+      },
+      {
+        "source": "头一沉",
+        "target": "动作",
+        "type": "INSTANCE_OF",
+        "properties": {}
+      },
+      {
+        "source": "没有办法",
+        "target": "特殊语言",
+        "type": "MEANING_OF",
+        "properties": {}
+      },
+      {
+        "source": "失望",
+        "target": "特殊语言",
+        "type": "MEANING_OF",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 可是从另一方面说，在一个社群所用的共同语言之外，也必然会因个人间的需要而发生许多少数人间的特殊语言，所谓“行话”。行话是同行人中的话，外行人因为没有这种经验，不会懂的。在每个学校里，甚至每个寝室里，都有他们特殊的语言。最普遍的特殊语言发生在母亲和孩子之间。\no “特殊语言”不过是亲密社群中所使用的象征体系的一部分，用声音来作象征的那一部分。在亲密社群中可用来作象征体系的原料比较多。表情、动作，因为在面对面的情境中，有时比声音更容易传情达意。即使用语言时，也总是密切配合于其他象征原料的。譬如：我可以和一位熟人说：“真是那个！”同时眉毛一皱，嘴角向下一斜，面上的皮肤一紧，用手指在头发里一插，头一沉，对方也就明白“那个”是“没有办法”，“失望”的意思了。如果同样的两个字用在另一表情的配合里，意义可以完全不同。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "特殊语言",
+        "type": "Language",
+        "properties": {}
+      },
+      {
+        "id": "社会定下的筛子",
+        "type": "Metaphor",
+        "properties": {}
+      },
+      {
+        "id": "情意公式化",
+        "type": "Phenomenon",
+        "properties": {}
+      },
+      {
+        "id": "感觉敏锐的人",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "李长吉",
+        "type": "Person",
+        "properties": {}
+      },
+      {
+        "id": "眉目传情",
+        "type": "Communication_method",
+        "properties": {}
+      },
+      {
+        "id": "指石相证",
+        "type": "Communication_method",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "特殊语言",
+        "target": "社会定下的筛子",
+        "type": "IS_SIMILAR_TO",
+        "properties": {}
+      },
+      {
+        "source": "情意公式化",
+        "target": "特殊语言",
+        "type": "RESULTS_FROM",
+        "properties": {}
+      },
+      {
+        "source": "感觉敏锐的人",
+        "target": "特殊语言",
+        "type": "FEELS_RESTRAINED_BY",
+        "properties": {}
+      },
+      {
+        "source": "李长吉",
+        "target": "特殊语言",
+        "type": "USES_TO_EXPRESS",
+        "properties": {}
+      },
+      {
+        "source": "眉目传情",
+        "target": "熟人中",
+        "type": "USED_IN",
+        "properties": {}
+      },
+      {
+        "source": "指石相证",
+        "target": "熟人中",
+        "type": "USED_IN",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o “特殊语言”常是特别有效，因为他可以摆脱字句的固定意义。语言象是个社会定下的筛子，如果我们有一种情意和这筛子的格子不同也就漏不过去。我想大家必然有过“无言胜似有言”的经验。其实这个筛子虽则帮助了人和人间的了解，而同时也使人和人间的情意公式化了，使每一人，每一刻的实际情意都走了一点样。我们永远在削足适履，使感觉敏锐的人怨恨语言的束缚。李长吉要在这束缚中去求比较切近的表达，难怪他要呕尽心血了。\no 于是在熟人中，我们话也少了，我们“眉目传情”，我们“指石相证”，我们抛开了比较间接的象征原料，而求更直接的会意了。所以在乡土社会中，不但文字是多余的，连语言都并不是传达情意的唯一象征体系。",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  },
+  {
+    "nodes": [
+      {
+        "id": "文字下乡",
+        "type": "Concept",
+        "properties": {}
+      },
+      {
+        "id": "现代化",
+        "type": "Process",
+        "properties": {}
+      },
+      {
+        "id": "乡土社会",
+        "type": "Society",
+        "properties": {}
+      },
+      {
+        "id": "愚",
+        "type": "Attribute",
+        "properties": {}
+      },
+      {
+        "id": "文字和语言",
+        "type": "Tool",
+        "properties": {}
+      },
+      {
+        "id": "传情达意",
+        "type": "Function",
+        "properties": {}
+      },
+      {
+        "id": "乡村学校",
+        "type": "Institution",
+        "properties": {}
+      }
+    ],
+    "relationships": [
+      {
+        "source": "文字下乡",
+        "target": "现代化",
+        "type": "PART_OF",
+        "properties": {}
+      },
+      {
+        "source": "乡土社会",
+        "target": "文字下乡",
+        "type": "CONTEXT_OF",
+        "properties": {}
+      },
+      {
+        "source": "愚",
+        "target": "乡土社会",
+        "type": "CHARACTERISTIC_OF",
+        "properties": {}
+      },
+      {
+        "source": "文字和语言",
+        "target": "传情达意",
+        "type": "USED_FOR",
+        "properties": {}
+      },
+      {
+        "source": "乡村学校",
+        "target": "文字下乡",
+        "type": "RELATED_TO",
+        "properties": {}
+      }
+    ],
+    "source_document": {
+      "page_content": "o 我决不是说我们不必推行文字下乡，在现代化的过程中，我们已经开始抛离乡土社会，文字是现代化的工具。我要辨明的是乡土社会中的文盲，并非出于乡下人的“愚”，而是由于乡土社会的本质。我而且愿意进一步说，单从文字和语言的角度去批判一个社会中人和人的了解程度是不够的，因为文字和语言，只是传情达意的一种工具，并非唯一的工具，而且这工具本身是有缺陷的，能传的情、能达的意是有限的。所以在提倡文字下乡的人，必须先考虑到文字和语言的基础，否则开几个乡村学校和使乡下人多识几个字，也许并不能使乡下人“聪明”起来。\n*",
+      "metadata": {
+        "source": "乡土中国.txt"
+      }
+    }
+  }
+]
