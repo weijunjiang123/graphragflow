@@ -26,7 +26,47 @@ A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Oll
   - neo4j
   - pydantic
   - tqdm
-  - yfiles_jupyter_graphs
+
+## Neo4j Setup with Docker
+
+If you don't have a Neo4j environment, you can easily set up your own using Docker:
+
+1. Create a `docker-compose.yml` file in the project root with the following content:
+
+```yaml
+version: '3'
+services:
+  neo4j:
+    image: neo4j:5.13.0
+    container_name: neo4j-graphrag
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/import:/import
+      - ./neo4j/plugins:/plugins
+    environment:
+      - NEO4J_AUTH=neo4j/your_password  # Change this password
+      - NEO4J_dbms_memory_heap_initial__size=1G
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_dbms_memory_pagecache_size=1G
+      # Enable vector index support
+      - NEO4J_dbms_security_procedures_unrestricted=gds.*,apoc.*,vectorize.*
+      - NEO4J_dbms_security_procedures_allowlist=gds.*,apoc.*,vectorize.*
+      # Install Neo4j plugins (APOC, GDS, Vectorize)
+      - NEO4J_PLUGINS=["apoc", "graph-data-science", "n10s"]
+```
+
+2. Start the Neo4j container:
+
+``` bash
+docker-compose up -d
+```
+
+3. Access the Neo4j Browser at http://localhost:7474 to verify the installation
+
 
 ## Installation
 
@@ -46,6 +86,7 @@ uv sync
 3. Set up Neo4j database instance (local or cloud)
 
 4. Make sure Ollama is running with the required models:
+
 ```bash
 ollama pull qwen2.5
 ollama pull nomic-embed-text
@@ -53,19 +94,25 @@ ollama pull nomic-embed-text
 
 ## Configuration
 
-Modify the following variables in `main.py` to match your environment:
+copy the .env.example to .env
 
-```python
+```sh
+cp .env.example .env
+```
+
+Modify the following variables in `.env` to match your environment:
+
+```sh
 # Neo4j connection parameters
-NEO4J_URL = "bolt://localhost:7687"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "your_password"
+NEO4J_URL=bolt://localhost:7687
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=your_password
 
 # Document processing parameters
-CHUNK_SIZE = 256  # Size of document chunks
-CHUNK_OVERLAP = 24  # Overlap between chunks
-LLM_MODEL = "qwen2.5"  # Ollama model to use
-DOCUMENT_PATH = "乡土中国.txt"  # Path to your document
+CHUNK_SIZE=256
+CHUNK_OVERLAP=24
+LLM_MODEL=qwen2.5
+DOCUMENT_PATH=../data/乡土中国.txt
 ```
 
 ## Usage
