@@ -1,6 +1,6 @@
-# GraphRAG with Llama 3.1
+# GraphRAG with Ollama
 
-A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Llama 3.1 and Neo4j. This project processes documents, extracts entities and relationships using LLMs, and stores the knowledge graph in Neo4j for advanced question-answering capabilities.
+A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Ollama LLMs and Neo4j. This project processes documents, extracts entities and relationships using LLMs, and stores the knowledge graph in Neo4j for advanced question-answering capabilities.
 
 ![images](./asset/show.png)
 
@@ -30,15 +30,17 @@ A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Lla
 
 ## Installation
 
+recomend using uv for package management
+
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/GraphRAG-with-Llama-3.1.git
-cd GraphRAG-with-Llama-3.1
+git clone https://github.com/weijunjiang123/GraphRAG-with-Ollama.git
+cd GraphRAG-with-Ollama
 ```
 
 2. Install required packages:
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 3. Set up Neo4j database instance (local or cloud)
@@ -63,7 +65,7 @@ NEO4J_PASSWORD = "your_password"
 CHUNK_SIZE = 256  # Size of document chunks
 CHUNK_OVERLAP = 24  # Overlap between chunks
 LLM_MODEL = "qwen2.5"  # Ollama model to use
-DOCUMENT_PATH = " document.txt"  # Path to your document
+DOCUMENT_PATH = "乡土中国.txt"  # Path to your document
 ```
 
 ## Usage
@@ -71,7 +73,7 @@ DOCUMENT_PATH = " document.txt"  # Path to your document
 Run the main script to process a document and build the knowledge graph:
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 The process includes:
@@ -97,6 +99,10 @@ This project implements a GraphRAG approach:
 ## Results
 
 Extracted graph documents are saved in the `results` directory with timestamps. These files contain the identified nodes, relationships, and their properties.
+
+## Reference
+
+https://github.com/Coding-Crashkurse/GraphRAG-with-Llama-3.1
 
 ## License
 
