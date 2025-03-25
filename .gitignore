@@ -43,7 +43,7 @@ venv.bak/
 
 # Project specific
 results/
-*.txt
+# *.txt
 neo4j_data/
 *.db
 *.log
@@ -69,4 +69,3 @@ Thumbs.db
 *.vec
 *.h5
 
-data
