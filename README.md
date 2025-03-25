@@ -63,7 +63,7 @@ NEO4J_PASSWORD = "your_password"
 CHUNK_SIZE = 256  # Size of document chunks
 CHUNK_OVERLAP = 24  # Overlap between chunks
 LLM_MODEL = "qwen2.5"  # Ollama model to use
-DOCUMENT_PATH = "your_document.txt"  # Path to your document
+DOCUMENT_PATH = " document.txt"  # Path to your document
 ```
 
 ## Usage
@@ -100,4 +100,4 @@ Extracted graph documents are saved in the `results` directory with timestamps. 
 
 ## License
 
-[Your License Information]
+[MIT]
