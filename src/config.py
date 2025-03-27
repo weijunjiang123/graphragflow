@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 # 尝试加载.env文件中的环境变量
-load_dotenv("../.env")
+load_dotenv(".env")
 
 # Neo4j连接参数
 NEO4J_URL = os.getenv("NEO4J_URL", "bolt://localhost:7687")
