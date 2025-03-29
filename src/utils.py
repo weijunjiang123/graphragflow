@@ -6,99 +6,64 @@ from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger(__name__)
 
+class CustomJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder to handle non-serializable data types"""
+    def default(self, obj):
+        if isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
+        try:
+            return super().default(obj)
+        except TypeError:
+            return str(obj)
+
 def save_graph_documents(graph_docs, output_dir="results"):
     """Save graph documents to a JSON file
-    
+
     Args:
         graph_docs: List of graph documents to save
         output_dir: Directory to save the output file
-        
+
     Returns:
         Path to the saved file
     """
     # Create a results directory if it doesn't exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+
     # Generate a timestamp for the filename
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{output_dir}/graph_documents_{timestamp}.json"
-    
+
     # Convert graph documents to serializable format
     serializable_docs = []
     for doc in graph_docs:
         doc_dict = {
-            "nodes": [],
-            "relationships": [],
+            "nodes": [
+                {
+                    "id": node.id,
+                    "type": getattr(node, 'type', getattr(node, 'label', None)),
+                    "properties": node.properties if hasattr(node, 'properties') else {}
+                } for node in doc.nodes
+            ],
+            "relationships": [
+                {
+                    "source": getattr(rel.source, 'id', rel.source),
+                    "target": getattr(rel.target, 'id', rel.target),
+                    "type": getattr(rel, 'type', None),
+                    "properties": getattr(rel, 'properties', {})
+                } for rel in doc.relationships
+            ],
             "source_document": {
-                "page_content": doc.source_document.page_content if hasattr(doc, 'source_document') else 
-                               (doc.source.page_content if hasattr(doc, 'source') else None),
-                "metadata": doc.source_document.metadata if hasattr(doc, 'source_document') else 
-                           (doc.source.metadata if hasattr(doc, 'source') else None)
-            } if (hasattr(doc, 'source_document') or hasattr(doc, 'source')) else None
+                "page_content": getattr(doc.source_document, 'page_content', getattr(doc.source, 'page_content', None)),
+                "metadata": getattr(doc.source_document, 'metadata', getattr(doc.source, 'metadata', None))
+            } if hasattr(doc, 'source_document') or hasattr(doc, 'source') else None
         }
-        
-        # Add nodes with proper error handling
-        for node in doc.nodes:
-            node_dict = {"id": node.id}
-            if hasattr(node, 'type'):
-                node_dict["type"] = node.type
-            elif hasattr(node, 'label'):
-                node_dict["type"] = node.label
-            if hasattr(node, 'properties'):
-                try:
-                    props = {}
-                    for key, value in node.properties.items():
-                        if isinstance(value, (str, int, float, bool, list, dict)) or value is None:
-                            props[key] = value
-                        else:
-                            props[key] = str(value)
-                    node_dict["properties"] = props
-                except Exception as e:
-                    node_dict["properties"] = {}
-            else:
-                node_dict["properties"] = {}
-            
-            doc_dict["nodes"].append(node_dict)
-        
-        for rel in doc.relationships:
-            rel_dict = {}
-            if hasattr(rel, 'source'):
-                if hasattr(rel.source, 'id'):  
-                    rel_dict["source"] = rel.source.id
-                else:  
-                    rel_dict["source"] = rel.source
-                    
-            if hasattr(rel, 'target'):
-                if hasattr(rel.target, 'id'):  
-                    rel_dict["target"] = rel.target.id
-                else: 
-                    rel_dict["target"] = rel.target
-                    
-            if hasattr(rel, 'type'):
-                rel_dict["type"] = rel.type
-            if hasattr(rel, 'properties'):
-                try:
-                    props = {}
-                    for key, value in rel.properties.items():
-                        if isinstance(value, (str, int, float, bool, list, dict)) or value is None:
-                            props[key] = value
-                        else:
-                            props[key] = str(value)
-                    rel_dict["properties"] = props
-                except Exception as e:
-                    rel_dict["properties"] = {}
-            else:
-                rel_dict["properties"] = {}
-            
-            doc_dict["relationships"].append(rel_dict)
-        
         serializable_docs.append(doc_dict)
-    
+
     # Save to JSON file
     with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(serializable_docs, f, indent=2, ensure_ascii=False)
-    
+        json.dump(serializable_docs, f, indent=2, ensure_ascii=False, cls=CustomJSONEncoder)
+
     logger.info(f"Graph documents saved to {filename}")
     print(f"✓ Graph documents saved to {filename}")
     return filename
@@ -137,5 +102,3 @@ def setup_logging(level=logging.INFO, log_file=None):
     # Suppress verbose logging from external libraries
     logging.getLogger("urllib3").setLevel(logging.WARNING)
     logging.getLogger("neo4j").setLevel(logging.WARNING)
-
-

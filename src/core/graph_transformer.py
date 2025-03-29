@@ -40,24 +40,26 @@ class GraphTransformerWrapper:
         # Process in batches with progress bar
         start_time = time.time()
         graph_documents = []
-        
-        for i in range(0, len(documents), batch_size):
-            batch = documents[i:min(i+batch_size, len(documents))]
-            
-            # Update progress
-            progress = min(i+batch_size, len(documents))
-            percentage = (progress / total_docs) * 100
-            elapsed = time.time() - start_time
-            eta = (elapsed / progress) * (total_docs - progress) if progress > 0 else 0
-            
-            print(f"\rProcessing: {progress}/{total_docs} documents ({percentage:.1f}%) - "
-                  f"Elapsed: {elapsed:.1f}s - ETA: {eta:.1f}s", end="")
-            
-            # Process batch
-            batch_results = self.transformer.convert_to_graph_documents(batch)
-            graph_documents.extend(batch_results)
-        
-        print(f"\n✓ Conversion complete: {len(graph_documents)} graph documents created in {time.time()-start_time:.1f}s")
+
+        with tqdm(total=len(documents), desc="Converting to graph format") as pbar:
+            for i in range(0, len(documents), batch_size):
+                batch = documents[i:min(i + batch_size, len(documents))]
+
+                # Process batch
+                try:
+                    # Process batch
+                    batch_results = self.transformer.convert_to_graph_documents(batch)
+                    graph_documents.extend(batch_results)
+                except Exception as e:
+                    logger.error(f"Error processing batch: {str(e)}")
+                    print(f"❌ Error processing batch: {str(e)}")
+                    # Consider adding a retry mechanism or skipping the batch
+                    continue
+
+                # Update progress
+                pbar.update(len(batch))
+
+        print(f"✓ Conversion complete: {len(graph_documents)} graph documents created in {time.time() - start_time:.1f}s")
         logger.info(f"Created {len(graph_documents)} graph documents")
-        
+
         return graph_documents, self.llm

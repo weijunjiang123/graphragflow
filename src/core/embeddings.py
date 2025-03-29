@@ -1,4 +1,5 @@
 import logging
+import os
 from typing import List, Optional, Dict, Any
 
 from langchain_ollama import OllamaEmbeddings
@@ -11,30 +12,31 @@ class EmbeddingsManager:
     """Manager class for embeddings and vector operations"""
     
     @staticmethod
-    def get_working_embeddings(base_url: str = "localhost:11434", 
+    def get_working_embeddings(base_url: str = "localhost:11434",
                               model: str = "nomic-embed-text") -> Optional[Embeddings]:
         """Get a working embeddings model
-        
+
         Args:
             base_url: URL for the embeddings API
             model: Name of the embeddings model
-            
+
         Returns:
             Embeddings model if successful, None otherwise
         """
+        embeddings_model = os.environ.get("EMBEDDINGS_MODEL", model)
         try:
-            logger.info(f"Trying {model} for embeddings...")
-            print(f"Initializing embeddings model: {model}")
-            emb = OllamaEmbeddings(base_url=base_url, model=model)
-            
+            logger.info(f"Trying {embeddings_model} for embeddings...")
+            print(f"Initializing embeddings model: {embeddings_model}")
+            emb = OllamaEmbeddings(base_url=base_url, model=embeddings_model)
+
             # Test if it works
             _ = emb.embed_query("test")
-            logger.info(f"Successfully using {model} for embeddings")
-            print(f"✓ Successfully initialized {model} embeddings")
+            logger.info(f"Successfully using {embeddings_model} for embeddings")
+            print(f"✓ Successfully initialized {embeddings_model} embeddings")
             return emb
         except Exception as e:
-            logger.error(f"Error with {model}: {str(e)}")
-            print(f"❌ Error initializing {model}: {str(e)}")
+            logger.error(f"Error with {embeddings_model}: {str(e)}")
+            print(f"❌ Error initializing {embeddings_model}: {str(e)}")
             return None
             
     def create_vector_index(self, 
@@ -61,16 +63,16 @@ class EmbeddingsManager:
         Returns:
             Vector retriever if successful, None otherwise
         """
-        from src.core.neo4j_manager import Neo4jConnectionManager
-        
+        from src.core.neo4j_manager import Neo4jConnectionManager # Move import here
+
         print(f"Creating vector index '{index_name}' in Neo4j...")
         logger.info(f"Creating vector index '{index_name}' in Neo4j")
-        
+
         try:
             # Now create the vector index
             vector_index = Neo4jVector.from_existing_graph(
                 embeddings,
-                url=neo4j_url,  
+                url=neo4j_url,
                 username=neo4j_user,
                 password=neo4j_password,
                 index_name=index_name,
@@ -86,7 +88,7 @@ class EmbeddingsManager:
             if "dimensions do not match" in str(e):
                 logger.error(f"Vector dimension mismatch: {str(e)}")
                 print("\n❌ Vector dimension mismatch detected. Trying to recreate index...")
-                
+
                 # Get driver instance and drop index
                 driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
                 with driver.session() as session:
@@ -95,10 +97,10 @@ class EmbeddingsManager:
                         print(f"✓ Dropped existing vector index '{index_name}'")
                     except Exception as inner_e:
                         logger.error(f"Failed to drop index: {str(inner_e)}")
-                        
+
                 # Try again with recreate=False since we've manually dropped the index
                 return self.create_vector_index(
-                    embeddings, neo4j_url, neo4j_user, neo4j_password, 
+                    embeddings, neo4j_url, neo4j_user, neo4j_password,
                     index_name, False, node_label, text_node_properties
                 )
             else:
