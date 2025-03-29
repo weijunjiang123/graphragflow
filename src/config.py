@@ -30,7 +30,6 @@ for directory in CORE_DIRECTORIES:
     (PROJECT_ROOT / directory).mkdir(exist_ok=True, parents=True)
 
 
-
 class DatabaseSettings(BaseSettings):
     """数据库配置"""
     URI: str = Field(default="bolt://localhost:7687")
@@ -52,19 +51,49 @@ class DatabaseSettings(BaseSettings):
     )
 
 
+class ModelProviderSettings(BaseSettings):
+    """模型提供商配置"""
+    PROVIDER: str = Field(default="ollama")
+    
+    # OpenAI 配置
+    OPENAI_API_KEY: Optional[str] = Field(default=None)
+    OPENAI_API_BASE: Optional[str] = Field(default="https://api.openai.com/v1")
+    OPENAI_MODEL: str = Field(default="gpt-3.5-turbo")
+    OPENAI_EMBEDDINGS_MODEL: str = Field(default="text-embedding-ada-002")
+    
+    # Ollama 配置
+    OLLAMA_BASE_URL: str = Field(default="http://localhost:11434")
+    
+    VALID_PROVIDERS: ClassVar[List[str]] = ["ollama", "openai"]
+    
+    @field_validator("PROVIDER")
+    def validate_provider(cls, v):
+        if v.lower() not in cls.VALID_PROVIDERS:
+            raise ValueError(f"MODEL_PROVIDER must be one of {cls.VALID_PROVIDERS}")
+        return v.lower()
+    
+    model_config = SettingsConfigDict(
+        env_file=str(env_path),
+        case_sensitive=True,
+        env_prefix="MODEL_",
+        extra="ignore"
+    )
+
+
 class DocumentSettings(BaseSettings):
     """文档处理参数"""
     CHUNK_SIZE: int = Field(default=1000)
     CHUNK_OVERLAP: int = Field(default=200)
-    LLM_MODEL: str = Field(default="qwen2.5")
+    OLLAMA_LLM_MODEL: str = Field(default="qwen2.5")
     DOCUMENT_PATH: Path = Field(default=PROJECT_ROOT / "data")
 
-    VALID_LLM_MODELS: ClassVar[List[str]] = ["qwen2.5", "llama3"]  # Add more models here
+    VALID_LLM_MODELS: ClassVar[List[str]] = ["qwen2.5", "llama3", "llama3.1"]  # Add more models here
 
-    @field_validator("LLM_MODEL")
+    @field_validator("OLLAMA_LLM_MODEL")
     def validate_llm_model(cls, model):
-        if model not in cls.VALID_LLM_MODELS:
-            raise ValueError(f"LLM_MODEL must be one of {cls.VALID_LLM_MODELS}")
+        # Only validate for Ollama models, OpenAI models can be any string
+        if os.environ.get("MODEL_PROVIDER", "ollama").lower() == "ollama" and model not in cls.VALID_LLM_MODELS:
+            raise ValueError(f"OLLAMA_LLM_MODEL must be one of {cls.VALID_LLM_MODELS} when using Ollama")
         return model
     
     @field_validator("DOCUMENT_PATH", mode='before')
@@ -128,6 +157,7 @@ class AppSettings(BaseSettings):
 DATABASE = DatabaseSettings()
 DOCUMENT = DocumentSettings()
 APP = AppSettings()
+MODEL = ModelProviderSettings()
 
 
 def validate_config() -> Dict[str, str]:
@@ -172,7 +202,13 @@ def get_config_info() -> Dict[str, Any]:
             "path": str(DOCUMENT.DOCUMENT_PATH),
             "chunk_size": DOCUMENT.CHUNK_SIZE,
             "chunk_overlap": DOCUMENT.CHUNK_OVERLAP,
-            "llm_model": DOCUMENT.LLM_MODEL,
+            "OLLAMA_LLM_MODEL": DOCUMENT.OLLAMA_LLM_MODEL,
+        },
+        "model": {
+            "provider": MODEL.PROVIDER,
+            "openai_model": MODEL.OPENAI_MODEL if MODEL.PROVIDER == "openai" else "N/A",
+            "openai_embeddings_model": MODEL.OPENAI_EMBEDDINGS_MODEL if MODEL.PROVIDER == "openai" else "N/A",
+            "ollama_base_url": MODEL.OLLAMA_BASE_URL if MODEL.PROVIDER == "ollama" else "N/A",
         },
         "paths": {
             "data_dir": str(APP.DATA_DIR),

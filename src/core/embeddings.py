@@ -2,9 +2,10 @@ import logging
 import os
 from typing import List, Optional, Dict, Any
 
-from langchain_ollama import OllamaEmbeddings
-from langchain_community.vectorstores import Neo4jVector
 from langchain.embeddings.base import Embeddings
+from langchain_community.vectorstores import Neo4jVector
+
+from src.core.model_provider import ModelProvider
 
 logger = logging.getLogger(__name__)
 
@@ -12,32 +13,22 @@ class EmbeddingsManager:
     """Manager class for embeddings and vector operations"""
     
     @staticmethod
-    def get_working_embeddings(base_url: str = "localhost:11434",
-                              model: str = "nomic-embed-text") -> Optional[Embeddings]:
+    def get_working_embeddings(provider: str = None, **kwargs) -> Optional[Embeddings]:
         """Get a working embeddings model
 
         Args:
-            base_url: URL for the embeddings API
-            model: Name of the embeddings model
+            provider: Provider for embeddings ("ollama" or "openai")
+            **kwargs: Additional parameters for embeddings initialization
 
         Returns:
             Embeddings model if successful, None otherwise
         """
-        embeddings_model = os.environ.get("EMBEDDINGS_MODEL", model)
-        try:
-            logger.info(f"Trying {embeddings_model} for embeddings...")
-            print(f"Initializing embeddings model: {embeddings_model}")
-            emb = OllamaEmbeddings(base_url=base_url, model=embeddings_model)
-
-            # Test if it works
-            _ = emb.embed_query("test")
-            logger.info(f"Successfully using {embeddings_model} for embeddings")
-            print(f"✓ Successfully initialized {embeddings_model} embeddings")
-            return emb
-        except Exception as e:
-            logger.error(f"Error with {embeddings_model}: {str(e)}")
-            print(f"❌ Error initializing {embeddings_model}: {str(e)}")
-            return None
+        # Determine provider from environment if not specified
+        if provider is None:
+            provider = os.environ.get("MODEL_PROVIDER", "ollama")
+            
+        # Get embeddings from provider
+        return ModelProvider.get_embeddings(provider=provider, **kwargs)
             
     def create_vector_index(self, 
                            embeddings: Embeddings,

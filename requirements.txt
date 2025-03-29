@@ -1,0 +1,12 @@
+docx2txt>=0.9
+langchain>=0.3.21
+langchain-community>=0.3.20
+langchain-experimental>=0.3.4
+langchain-ollama>=0.3.0
+neo4j>=5.28.1
+pydantic>=2.10.6
+pydantic-settings>=2.8.1
+pypdf>=5.4.0
+tqdm>=4.67.1
+fastapi>=0.110.0
+uvicorn>=0.27.0
