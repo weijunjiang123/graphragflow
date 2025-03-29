@@ -56,7 +56,10 @@ def save_graph_documents(graph_docs, output_dir="results"):
             "source_document": {
                 "page_content": getattr(doc.source_document, 'page_content', getattr(doc.source, 'page_content', None)),
                 "metadata": getattr(doc.source_document, 'metadata', getattr(doc.source, 'metadata', None))
-            } if hasattr(doc, 'source_document') or hasattr(doc, 'source') else None
+            } if hasattr(doc, 'source_document') else {
+                "page_content": getattr(doc, 'page_content', None),
+                "metadata": getattr(doc, 'metadata', None)
+            } if hasattr(doc, 'page_content') or hasattr(doc, 'metadata') else None
         }
         serializable_docs.append(doc_dict)
 

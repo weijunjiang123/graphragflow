@@ -2,17 +2,22 @@
 
 import os
 import logging
+from pathlib import Path
 import time
 import sys
 from typing import Optional
 
+from dotenv import load_dotenv
 from langchain_experimental.llms.ollama_functions import OllamaFunctions
+
+# 首先确保环境变量加载，防止配置模块导入时环境变量未准备好
+PROJECT_ROOT = Path(__file__).resolve().parent
+env_path = PROJECT_ROOT / '.env'
+load_dotenv(dotenv_path=env_path)
 
 # Import configuration
 from src.config import (
-    NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD, 
-    CHUNK_SIZE, CHUNK_OVERLAP, LLM_MODEL, DOCUMENT_PATH,
-    LOG_LEVEL, OUTPUT_DIR
+    DATABASE, DOCUMENT,  APP
 )
 
 # Import core modules
@@ -29,7 +34,7 @@ from src.utils import save_graph_documents, setup_logging
 def main():
     """Main execution function with progress tracking"""
     # Set up logging
-    setup_logging(level=getattr(logging, LOG_LEVEL))
+    setup_logging()
     logger = logging.getLogger(__name__)
     
     # Initialize progress tracker
@@ -38,23 +43,26 @@ def main():
     try:
         # STAGE 1: Load and process documents
         progress.update("Loading and processing documents")
-        document_processor = DocumentProcessor(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
-        documents = document_processor.load_and_split(DOCUMENT_PATH)
+        document_processor = DocumentProcessor(
+            chunk_size=DOCUMENT.CHUNK_SIZE, 
+            chunk_overlap=DOCUMENT.CHUNK_OVERLAP
+            )
+        documents = document_processor.load_and_split(DOCUMENT.DOCUMENT_PATH)
         
         # STAGE 2: Initialize LLM and convert to graph documents
         progress.update("Converting documents to graph format")
-        llm = OllamaFunctions(model=LLM_MODEL, temperature=0, format="json")
+        llm = OllamaFunctions(model=DOCUMENT.LLM_MODEL, temperature=0, format="json")
         transformer = GraphTransformerWrapper(llm=llm)
         graph_documents, _ = transformer.create_graph_from_documents(documents)
         
         # STAGE 3: Save graph documents
         progress.update("Saving extracted graph documents")
-        saved_file = save_graph_documents(graph_documents, output_dir=OUTPUT_DIR)
+        saved_file = save_graph_documents(graph_documents)
         logger.info(f"Saved graph documents to {saved_file}")
         
         # STAGE 4: Initialize Neo4j graph
         progress.update("Initializing Neo4j graph")
-        neo4j_manager = Neo4jManager(NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD)
+        neo4j_manager = Neo4jManager(DATABASE.URI, DATABASE.USERNAME,DATABASE.PASSWORD)
         print("✓ Neo4j graph initialized")
         
         # STAGE 5: Add graph documents to Neo4j
@@ -75,9 +83,9 @@ def main():
             if embeddings:
                 vector_retriever = embeddings_manager.create_vector_index(
                     embeddings=embeddings,
-                    neo4j_url=NEO4J_URL, 
-                    neo4j_user=NEO4J_USER, 
-                    neo4j_password=NEO4J_PASSWORD, 
+                    neo4j_url=DATABASE.URI, 
+                    neo4j_user=DATABASE.USERNAME, 
+                    neo4j_password=DATABASE.PASSWORD, 
                     index_name="document_vector",
                     recreate=False
                 )
