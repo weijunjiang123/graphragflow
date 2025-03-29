@@ -8,6 +8,7 @@ A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Oll
 
 - Document processing and chunking
 - LLM-based knowledge graph extraction
+- Fix for handling string `target` attributes during graph document preprocessing
 - Neo4j integration for graph storage
 - Vector embeddings for semantic search
 - Entity extraction capabilities
@@ -111,7 +112,7 @@ NEO4J_PASSWORD=your_password
 # Document processing parameters
 CHUNK_SIZE=256
 CHUNK_OVERLAP=24
-LLM_MODEL=qwen2.5
+OLLAMA_LLM_MODEL=qwen2.5
 DOCUMENT_PATH=../data/乡土中国.txt
 ```
 
@@ -146,6 +147,36 @@ This project implements a GraphRAG approach:
 ## Results
 
 Extracted graph documents are saved in the `results` directory with timestamps. These files contain the identified nodes, relationships, and their properties.
+
+## Directory Structure
+
+```
+GraphRAG-with-Llama-3.1/
+├── .env.example             # Example environment variables
+├── .gitignore                # Specifies intentionally untracked files that Git should ignore
+├── main.py                   # Main script to run the application
+├── README.md                 # Documentation for the project
+├── requirements.txt          # List of Python dependencies
+├── src/                      # Source code directory
+│   ├── config.py             # Configuration settings
+│   ├── core/                 # Core logic and modules
+│   │   ├── document_processor.py # Handles document loading and chunking
+│   │   ├── embeddings.py       # Manages embeddings creation and vector index
+│   │   ├── entity_extraction.py# Extracts entities from text
+│   │   ├── graph_transformer.py# Converts documents to graph format
+│   │   ├── neo4j_manager.py    # Manages Neo4j database operations
+│   │   └── ...               # Other core modules
+│   ├── utils.py              # Utility functions
+├── data/                     # Directory for storing data files
+│   └── ...                   # Documents to be processed
+├── results/                  # Directory for storing output files
+│   └── ...                   # Extracted graph documents
+└── ...                       # Other directories and files
+```
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
 ## Reference
 

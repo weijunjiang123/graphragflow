@@ -22,22 +22,25 @@ from langchain_community.vectorstores.neo4j_vector import remove_lucene_chars
 from langchain_ollama import OllamaEmbeddings
 from langchain_experimental.llms.ollama_functions import OllamaFunctions
 
-from utils import get_working_embeddings, save_graph_documents
+from utils import save_graph_documents
+from config import DATABASE, DOCUMENT  # Import the new config classes
+from src.core.embeddings import EmbeddingsManager
+from src.core.graph_transformer import GraphTransformerWrapper
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Neo4j connection parameters
-NEO4J_URL = "bolt://localhost:7687"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "jwj20020124"
+# Neo4j connection parameters - now using config classes
+NEO4J_URL = DATABASE.URI
+NEO4J_USER = DATABASE.USERNAME
+NEO4J_PASSWORD = DATABASE.PASSWORD
 
-# Document processing parameters
-CHUNK_SIZE = 256
-CHUNK_OVERLAP = 24
-LLM_MODEL = "qwen2.5"
-DOCUMENT_PATH = "乡土中国.txt"
+# Document processing parameters - now using config classes
+CHUNK_SIZE = DOCUMENT.CHUNK_SIZE
+CHUNK_OVERLAP = DOCUMENT.CHUNK_OVERLAP
+OLLAMA_LLM_MODEL = DOCUMENT.OLLAMA_LLM_MODEL
+DOCUMENT_PATH = DOCUMENT.DOCUMENT_PATH
 
 class ProgressTracker:
     """Track progress across different stages of processing"""
@@ -169,45 +172,106 @@ def batch_process_documents(documents: List, batch_size: int = 5, process_fn=Non
     return results
 
 
-def create_graph_from_documents(documents, llm_model=LLM_MODEL):
+def create_graph_from_documents(documents, llm_model=OLLAMA_LLM_MODEL):
     """Convert documents to graph documents using LLM transformer with progress tracking"""
     total_docs = len(documents)
     logger.info(f"Initializing LLM ({llm_model}) for graph transformation of {total_docs} documents")
     print(f"Initializing LLM model: {llm_model}")
     
-    llm = OllamaFunctions(model=llm_model, temperature=0, format="json")
-    llm_transformer = LLMGraphTransformer(llm=llm)
+    # Check if the model supports function calling properly
+    function_calling_models = ["qwen2.5", "mistral", "llama3.1", "gemma2", "openai", "deepseek"]
+    simple_models = ["llama3", "llama3.2", "llama2", "phi3"]
     
-    print(f"Converting {total_docs} documents to graph format (this may take a while)...")
+    # Import the custom graph transformer
+    from src.core.graph_transformer import GraphTransformerWrapper
     
-    # Process in batches with progress bar
-    start_time = time.time()
-    graph_documents = []
+    # Determine if we need to use a fallback approach
+    use_fallback = any(model in llm_model.lower() for model in simple_models)
     
-    batch_size = 5  # Adjust based on your system's capacity
-    for i in range(0, len(documents), batch_size):
-        batch = documents[i:min(i+batch_size, len(documents))]
+    try:
+        if use_fallback:
+            print(f"⚠️ Warning: Model {llm_model} may have limited function calling support")
+            print("Using fallback approach with simpler prompting...")
+            
+            # Use regular ChatOllama with structured output guidance
+            from langchain_core.output_parsers import StrOutputParser
+            from langchain_experimental.graph_transformers import SimpleGraphTransformer
+            from langchain_community.chat_models import ChatOllama
+            
+            # Use a simpler model setup with prompt guidance for structured output
+            llm = ChatOllama(model=llm_model, temperature=0)
+            transformer = SimpleGraphTransformer(llm=llm)
+            
+            # Process the documents using the custom transformer wrapper
+            print(f"Converting {total_docs} documents to graph format (this may take a while)...")
+            graph_documents = []
+            
+            start_time = time.time()
+            for doc in tqdm(documents, desc="Processing documents"):
+                try:
+                    result = transformer.convert_to_graph_documents([doc])
+                    graph_documents.extend(result)
+                except Exception as e:
+                    logger.error(f"Error processing document: {str(e)}")
+                    # Create a minimal graph document to avoid complete failure
+                    text = doc.page_content if hasattr(doc, "page_content") else str(doc)
+                    graph_documents.append({
+                        "nodes": [{"id": f"doc_{len(graph_documents)}", "type": "Document", "properties": {"text": text[:1000]}}],
+                        "edges": [],
+                        "source": doc
+                    })
+            
+            print(f"✓ Conversion complete: {len(graph_documents)} graph documents created in {time.time()-start_time:.1f}s")
+        else:
+            # Use the custom GraphTransformerWrapper for better JSON handling
+            try:
+                # Use OllamaFunctions for function-calling capabilities when available
+                from langchain_ollama import OllamaFunctions
+                llm = OllamaFunctions(model=llm_model, temperature=0, format="json")
+            except Exception as e:
+                logger.warning(f"Error initializing OllamaFunctions: {str(e)}")
+                print(f"⚠️ Falling back to regular ChatOllama: {str(e)}")
+                from langchain_community.chat_models import ChatOllama
+                llm = ChatOllama(model=llm_model, temperature=0)
+            
+            # Initialize the custom graph transformer wrapper
+            transformer_wrapper = GraphTransformerWrapper(llm=llm)
+            
+            # Convert documents to graph format with better JSON handling
+            graph_documents, llm = transformer_wrapper.create_graph_from_documents(
+                documents, 
+                batch_size=5
+            )
+    except Exception as e:
+        logger.error(f"Error during graph transformation: {str(e)}")
+        print(f"❌ Error during graph transformation: {str(e)}")
+        # Fallback to simpler approach
+        from langchain_community.chat_models import ChatOllama
+        llm = ChatOllama(model=llm_model, temperature=0)
         
-        # Update progress
-        progress = min(i+batch_size, len(documents))
-        percentage = (progress / total_docs) * 100
-        elapsed = time.time() - start_time
-        eta = (elapsed / progress) * (total_docs - progress) if progress > 0 else 0
-        
-        print(f"\rProcessing: {progress}/{total_docs} documents ({percentage:.1f}%) - Elapsed: {elapsed:.1f}s - ETA: {eta:.1f}s", end="")
-        
-        # Process batch
-        batch_results = llm_transformer.convert_to_graph_documents(batch)
-        graph_documents.extend(batch_results)
+        # Create minimal graph documents
+        graph_documents = []
+        for doc in documents:
+            text = doc.page_content if hasattr(doc, "page_content") else str(doc)
+            graph_documents.append({
+                "nodes": [{"id": f"doc_{len(graph_documents)}", "type": "Document", "properties": {"text": text[:1000]}}],
+                "edges": [],
+                "source": doc
+            })
+        print(f"⚠️ Created {len(graph_documents)} minimal graph documents due to error")
     
-    print(f"\n✓ Conversion complete: {len(graph_documents)} graph documents created in {time.time()-start_time:.1f}s")
-    logger.info(f"Created {len(graph_documents)} graph documents")
+    failed_docs = total_docs - len(graph_documents)
+    if failed_docs > 0:
+        print(f"⚠️ {failed_docs} documents could not be processed")
+    
+    logger.info(f"Created {len(graph_documents)} graph documents (failed: {failed_docs})")
     
     return graph_documents, llm
 
+
 def create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name="vector", recreate=False):
     """Create and return a vector index for document retrieval
-    
+
     Args:
         neo4j_url: Neo4j connection URL
         neo4j_user: Neo4j username
@@ -216,10 +280,11 @@ def create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name="vecto
         recreate: If True, drop existing index and recreate it
     """
     print("Creating vector index in Neo4j...")
-    
-    # Get working embeddings
-    embeddings = get_working_embeddings()
-    
+
+    # Initialize EmbeddingsManager
+    embeddings_manager = EmbeddingsManager()
+    embeddings = embeddings_manager.get_working_embeddings()
+
     # Create vector index with progress updates
     logger.info("Creating vector index in Neo4j")
     try:
@@ -234,44 +299,53 @@ def create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name="vecto
                         f"SHOW VECTOR INDEXES WHERE name = $name",
                         name=index_name
                     ).single()
-                    
+
                     if result:
                         print(f"Found existing vector index '{index_name}' - dropping it...")
                         session.run(f"DROP VECTOR INDEX {index_name}")
                         print(f"✓ Dropped existing vector index '{index_name}'")
-                        
+
             except Exception as e:
                 logger.warning(f"Error when trying to drop vector index: {str(e)}")
                 print(f"Warning: Could not drop existing index: {str(e)}")
-            
-        # Now create the vector index
-        # Use index_name parameter for the index name
-        vector_index = Neo4jVector.from_existing_graph(
-            embeddings,
-            url=neo4j_url,  
-            username=neo4j_user,
-            password=neo4j_password,
-            index_name=index_name,  # Use custom index name
-            search_type="hybrid",
-            node_label="Document",
-            text_node_properties=["text"],
-            embedding_node_property="embedding"
-        )
-        print(f"✓ Vector index '{index_name}' created successfully")
-        return vector_index.as_retriever()
+
+        if embeddings:
+            # Now create the vector index
+            # Use index_name parameter for the index name
+            vector_index = Neo4jVector.from_existing_graph(
+                embeddings,
+                url=neo4j_url,
+                username=neo4j_user,
+                password=neo4j_password,
+                index_name=index_name,  # Use custom index name
+                search_type="hybrid",
+                node_label="Document",
+                text_node_properties=["text"],
+                embedding_node_property="embedding"
+            )
+            print(f"✓ Vector index '{index_name}' created successfully")
+            return vector_index.as_retriever()
+        else:
+            logger.error("Failed to initialize embeddings")
+            print("❌ Failed to initialize embeddings")
+            return None
     except ValueError as e:
         # Handle dimension mismatch error
         if "dimensions do not match" in str(e):
             logger.error(f"Vector dimension mismatch: {str(e)}")
             print("\n❌ Vector dimension mismatch detected. Trying to recreate index...")
-            
-            # Recursively call this function but with recreate=True
-            if not recreate:
-                return create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name, recreate=True)
-            else:
-                logger.error("Failed to recreate vector index after dropping")
-                print("❌ Failed to recreate vector index even after dropping the old one")
-                raise
+
+            # Get driver instance and drop index
+            driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
+            with driver.session() as session:
+                try:
+                    session.run(f"DROP VECTOR INDEX {index_name}")
+                    print(f"✓ Dropped existing vector index '{index_name}'")
+                except Exception as inner_e:
+                    logger.error(f"Failed to drop index: {str(inner_e)}")
+
+            # Try again with recreate=False since we've manually dropped the index
+            return create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name, recreate=True)
         else:
             logger.error(f"Error creating vector index: {str(e)}")
             print(f"❌ Failed to create vector index: {str(e)}")
@@ -311,7 +385,8 @@ def main():
     try:
         # STAGE 1: Load and process documents
         progress.update("Loading and processing documents")
-        documents = load_and_process_documents(DOCUMENT_PATH)
+        # 此处显式传递CHUNK_SIZE和CHUNK_OVERLAP参数，确保使用配置文件的值
+        documents = load_and_process_documents(DOCUMENT_PATH, CHUNK_SIZE, CHUNK_OVERLAP)
         
         # STAGE 2: Convert to graph documents
         progress.update("Converting documents to graph format")

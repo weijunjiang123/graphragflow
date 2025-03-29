@@ -1,9 +1,11 @@
 import logging
+import os
 from typing import List, Optional, Dict, Any
 
-from langchain_ollama import OllamaEmbeddings
-from langchain_community.vectorstores import Neo4jVector
 from langchain.embeddings.base import Embeddings
+from langchain_community.vectorstores import Neo4jVector
+
+from src.core.model_provider import ModelProvider
 
 logger = logging.getLogger(__name__)
 
@@ -11,31 +13,22 @@ class EmbeddingsManager:
     """Manager class for embeddings and vector operations"""
     
     @staticmethod
-    def get_working_embeddings(base_url: str = "localhost:11434", 
-                              model: str = "nomic-embed-text") -> Optional[Embeddings]:
+    def get_working_embeddings(provider: str = None, **kwargs) -> Optional[Embeddings]:
         """Get a working embeddings model
-        
+
         Args:
-            base_url: URL for the embeddings API
-            model: Name of the embeddings model
-            
+            provider: Provider for embeddings ("ollama" or "openai")
+            **kwargs: Additional parameters for embeddings initialization
+
         Returns:
             Embeddings model if successful, None otherwise
         """
-        try:
-            logger.info(f"Trying {model} for embeddings...")
-            print(f"Initializing embeddings model: {model}")
-            emb = OllamaEmbeddings(base_url=base_url, model=model)
+        # Determine provider from environment if not specified
+        if provider is None:
+            provider = os.environ.get("MODEL_PROVIDER", "ollama")
             
-            # Test if it works
-            _ = emb.embed_query("test")
-            logger.info(f"Successfully using {model} for embeddings")
-            print(f"✓ Successfully initialized {model} embeddings")
-            return emb
-        except Exception as e:
-            logger.error(f"Error with {model}: {str(e)}")
-            print(f"❌ Error initializing {model}: {str(e)}")
-            return None
+        # Get embeddings from provider
+        return ModelProvider.get_embeddings(provider=provider, **kwargs)
             
     def create_vector_index(self, 
                            embeddings: Embeddings,
@@ -61,16 +54,16 @@ class EmbeddingsManager:
         Returns:
             Vector retriever if successful, None otherwise
         """
-        from src.core.neo4j_manager import Neo4jConnectionManager
-        
+        from src.core.neo4j_manager import Neo4jConnectionManager # Move import here
+
         print(f"Creating vector index '{index_name}' in Neo4j...")
         logger.info(f"Creating vector index '{index_name}' in Neo4j")
-        
+
         try:
             # Now create the vector index
             vector_index = Neo4jVector.from_existing_graph(
                 embeddings,
-                url=neo4j_url,  
+                url=neo4j_url,
                 username=neo4j_user,
                 password=neo4j_password,
                 index_name=index_name,
@@ -86,7 +79,7 @@ class EmbeddingsManager:
             if "dimensions do not match" in str(e):
                 logger.error(f"Vector dimension mismatch: {str(e)}")
                 print("\n❌ Vector dimension mismatch detected. Trying to recreate index...")
-                
+
                 # Get driver instance and drop index
                 driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
                 with driver.session() as session:
@@ -95,10 +88,10 @@ class EmbeddingsManager:
                         print(f"✓ Dropped existing vector index '{index_name}'")
                     except Exception as inner_e:
                         logger.error(f"Failed to drop index: {str(inner_e)}")
-                        
+
                 # Try again with recreate=False since we've manually dropped the index
                 return self.create_vector_index(
-                    embeddings, neo4j_url, neo4j_user, neo4j_password, 
+                    embeddings, neo4j_url, neo4j_user, neo4j_password,
                     index_name, False, node_label, text_node_properties
                 )
             else:
