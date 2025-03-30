@@ -1,9 +1,11 @@
 # GraphRAGFlow
+
 ![images](./asset/GraphPipeline.svg)
 
 A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Ollama or OpenAI API support LLMs and Neo4j Graph database. This project processes documents, extracts entities and relationships using LLMs, and stores the knowledge graph in Neo4j for advanced question-answering capabilities.
 
 here is demo in neo4j
+
 ![images](./asset/show.png)
 
 ## ✨ Features
