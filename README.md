@@ -144,10 +144,6 @@ This project implements a GraphRAG approach:
 5. **Retrieval**: When querying, the system can use both graph traversal and vector similarity.
 6. **Entity Extraction**: A separate chain extracts entities from arbitrary text.
 
-## Results
-
-Extracted graph documents are saved in the `results` directory with timestamps. These files contain the identified nodes, relationships, and their properties.
-
 ## Directory Structure
 
 ```
