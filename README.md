@@ -1,10 +1,12 @@
-# GraphRAG with Ollama
+# GraphRAGFlow
+![images](./asset/GraphPipeline.svg)
 
-A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Ollama LLMs and Neo4j. This project processes documents, extracts entities and relationships using LLMs, and stores the knowledge graph in Neo4j for advanced question-answering capabilities.
+A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Ollama or OpenAI API support LLMs and Neo4j Graph database. This project processes documents, extracts entities and relationships using LLMs, and stores the knowledge graph in Neo4j for advanced question-answering capabilities.
 
+here is demo in neo4j
 ![images](./asset/show.png)
 
-## Features
+## ✨ Features
 
 - Document processing and chunking
 - LLM-based knowledge graph extraction
@@ -15,20 +17,9 @@ A Graph-based Retrieval Augmented Generation (GraphRAG) implementation using Oll
 - Progress tracking for long-running operations
 - Batch processing with progress indicators
 
-## Requirements
+## 🚀 Quickstart
 
-- Python 3.8+
-- Ollama with models:
-  - qwen2.5 (default LLM model)
-  - nomic-embed-text (for embeddings)
-- Neo4j database instance
-- Required Python packages:
-  - langchain and langchain_experimental
-  - neo4j
-  - pydantic
-  - tqdm
-
-## Neo4j Setup with Docker
+### Neo4j Setup with Docker
 
 If you don't have a Neo4j environment, you can easily set up your own using Docker:
 
@@ -68,8 +59,25 @@ docker-compose up -d
 
 3. Access the Neo4j Browser at http://localhost:7474 to verify the installation
 
+### Requirements
 
-## Installation
+- Python 3.8+
+- Ollama with models:
+  - qwen2.5 (default LLM model)
+  - nomic-embed-text (for embeddings)
+- OpenAI API support models:
+- Neo4j database instance
+- Required Python packages:
+  - langchain and langchain_experimental
+  - neo4j
+  - pydantic
+  - tqdm
+  - fastapi
+  - uvciorn
+  - pypdf
+
+
+### Installation
 
 recomend using uv for package management
 
@@ -79,12 +87,12 @@ git clone https://github.com/weijunjiang123/GraphRAG-with-Ollama.git
 cd GraphRAG-with-Ollama
 ```
 
-2. Install required packages:
+2. Install required packages with uv:
 ```bash
 uv sync
 ```
 
-3. Set up Neo4j database instance (local or cloud)
+3. Set up Neo4j database instance (local or cloud),if you don't setup checkout [this](#neo4j-setup-with-docker)
 
 4. Make sure Ollama is running with the required models:
 
@@ -93,7 +101,9 @@ ollama pull qwen2.5
 ollama pull nomic-embed-text
 ```
 
-## Configuration
+or you can config api key in .env
+
+### Configuration
 
 copy the .env.example to .env
 
@@ -101,22 +111,12 @@ copy the .env.example to .env
 cp .env.example .env
 ```
 
-Modify the following variables in `.env` to match your environment:
+Modify the following variables in `.env` to match your environment: 
 
-```sh
-# Neo4j connection parameters
-NEO4J_URL=bolt://localhost:7687
-NEO4J_USER=neo4j
-NEO4J_PASSWORD=your_password
+checkout [this](/.env.example) for detail
 
-# Document processing parameters
-CHUNK_SIZE=256
-CHUNK_OVERLAP=24
-OLLAMA_LLM_MODEL=qwen2.5
-DOCUMENT_PATH=../data/乡土中国.txt
-```
 
-## Usage
+### Usage
 
 Run the main script to process a document and build the knowledge graph:
 
@@ -133,7 +133,7 @@ The process includes:
 6. Creating vector and fulltext indices
 7. Setting up entity extraction
 
-## How it Works
+## 🔧 How it Works
 
 This project implements a GraphRAG approach:
 
