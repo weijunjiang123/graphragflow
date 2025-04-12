@@ -2,33 +2,29 @@ import os
 import json
 import logging
 import datetime
+from pathlib import Path
 import time
 from typing import Optional, List
 import asyncio
 from tqdm import tqdm
 from pydantic import BaseModel, Field
+# 确定项目根目录
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 from neo4j import GraphDatabase
-from langchain_core.runnables import RunnablePassthrough
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from langchain_community.graphs import Neo4jGraph
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.chat_models import ChatOllama
-from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_community.vectorstores import Neo4jVector
 from langchain_community.document_loaders import TextLoader
-from langchain_community.vectorstores.neo4j_vector import remove_lucene_chars
-from langchain_ollama import OllamaEmbeddings
-from langchain_experimental.llms.ollama_functions import OllamaFunctions
-
-from utils import save_graph_documents
-from config import DATABASE, DOCUMENT  # Import the new config classes
+from src.utils import save_graph_documents
+from src.config import DATABASE, DOCUMENT, MODEL  # Import the new config classes
 from src.core.embeddings import EmbeddingsManager
-from src.core.graph_transformer import GraphTransformerWrapper
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 logger = logging.getLogger(__name__)
 
 # Neo4j connection parameters - now using config classes
@@ -39,8 +35,9 @@ NEO4J_PASSWORD = DATABASE.PASSWORD
 # Document processing parameters - now using config classes
 CHUNK_SIZE = DOCUMENT.CHUNK_SIZE
 CHUNK_OVERLAP = DOCUMENT.CHUNK_OVERLAP
-OLLAMA_LLM_MODEL = DOCUMENT.OLLAMA_LLM_MODEL
 DOCUMENT_PATH = DOCUMENT.DOCUMENT_PATH
+
+OLLAMA_LLM_MODEL = MODEL.OLLAMA_LLM_MODEL
 
 class ProgressTracker:
     """Track progress across different stages of processing"""

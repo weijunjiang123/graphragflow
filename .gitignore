@@ -69,3 +69,12 @@ Thumbs.db
 *.vec
 *.h5
 
+# neo4j
+neo4j/
+
+# output 
+output/*
+graph-importer/data/*
+
+# data 
+data/*

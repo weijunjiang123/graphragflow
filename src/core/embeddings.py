@@ -18,6 +18,9 @@ class EmbeddingsManager:
 
         Args:
             provider: Provider for embeddings ("ollama" or "openai")
+            model_name: Name of the model to use
+            base_url: Base URL for the provider (if applicable)
+            api_key: API key for the provider (if applicable)
             **kwargs: Additional parameters for embeddings initialization
 
         Returns:
