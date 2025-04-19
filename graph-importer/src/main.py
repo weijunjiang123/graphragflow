@@ -16,7 +16,7 @@ from importer.json_parser import JsonParser
 
 def main():
     # Use pathlib for cross-platform path handling
-    data_path = Path(script_dir).parent / "data" / "graph_documents_20250324_215838.json"
+    data_path = Path(script_dir).parent / "data" / "graph_documents_20250412_095305.json"
     
     # Ensure the file exists
     if not data_path.exists():

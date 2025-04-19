@@ -108,6 +108,9 @@ class ModelProvider:
         
         Args:
             provider: Embeddings provider ("ollama" or "openai")
+            model_name: Name of the model to use
+            base_url: Base URL for the provider (if applicable)
+            api_key: API key for the provider (if applicable)
             **kwargs: Additional parameters for embeddings initialization
             
         Returns:
@@ -133,8 +136,8 @@ class ModelProvider:
                 return None
                 
         elif provider.lower() == "openai":
-            api_key = kwargs.get("api_key", os.environ.get("OPENAI_API_KEY"))
-            api_base = kwargs.get("api_base", os.environ.get("OPENAI_API_BASE"))
+            api_key = kwargs.get("api_key", os.environ.get("OPENAI_EMBEDDING_API_KEY"))
+            api_base = kwargs.get("api_base", os.environ.get("OPENAI_EMBEDDING_API_BASE"))
             model_name = kwargs.get("model_name", os.environ.get("OPENAI_EMBEDDINGS_MODEL", "text-embedding-ada-002"))
             
             if not api_key:

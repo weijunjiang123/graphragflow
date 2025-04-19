@@ -68,5 +68,14 @@ Thumbs.db
 *.bin
 *.vec
 *.h5
-*.json
-*.pdf
+
+
+# neo4j
+neo4j/
+
+# output 
+output/*
+graph-importer/data/*
+
+# data 
+data/*

@@ -5,6 +5,18 @@ from pydantic import BaseModel, Field
 from langchain.base_language import BaseLanguageModel
 from langchain_core.prompts import ChatPromptTemplate
 
+import sys
+import os
+from pathlib import Path
+
+# 添加项目根目录到 Python 路径
+current_dir = Path(__file__).resolve().parent
+parent_dir = current_dir.parent  # src 目录
+root_dir = parent_dir.parent     # 项目根目录
+sys.path.append(str(root_dir))
+
+from src.core.model_provider import ModelProvider
+
 logger = logging.getLogger(__name__)
 
 class Entities(BaseModel):
