@@ -178,10 +178,10 @@ def main():
         # Initialize appropriate LLM based on configured provider
         llm = None
         try:
-            if MODEL.PROVIDER == "ollama":
+            if MODEL.MODEL_PROVIDER == "ollama":
                 llm = ModelProvider.get_llm(
                     provider="ollama",
-                    model_name=DOCUMENT.OLLAMA_LLM_MODEL,
+                    model_name=MODEL.OLLAMA_LLM_MODEL,
                     base_url=MODEL.OLLAMA_BASE_URL,
                     temperature=0
                 )
@@ -195,19 +195,19 @@ def main():
                 )
                 
             if not llm:
-                raise ValueError(f"Failed to initialize LLM with provider {MODEL.PROVIDER}")
+                raise ValueError(f"Failed to initialize LLM with provider {MODEL.MODEL_PROVIDER}")
         except Exception as e:
             logger.error(f"Error initializing LLM: {str(e)}")
             print(f"❌ Error initializing LLM: {str(e)}")
             print("Attempting to fall back to a different provider...")
             
             # Try the other provider as a fallback
-            fallback_provider = "openai" if MODEL.PROVIDER == "ollama" else "ollama"
+            fallback_provider = "openai" if MODEL.MODEL_PROVIDER == "ollama" else "ollama"
             try:
                 if fallback_provider == "ollama":
                     llm = ModelProvider.get_llm(
                         provider="ollama",
-                        model_name=DOCUMENT.OLLAMA_LLM_MODEL,
+                        model_name=MODEL.OLLAMA_LLM_MODEL,
                         base_url=MODEL.OLLAMA_BASE_URL,
                         temperature=0
                     )
@@ -258,7 +258,7 @@ def main():
         try:
             # Initialize embeddings based on configured provider
             embeddings_manager = EmbeddingsManager()
-            embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.PROVIDER)
+            embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.MODEL_PROVIDER)
             
             if embeddings:
                 vector_retriever = embeddings_manager.create_vector_index(

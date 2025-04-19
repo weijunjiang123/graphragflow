@@ -1,3 +1,4 @@
+import json
 import logging
 from pathlib import Path
 import sys
@@ -22,15 +23,17 @@ logger = logging.getLogger(__name__)
 
 class GraphRetriever:
     """用于检索图数据库中知识的检索器类"""
-    
-    def __init__(self, uri: str, user: str, password: str, database: str = "neo4j"):
+
+    def __init__(self, uri: str, user: str, password: str, database: str = "neo4j", llm=None, ner_model=None):
         """初始化图检索器
-        
+
         Args:
             uri: Neo4j 数据库URI
             user: 用户名
             password: 密码
             database: 数据库名称(默认为"neo4j")
+            llm: 大语言模型 (optional)
+            ner_model: 命名实体识别模型 (optional)
         """
         self.uri = uri
         self.user = user
@@ -38,7 +41,11 @@ class GraphRetriever:
         self.database = database
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
         self.vector_store = None
+        self.llm = llm
+        self.ner_model = ner_model
         logger.info(f"初始化图检索器，连接到 {uri}")
+    """用于检索图数据库中知识的检索器类"""
+    
         
     def close(self):
         """关闭数据库连接"""
@@ -67,7 +74,7 @@ class GraphRetriever:
                 search_type="vector",  # 改为 vector 类型，避免需要 keyword_index
                 # 或者使用：search_type="hybrid", keyword_index="fulltext_entity_id",
                 node_label="Document",
-                text_node_properties=["text"],
+                text_node_property="text",
                 embedding_node_property="embedding"
             )
             logger.info(f"成功初始化向量检索器，使用索引: {index_name}")
@@ -75,6 +82,74 @@ class GraphRetriever:
         except Exception as e:
             logger.error(f"初始化向量检索器失败: {str(e)}")
             raise
+
+    def extract_entities(self, text: str) -> List[Dict[str, str]]:
+        """从文本中提取实体
+
+        Args:
+            text: 输入文本
+
+        Returns:
+            实体列表 [{"entity": "实体名", "type": "实体类型"}]
+        """
+        logger.info(f"从文本中提取实体: {text[:100]}...")
+        extracted_entities = []
+
+        if self.ner_model:
+            # 使用专用NER模型提取实体
+            entities = self.ner_model(text)
+            extracted_entities = entities
+            logger.info(f"NER模型提取的实体: {extracted_entities}")
+            return entities
+        elif self.llm:
+            # 使用LLM提取实体
+            prompt = f"""
+            从以下文本中提取所有的命名实体（人物、组织、地点、产品等）:
+
+            {text}
+
+            以JSON数组格式返回，每个实体包含实体名称和实体类型:
+            [
+                {{"entity": "实体名称", "type": "实体类型"}}
+            ]
+            仅返回JSON数组，不要包含其他解释。
+            """
+
+            try:
+                result = self.llm.invoke(prompt)
+
+                # 处理LLM返回的JSON
+                import re
+                json_pattern = r'\[(.*?)\]'
+                match = re.search(json_pattern, result, re.DOTALL)
+
+                if match:
+                    try:
+                        json_str = f"[{match.group(1)}]"
+                        entities = json.loads(json_str)
+                        extracted_entities = entities
+                        logger.info(f"LLM提取的实体: {extracted_entities}")
+                        return entities
+                    except json.JSONDecodeError:
+                        try:
+                            # 尝试直接解析整个结果
+                            entities = json.loads(result)
+                            if isinstance(entities, list):
+                                return entities
+                        except:
+                            logger.warning(f"无法解析LLM返回的实体JSON: {result}")
+                            return []
+                else:
+                    logger.warning("LLM未返回有效的实体JSON")
+                    return []
+            except Exception as e:
+                logger.error(f"使用LLM提取实体失败: {str(e)}")
+                return []
+        else:
+            logger.warning("未提供NER模型或LLM，无法提取实体")
+            return []
+
+        return extracted_entities
             
     def fulltext_search(self, query: str, limit: int = 5) -> List[Dict[str, Any]]:
         """使用全文索引搜索
@@ -137,31 +212,34 @@ class GraphRetriever:
         Returns:
             混合搜索结果
         """
-        # 提取可能的实体关键词
-        keywords = query.split()
-        entity_filter = " OR ".join([f"entity.id:*{keyword}*" for keyword in keywords])
-        
-        cypher_query = """
+        # 提取实体
+        entities = self.extract_entities(query)
+
+        # 构建实体过滤器
+        entity_ids = [entity["entity"] for entity in entities] if entities else []
+        entity_filter = " OR ".join([f"entity.id:*{entity_id}*" for entity_id in entity_ids])
+        cypher_query = f"""
         // 第一部分：向量搜索
-        CALL db.index.vector.queryNodes($index_name, $embedding, $limit) 
+        CALL db.index.vector.queryNodes($index_name, $embedding, $limit)
         YIELD node as doc, score as vector_score
-        
+
         // 关联文档与实体
         OPTIONAL MATCH (doc)<-[:MENTIONED_IN|RELATED_TO]-(entity:__Entity__)
         WHERE doc.text IS NOT NULL
-        
+        {"AND " + entity_filter if entity_filter else ""}
+
         // 收集结果
         WITH doc, entity, vector_score,
              CASE WHEN entity IS NOT NULL THEN 1 ELSE 0 END as has_entity
-        
+
         RETURN doc.id AS id,
                labels(doc) AS type,
                doc.text AS content,
                vector_score AS relevance,
-               COLLECT(DISTINCT {
-                   id: entity.id, 
+               COLLECT(DISTINCT {{
+                   id: entity.id,
                    type: CASE WHEN entity IS NOT NULL THEN head(labels(entity)) ELSE NULL END
-               }) AS related_entities,
+               }}) AS related_entities,
                count(entity) as entity_count
         ORDER BY relevance DESC, entity_count DESC
         LIMIT $limit
@@ -246,83 +324,3 @@ class GraphRetriever:
                 return {"nodes": [], "relationships": []}
             
 
-def test_llm_retrieval():
-    NEO4J_URL = DATABASE.URI
-    NEO4J_USER = DATABASE.USERNAME
-    NEO4J_PASSWORD = DATABASE.PASSWORD
-    NEO4J_DATABASE = DATABASE.DATABASE_NAME
-
-    progress = ProgressTracker(total_stages=7)
-
-    fallback_provider = MODEL.MODEL_PROVIDER
-    try:
-        if fallback_provider == "ollama":
-            llm = ModelProvider.get_llm(
-                provider="ollama",
-                model_name=DOCUMENT.OLLAMA_LLM_MODEL,
-                base_url=MODEL.OLLAMA_BASE_URL,
-                # temperature=0
-            )
-        else:
-            llm = ModelProvider.get_llm(
-                provider="openai",
-                model_name=MODEL.OPENAI_MODEL,
-                api_key=MODEL.OPENAI_API_KEY,
-                api_base=MODEL.OPENAI_API_BASE,
-                # temperature=0
-            )
-        
-        if llm:
-            print(f"✓ Successfully initialized fallback LLM with provider {fallback_provider}")
-        else:
-            raise ValueError(f"Failed to initialize fallback LLM with provider {fallback_provider}")
-    except Exception as fallback_error:
-        logger.error(f"Error initializing fallback LLM: {str(fallback_error)}")
-        raise ValueError(f"Failed to initialize LLM with both primary and fallback providers")
-
-    # 继续创建全文索引
-    driver = Neo4jConnectionManager.get_instance(NEO4J_URL, (NEO4J_USER, NEO4J_PASSWORD))
-    index_result = create_fulltext_index(driver)
-    if index_result:
-        print("✓ Fulltext index created/verified")
-    
-    # 创建图检索器对象
-    graph_retriever = GraphRetriever(NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD)
-    
-    # 初始化向量检索器
-    try:
-        # 重用之前创建的嵌入模型
-        embeddings_manager = EmbeddingsManager()
-        embeddings = embeddings_manager.get_working_embeddings(
-            provider=MODEL.MODEL_PROVIDER, 
-            api_key=MODEL.OPENAI_EMBEDDING_API_KEY, 
-            api_base=MODEL.OPENAI_EMBEDDING_API_BASE,
-            model_name=MODEL.OPENAI_EMBEDDINGS_MODEL  # 添加模型名称参数
-        )
-        vector_retriever = graph_retriever.initialize_vector_retriever(embeddings)
-        print("✓ 向量检索器初始化成功")
-    except Exception as e:
-        print(f"⚠️ 向量检索器初始化失败: {str(e)}")
-        print("将使用全文搜索进行检索")
-    # STAGE 7: Set up entity extraction
-    progress.update("Setting up entity extraction")
-    entity_chain = setup_entity_extraction(llm)
-    
-    # 示例查询
-    print("\n演示图检索器能力:")
-    try:
-        query = "who is author of this？"
-        print(f"查询: '{query}'")
-        results = graph_retriever.hybrid_search(query, limit=3)
-        
-        print(f"找到 {len(results)} 个相关内容:")
-        for i, result in enumerate(results, 1):
-            print(f"  {i}. {result.get('content', '')[:100]}...")
-            
-            if result.get('related_entities'):
-                print(f"     相关实体: {', '.join([e['id'] for e in result['related_entities'] if e['id']])}")
-    except Exception as e:
-        print(f"❌ 查询失败: {str(e)}")
-    finally:
-        # 记得在程序结束时关闭检索器
-        graph_retriever.close()
