@@ -413,10 +413,10 @@ def main():
         progress.update("Creating vector and fulltext indices")
         try:
             vector_retriever = create_vector_index(
-                NEO4J_URL, 
-                NEO4J_USER, 
-                NEO4J_PASSWORD, 
-                index_name="document_vector",  # 使用新的索引名称
+                NEO4J_URL,
+                NEO4J_USER,
+                NEO4J_PASSWORD,
+                index_name=APP.VECTOR_INDEX_NAME,  # 使用新的索引名称
                 recreate=False  # 首次尝试不删除已有索引
             )
             print("✓ Vector index created successfully")

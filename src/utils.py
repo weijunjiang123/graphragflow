@@ -33,8 +33,9 @@ def save_graph_documents(graph_documents):
     logger = logging.getLogger(__name__)
     
     # Create results directory if it doesn't exist
-    results_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "results")
-    os.makedirs(results_dir, exist_ok=True)
+    from src.config import APP
+    results_dir = APP.RESULTS_DIR
+    os.makedirs(results_dir, exist_ok=True, parents=True)
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"graph_documents_{timestamp}.json"
