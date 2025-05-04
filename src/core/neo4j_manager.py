@@ -827,3 +827,408 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"程序运行出错: {str(e)}")
         print("请查看上方错误信息并进行修复")
+
+class Neo4jIndexOptimizer:
+    """用于Neo4j索引优化的工具类"""
+    
+    def __init__(self, driver):
+        """初始化索引优化器
+        
+        Args:
+            driver: Neo4j驱动实例
+        """
+        self.driver = driver
+        
+    def create_optimized_fulltext_index(self, index_name: str, label: str, properties: List[str], 
+                                      analyzer: str = "standard", eventually_consistent: bool = True) -> bool:
+        """创建优化的全文索引
+        
+        Args:
+            index_name: 索引名称
+            label: 要索引的节点标签
+            properties: 要索引的属性列表
+            analyzer: 使用的文本分析器 (standard, english, chinese等)
+            eventually_consistent: 是否使用最终一致性模式提高写入性能
+            
+        Returns:
+            创建是否成功
+        """
+        # 构建属性字符串
+        properties_str = ", ".join([f"n.{prop}" for prop in properties])
+        
+        query = f'''
+        CREATE FULLTEXT INDEX `{index_name}` 
+        IF NOT EXISTS
+        FOR (n:{label}) 
+        ON EACH [{properties_str}]
+        OPTIONS {{
+          analyzer: '{analyzer}',
+          eventually_consistent: {str(eventually_consistent).lower()}
+        }};
+        '''
+        
+        try:
+            with self.driver.session() as session:
+                session.run(query)
+                logger.info(f"优化的全文索引 '{index_name}' 创建成功")
+                return True
+        except Exception as e:
+            if "already exists" in str(e):
+                logger.info(f"索引 '{index_name}' 已存在，跳过创建")
+                return True
+            else:
+                logger.error(f"创建全文索引失败: {str(e)}")
+                return False
+    
+    def create_optimized_vector_index(self, index_name: str, label: str, property_name: str,
+                                     dimension: int, similarity_function: str = "cosine",
+                                     distance_threshold: Optional[float] = None) -> bool:
+        """创建优化的向量索引
+        
+        Args:
+            index_name: 索引名称
+            label: 要索引的节点标签
+            property_name: 包含向量的属性名
+            dimension: 向量维度
+            similarity_function: 相似度函数 (cosine, euclidean, dot)
+            distance_threshold: 可选的距离阈值
+            
+        Returns:
+            创建是否成功
+        """
+        # 构建索引配置选项
+        options = f'''
+        OPTIONS {{
+          indexConfig: {{
+            `vector.dimensions`: {dimension},
+            `vector.similarity_function`: '{similarity_function}'
+        '''
+        
+        if distance_threshold is not None:
+            options += f''',
+            `vector.distance_threshold`: {distance_threshold}'''
+            
+        options += '''
+          }
+        }
+        '''
+        
+        query = f'''
+        CREATE VECTOR INDEX `{index_name}`
+        IF NOT EXISTS
+        FOR (n:{label})
+        ON (n.{property_name})
+        {options};
+        '''
+        
+        try:
+            with self.driver.session() as session:
+                session.run(query)
+                logger.info(f"优化的向量索引 '{index_name}' 创建成功")
+                return True
+        except Exception as e:
+            if "already exists" in str(e):
+                logger.info(f"索引 '{index_name}' 已存在，跳过创建")
+                return True
+            else:
+                logger.error(f"创建向量索引失败: {str(e)}")
+                return False
+    
+    def create_composite_index(self, index_name: str, label: str, properties: List[str]) -> bool:
+        """创建复合索引
+        
+        Args:
+            index_name: 索引名称
+            label: 要索引的节点标签
+            properties: 要索引的属性列表
+            
+        Returns:
+            创建是否成功
+        """
+        # 构建属性字符串
+        properties_str = ", ".join([f"n.{prop}" for prop in properties])
+        
+        query = f'''
+        CREATE INDEX `{index_name}`
+        IF NOT EXISTS
+        FOR (n:{label})
+        ON ({properties_str});
+        '''
+        
+        try:
+            with self.driver.session() as session:
+                session.run(query)
+                logger.info(f"复合索引 '{index_name}' 创建成功")
+                return True
+        except Exception as e:
+            if "already exists" in str(e):
+                logger.info(f"索引 '{index_name}' 已存在，跳过创建")
+                return True
+            else:
+                logger.error(f"创建复合索引失败: {str(e)}")
+                return False
+    
+    def get_index_statistics(self, index_name: Optional[str] = None) -> List[Dict[str, Any]]:
+        """获取索引统计信息
+        
+        Args:
+            index_name: 可选的索引名称，如果不提供则返回所有索引的统计信息
+            
+        Returns:
+            索引统计信息列表
+        """
+        query = """
+        SHOW INDEXES 
+        YIELD name, type, labelsOrTypes, properties, state, populationPercent, uniqueness
+        """
+        
+        if index_name:
+            query += " WHERE name = $name"
+            params = {"name": index_name}
+        else:
+            params = {}
+        
+        try:
+            with self.driver.session() as session:
+                result = session.run(query, params)
+                stats = [dict(record) for record in result]
+                return stats
+        except Exception as e:
+            logger.error(f"获取索引统计信息失败: {str(e)}")
+            return []
+    
+    def optimize_indexes(self, index_names: Optional[List[str]] = None) -> bool:
+        """优化指定索引或所有索引
+        
+        Args:
+            index_names: 可选的要优化的索引名称列表
+            
+        Returns:
+            优化是否成功
+        """
+        try:
+            with self.driver.session() as session:
+                if index_names:
+                    for name in index_names:
+                        session.run("OPTIMIZE INDEX $name", name=name)
+                        logger.info(f"已优化索引: {name}")
+                else:
+                    # 获取所有索引并优化
+                    result = session.run("SHOW INDEXES")
+                    for record in result:
+                        index_name = record["name"]
+                        # 跳过系统索引
+                        if not index_name.startswith("system"):
+                            session.run("OPTIMIZE INDEX $name", name=index_name)
+                            logger.info(f"已优化索引: {index_name}")
+            return True
+        except Exception as e:
+            logger.error(f"优化索引失败: {str(e)}")
+            return False
+    
+    def monitor_index_usage(self, days: int = 7) -> List[Dict[str, Any]]:
+        """监控索引使用情况
+        
+        Args:
+            days: 监控天数
+            
+        Returns:
+            索引使用统计信息列表
+        """
+        try:
+            with self.driver.session() as session:
+                result = session.run("""
+                CALL db.index.statistics.all() 
+                YIELD index, identifier, indexType, usage, lastUsed 
+                WHERE lastUsed > datetime() - duration({days: $days}) 
+                RETURN index, indexType, usage, lastUsed 
+                ORDER BY usage DESC
+                """, days=days)
+                
+                stats = [dict(record) for record in result]
+                return stats
+        except Exception as e:
+            logger.error(f"监控索引使用情况失败: {str(e)}")
+            return []
+    
+    def analyze_data_for_indexes(self) -> Dict[str, Any]:
+        """分析数据模式并推荐索引
+        
+        Returns:
+            索引建议字典
+        """
+        recommendations = {"btree": [], "fulltext": [], "vector": []}
+        
+        try:
+            with self.driver.session() as session:
+                # 分析节点标签和属性
+                node_analysis = session.run("""
+                MATCH (n)
+                WITH DISTINCT labels(n) AS labels, keys(n) AS properties
+                RETURN labels, properties, count(*) AS count
+                ORDER BY count DESC
+                LIMIT 10
+                """).data()
+                
+                # 分析查询模式（需要启用查询日志）
+                try:
+                    query_patterns = session.run("""
+                    CALL db.queryLog.summary()
+                    YIELD query, parameters, times
+                    RETURN query, parameters, times
+                    ORDER BY times.total DESC
+                    LIMIT 10
+                    """).data()
+                except:
+                    query_patterns = []
+                
+                # 分析属性选择性
+                property_selectivity = session.run("""
+                MATCH (n)
+                UNWIND keys(n) AS property
+                WITH labels(n) AS labels, property, count(DISTINCT n[property]) AS distinct_values, count(*) AS total
+                WHERE total > 100
+                RETURN labels, property, distinct_values, total, toFloat(distinct_values)/total AS selectivity
+                ORDER BY selectivity DESC
+                LIMIT 20
+                """).data()
+                
+                # 基于数据分析生成推荐
+                for prop in property_selectivity:
+                    selectivity = prop.get("selectivity", 0)
+                    labels = prop.get("labels", [])
+                    property_name = prop.get("property", "")
+                    
+                    if not labels or not property_name:
+                        continue
+                    
+                    label_str = ":".join(labels) if isinstance(labels, list) else labels
+                    
+                    # 高选择性属性适合B树索引
+                    if selectivity > 0.8 and property_name not in ["text", "embedding"]:
+                        recommendations["btree"].append({
+                            "label": label_str,
+                            "property": property_name,
+                            "selectivity": selectivity,
+                            "suggestion": f"CREATE INDEX idx_{label_str.replace(':', '_')}_{property_name} FOR (n:{label_str}) ON (n.{property_name});"
+                        })
+                    
+                    # 文本属性适合全文索引
+                    if property_name.lower() in ["name", "title", "description", "content", "text"]:
+                        recommendations["fulltext"].append({
+                            "label": label_str,
+                            "property": property_name,
+                            "suggestion": f"CREATE FULLTEXT INDEX ftx_{label_str.replace(':', '_')}_{property_name} FOR (n:{label_str}) ON EACH [n.{property_name}];"
+                        })
+                
+                # 检查是否有向量属性
+                for node in node_analysis:
+                    properties = node.get("properties", [])
+                    labels = node.get("labels", [])
+                    
+                    if not isinstance(properties, list) or not isinstance(labels, list):
+                        continue
+                        
+                    label_str = ":".join(labels)
+                    
+                    for prop in properties:
+                        if prop.lower() in ["embedding", "vector", "embeddings", "vectors"]:
+                            recommendations["vector"].append({
+                                "label": label_str,
+                                "property": prop,
+                                "suggestion": f"CREATE VECTOR INDEX vix_{label_str.replace(':', '_')}_{prop} FOR (n:{label_str}) ON (n.{prop});"
+                            })
+                
+                return recommendations
+        except Exception as e:
+            logger.error(f"分析数据模式失败: {str(e)}")
+            return recommendations
+            
+    def create_recommended_indexes(self, recommendations: Dict[str, List[Dict]], auto_apply: bool = False) -> Dict[str, List[Dict]]:
+        """创建推荐的索引
+        
+        Args:
+            recommendations: 索引建议字典
+            auto_apply: 是否自动应用建议
+            
+        Returns:
+            应用结果字典
+        """
+        results = {"applied": [], "skipped": []}
+        
+        if not auto_apply:
+            logger.info("索引建议生成完毕，未自动应用")
+            return {"applied": [], "skipped": recommendations}
+        
+        try:
+            with self.driver.session() as session:
+                # 应用B树索引建议
+                for rec in recommendations.get("btree", []):
+                    cypher = rec.get("suggestion", "")
+                    if not cypher:
+                        continue
+                        
+                    try:
+                        session.run(cypher)
+                        results["applied"].append({
+                            "type": "btree", 
+                            "cypher": cypher,
+                            "status": "success"
+                        })
+                        logger.info(f"已应用B树索引: {cypher}")
+                    except Exception as e:
+                        results["skipped"].append({
+                            "type": "btree", 
+                            "cypher": cypher,
+                            "error": str(e)
+                        })
+                        logger.error(f"应用B树索引失败: {cypher} - {str(e)}")
+                
+                # 应用全文索引建议
+                for rec in recommendations.get("fulltext", []):
+                    cypher = rec.get("suggestion", "")
+                    if not cypher:
+                        continue
+                        
+                    try:
+                        session.run(cypher)
+                        results["applied"].append({
+                            "type": "fulltext", 
+                            "cypher": cypher,
+                            "status": "success"
+                        })
+                        logger.info(f"已应用全文索引: {cypher}")
+                    except Exception as e:
+                        results["skipped"].append({
+                            "type": "fulltext", 
+                            "cypher": cypher,
+                            "error": str(e)
+                        })
+                        logger.error(f"应用全文索引失败: {cypher} - {str(e)}")
+                
+                # 应用向量索引建议
+                for rec in recommendations.get("vector", []):
+                    cypher = rec.get("suggestion", "")
+                    if not cypher:
+                        continue
+                        
+                    try:
+                        session.run(cypher)
+                        results["applied"].append({
+                            "type": "vector", 
+                            "cypher": cypher,
+                            "status": "success"
+                        })
+                        logger.info(f"已应用向量索引: {cypher}")
+                    except Exception as e:
+                        results["skipped"].append({
+                            "type": "vector", 
+                            "cypher": cypher,
+                            "error": str(e)
+                        })
+                        logger.error(f"应用向量索引失败: {cypher} - {str(e)}")
+                
+                return results
+        except Exception as e:
+            logger.error(f"应用索引建议失败: {str(e)}")
+            return {"applied": [], "skipped": recommendations, "error": str(e)}

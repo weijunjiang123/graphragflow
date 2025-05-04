@@ -116,9 +116,15 @@ class ModelProvider:
         Returns:
             Embeddings instance if successful, None otherwise
         """
-        if provider.lower() == "ollama":
-            model_name = kwargs.get("model_name", os.environ.get("EMBEDDINGS_MODEL", "nomic-embed-text"))
-            base_url = kwargs.get("base_url", "http://localhost:11434")
+        # 从提供的参数或环境变量中获取嵌入模型提供者，默认使用与LLM相同的提供者
+        provider = provider.lower() if provider else os.environ.get("MODEL_PROVIDER", "ollama").lower()
+        
+        if provider == "ollama":
+            model_name = kwargs.get("model_name", os.environ.get("OLLAMA_EMBEDDINGS_MODEL", "nomic-embed-text"))
+            base_url = kwargs.get("base_url", os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434"))
+            
+            # 有效的Ollama嵌入模型列表
+            valid_models = ["nomic-embed-text", "llama3", "all-MiniLM-L6-v2"]
             
             try:
                 logger.info(f"Initializing Ollama embeddings: {model_name}")
@@ -131,19 +137,44 @@ class ModelProvider:
                 print(f"✓ Successfully initialized Ollama embeddings: {model_name}")
                 return embeddings
             except Exception as e:
-                logger.error(f"Error initializing Ollama embeddings: {str(e)}")
-                print(f"❌ Error initializing Ollama embeddings: {str(e)}")
+                logger.error(f"Error initializing Ollama embeddings with {model_name}: {str(e)}")
+                print(f"❌ Error initializing Ollama embeddings with {model_name}: {str(e)}")
+                
+                # 尝试其他Ollama嵌入模型
+                for fallback_model in valid_models:
+                    if fallback_model == model_name:
+                        continue  # 跳过已经尝试过的模型
+                    
+                    try:
+                        logger.info(f"Trying fallback Ollama embeddings model: {fallback_model}")
+                        print(f"Trying fallback Ollama embeddings model: {fallback_model}")
+                        fallback_embeddings = OllamaEmbeddings(base_url=base_url, model=fallback_model)
+                        
+                        # Test if embeddings work
+                        _ = fallback_embeddings.embed_query("test")
+                        logger.info(f"Successfully initialized fallback Ollama embeddings: {fallback_model}")
+                        print(f"✓ Successfully initialized fallback Ollama embeddings: {fallback_model}")
+                        return fallback_embeddings
+                    except Exception as fallback_error:
+                        logger.error(f"Error initializing fallback Ollama embeddings with {fallback_model}: {str(fallback_error)}")
+                        print(f"❌ Error initializing fallback Ollama embeddings with {fallback_model}: {str(fallback_error)}")
+                
+                # 所有Ollama模型都失败，返回None
                 return None
                 
-        elif provider.lower() == "openai":
-            api_key = kwargs.get("api_key", os.environ.get("OPENAI_EMBEDDING_API_KEY"))
-            api_base = kwargs.get("api_base", os.environ.get("OPENAI_EMBEDDING_API_BASE"))
+        elif provider == "openai":
+            api_key = kwargs.get("api_key", os.environ.get("OPENAI_EMBEDDING_API_KEY") or os.environ.get("OPENAI_API_KEY"))
+            api_base = kwargs.get("api_base", os.environ.get("OPENAI_EMBEDDING_API_BASE") or os.environ.get("OPENAI_API_BASE"))
             model_name = kwargs.get("model_name", os.environ.get("OPENAI_EMBEDDINGS_MODEL", "text-embedding-ada-002"))
             
             if not api_key:
                 logger.error("OpenAI API key not provided.")
-                print("❌ OpenAI API key not provided. Please set OPENAI_API_KEY in your .env file.")
-                return None
+                print("❌ OpenAI API key not provided. Please set OPENAI_API_KEY or OPENAI_EMBEDDING_API_KEY in your .env file.")
+                
+                # 如果OpenAI失败，尝试回退到Ollama嵌入
+                logger.info("Falling back to Ollama embeddings")
+                print("Falling back to Ollama embeddings")
+                return ModelProvider.get_embeddings(provider="ollama", **kwargs)
                 
             try:
                 logger.info(f"Initializing OpenAI embeddings: {model_name}")
@@ -168,8 +199,16 @@ class ModelProvider:
             except Exception as e:
                 logger.error(f"Error initializing OpenAI embeddings: {str(e)}")
                 print(f"❌ Error initializing OpenAI embeddings: {str(e)}")
-                return None
+                
+                # 如果OpenAI失败，尝试回退到Ollama嵌入
+                logger.info("Falling back to Ollama embeddings")
+                print("Falling back to Ollama embeddings")
+                return ModelProvider.get_embeddings(provider="ollama", **kwargs)
         else:
             logger.error(f"Unsupported embeddings provider: {provider}")
             print(f"❌ Unsupported embeddings provider: {provider}")
-            return None
+            
+            # 对于不支持的提供者，尝试回退到Ollama
+            logger.info("Falling back to Ollama embeddings")
+            print("Falling back to Ollama embeddings")
+            return ModelProvider.get_embeddings(provider="ollama", **kwargs)
