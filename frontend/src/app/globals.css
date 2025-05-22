@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-800 antialiased;
+    font-feature-settings: "kern";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl text-neutral-900 mb-6;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl text-neutral-800 mb-5;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl text-neutral-700 mb-4;
+  }
+
+  p {
+    @apply mb-4 leading-relaxed text-neutral-600;
+  }
+
+  a {
+    @apply text-primary-DEFAULT hover:text-primary-dark transition-colors duration-150;
+  }
+
+  /* Basic styling for input fields */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  input[type='number'],
+  textarea,
+  select {
+    @apply block w-full px-4 py-2.5 border border-neutral-300 rounded-md shadow-sm transition-colors duration-150;
+    @apply focus:ring-2 focus:ring-primary-light focus:border-primary-light outline-none;
+    @apply placeholder-neutral-400 bg-white;
+  }
+
+  textarea {
+    @apply min-h-[120px];
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-DEFAULT ring-offset-2;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2.5 border border-transparent rounded-md shadow-sm text-sm font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-DEFAULT text-white hover:bg-primary-dark focus:ring-primary-DEFAULT;
+  }
+
+  .btn-secondary {
+    @apply btn bg-neutral-200 text-neutral-700 hover:bg-neutral-300 focus:ring-neutral-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-primary-DEFAULT text-primary-DEFAULT hover:bg-primary-DEFAULT hover:text-white focus:ring-primary-DEFAULT;
+  }
+
+  .card {
+    @apply bg-white shadow-md rounded-lg p-6;
+  }
+}

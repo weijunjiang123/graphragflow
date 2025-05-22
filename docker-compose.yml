@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5-community # Using a recent Neo4j 5 version
+    ports:
+      - "7474:7474" # Neo4j Browser
+      - "7687:7687" # Bolt protocol
+    volumes:
+      - neo4j_data:/data
+    environment:
+      # IMPORTANT: Change 'yourStrongPassword' to a secure password.
+      NEO4J_AUTH: neo4j/yourStrongPassword123! 
+      NEO4J_PLUGINS: '["apoc"]' # Include APOC plugin
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*" # Allow all APOC procedures
+      # For development, you might want to disable password reset prompt
+      NEO4J_dbms_security_auth__force__initial__password__change: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # These will be used by src/config.py
+      NEO4J_URL: "bolt://neo4j:7687" # Service name 'neo4j' is resolvable by Docker Compose
+      NEO4J_USER: "neo4j"
+      NEO4J_PASSWORD: "yourStrongPassword123!" # Must match NEO4J_AUTH above
+      
+      # Model provider configurations (examples, set via .env file)
+      MODEL_PROVIDER: "${MODEL_PROVIDER:-ollama}" # Default to ollama if not set
+      
+      # OpenAI specific (loaded if MODEL_PROVIDER=openai)
+      MODEL_OPENAI_API_KEY: "${MODEL_OPENAI_API_KEY}" 
+      MODEL_OPENAI_API_BASE: "${MODEL_OPENAI_API_BASE:-https://api.openai.com/v1}"
+      MODEL_OPENAI_MODEL: "${MODEL_OPENAI_MODEL:-gpt-3.5-turbo}"
+      MODEL_OPENAI_EMBEDDING_API_KEY: "${MODEL_OPENAI_EMBEDDING_API_KEY}"
+      MODEL_OPENAI_EMBEDDING_API_BASE: "${MODEL_OPENAI_EMBEDDING_API_BASE:-https://api.openai.com/v1}"
+      MODEL_OPENAI_EMBEDDINGS_MODEL: "${MODEL_OPENAI_EMBEDDINGS_MODEL:-text-embedding-ada-002}"
+
+      # Ollama specific (loaded if MODEL_PROVIDER=ollama)
+      MODEL_OLLAMA_BASE_URL: "${MODEL_OLLAMA_BASE_URL:-http://host.docker.internal:11434}" # For Ollama running on host
+      MODEL_OLLAMA_LLM_MODEL: "${MODEL_OLLAMA_LLM_MODEL:-qwen2.5}" # Example, ensure this model is served by Ollama
+
+      # Document processing settings
+      DOCUMENT_CHUNK_SIZE: "${DOCUMENT_CHUNK_SIZE:-1000}"
+      DOCUMENT_CHUNK_OVERLAP: "${DOCUMENT_CHUNK_OVERLAP:-200}"
+      # DOCUMENT_PATH is usually handled by volume mounts or file uploads in a real app, not env var here.
+
+      # App settings
+      APP_LOG_LEVEL: "${APP_LOG_LEVEL:-INFO}"
+      APP_DEBUG_MODE: "${APP_DEBUG_MODE:-False}"
+
+    depends_on:
+      neo4j:
+        condition: service_healthy # Wait for Neo4j to be healthy
+    # For development: mount local source code. Remove for production.
+    # volumes:
+    #   - ./src:/app/src 
+    #   - ./data:/app/data # Example if you need to mount local data
+    #   - ./.env:/app/.env # Mount .env file directly if needed by find_and_load_env_file
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      # This is used by frontend/src/services/api.ts
+      # 'backend' is the service name, resolvable by Docker Compose
+      NEXT_PUBLIC_API_BASE_URL: "http://backend:8000/api/v1" 
+    depends_on:
+      - backend
+    # For development: mount local source code. Remove for production.
+    # Ensure .dockerignore is robust if using this.
+    # volumes:
+    #   - ./frontend:/app 
+    # command: npm run dev # Overrides CMD in Dockerfile for dev with hot-reloading
+
+volumes:
+  neo4j_data: # Persists Neo4j data across container restarts
