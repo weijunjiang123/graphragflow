@@ -1,4 +1,4 @@
-# GraphRAGFlow
+# 🚀 GraphRAGFlow
 
 ![images](./asset/GraphPipeline.svg)
 
@@ -18,10 +18,11 @@ here is demo in neo4j
 - Entity extraction capabilities
 - Progress tracking for long-running operations
 - Batch processing with progress indicators
+- **Modern Next.js frontend** for interactive visualization and management
 
 ## 🚀 Quickstart
 
-### Neo4j Setup with Docker
+### 🐳 Neo4j Setup with Docker
 
 If you don't have a Neo4j environment, you can easily set up your own using Docker:
 
@@ -61,7 +62,7 @@ docker-compose up -d
 
 3. Access the Neo4j Browser at <http://localhost:7474> to verify the installation
 
-### Requirements
+### 📦 Requirements
 
 - Python 3.8+
 - Ollama with models:
@@ -78,7 +79,7 @@ docker-compose up -d
   - uvciorn
   - pypdf
 
-### Installation
+### 🛠️ Installation
 
 recomend using uv for package management
 
@@ -106,7 +107,7 @@ ollama pull nomic-embed-text
 
 or you can config api key in .env
 
-### Configuration
+### ⚙️ Configuration
 
 copy the .env.example to .env
 
@@ -118,7 +119,7 @@ Modify the following variables in `.env` to match your environment:
 
 checkout [this](/.env.example) for detail
 
-### Usage
+### ▶️ Usage
 
 Run the main script to process a document and build the knowledge graph:
 
@@ -136,6 +137,67 @@ The process includes:
 6. Creating vector and fulltext indices
 7. Setting up entity extraction
 
+---
+
+## 🌐 Frontend Deployment (Next.js)
+
+The frontend is located in the `web/` directory and built with [Next.js](https://nextjs.org). You can use it for interactive visualization and management of the knowledge graph.
+
+### 💻 Local Development
+
+1. Enter the frontend directory:
+
+```bash
+cd web
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000)
+
+### 🏗️ Build & Production Deployment
+
+1. Build the frontend static files:
+
+```bash
+npm run build
+```
+
+2. Start the production server:
+
+```bash
+npm start
+```
+
+3. Or deploy the `.next` or `out` directory to Vercel, Netlify, or any static hosting service.
+
+## 🖼️ Screenshots
+
+![Frontend Example 1](./asset/frontend1.png)
+![Frontend Example 2](./asset/frontend2.png)
+
 ## 🔧 How it Works
 
 This project implements a GraphRAG approach:
@@ -147,9 +209,9 @@ This project implements a GraphRAG approach:
 5. **Retrieval**: When querying, the system can use both graph traversal and vector similarity.
 6. **Entity Extraction**: A separate chain extracts entities from arbitrary text.
 
-## Directory Structure
+## 📁 Directory Structure
 
-```
+``` bash
 GraphRAG-with-Llama-3.1/
 ├── .env.example             # Example environment variables
 ├── .gitignore                # Specifies intentionally untracked files that Git should ignore
@@ -170,18 +232,22 @@ GraphRAG-with-Llama-3.1/
 │   └── ...                   # Documents to be processed
 ├── results/                  # Directory for storing output files
 │   └── ...                   # Extracted graph documents
+├── web/                      # Next.js 前端项目目录
+│   ├── app/                  # Next.js 页面与组件
+│   ├── public/               # 静态资源
+│   ├── package.json          # 前端依赖与脚本
+│   └── ...                   # 其他前端相关文件
 └── ...                       # Other directories and files
 ```
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-## Reference
+## 🔗 Reference
 
 <https://github.com/Coding-Crashkurse/GraphRAG-with-Llama-3.1>
 
-## License
+## 📝 License
 
-[MIT]
-
+[MIT](./LICENSE)
