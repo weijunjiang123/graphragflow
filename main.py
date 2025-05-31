@@ -255,29 +255,29 @@ def main():
         
         # STAGE 6: Create vector index and fulltext index
         progress.update("Creating vector and fulltext indices")
-        try:
-            # Initialize embeddings based on configured provider
-            embeddings_manager = EmbeddingsManager()
-            embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.MODEL_PROVIDER)
+        # try:
+        #     # Initialize embeddings based on configured provider
+        #     embeddings_manager = EmbeddingsManager()
+        #     embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.MODEL_PROVIDER)
             
-            if embeddings:
-                vector_retriever = embeddings_manager.create_vector_index(
-                    embeddings=embeddings,
-                    neo4j_url=DATABASE.URI, 
-                    neo4j_user=DATABASE.USERNAME, 
-                    neo4j_password=DATABASE.PASSWORD, 
-                    index_name="document_vector",
-                    recreate=False
-                )
-                if vector_retriever:
-                    print("✓ Vector index created successfully")
-            else:
-                logger.warning("No working embeddings model found")
-                print("⚠️ Could not initialize embeddings model, skipping vector index creation")
-        except Exception as e:
-            logger.error(f"Vector index creation failed: {str(e)}")
-            print(f"❌ Vector index creation failed: {str(e)}")
-            print("Continuing without vector retrieval...")
+        #     if embeddings:
+        #         vector_retriever = embeddings_manager.create_vector_index(
+        #             embeddings=embeddings,
+        #             neo4j_url=DATABASE.URI, 
+        #             neo4j_user=DATABASE.USERNAME, 
+        #             neo4j_password=DATABASE.PASSWORD, 
+        #             index_name="document_vector",
+        #             recreate=False
+        #         )
+        #         if vector_retriever:
+        #             print("✓ Vector index created successfully")
+        #     else:
+        #         logger.warning("No working embeddings model found")
+        #         print("⚠️ Could not initialize embeddings model, skipping vector index creation")
+        # except Exception as e:
+        #     logger.error(f"Vector index creation failed: {str(e)}")
+        #     print(f"❌ Vector index creation failed: {str(e)}")
+        #     print("Continuing without vector retrieval...")
 
         # Create fulltext index
         index_result = neo4j_manager.create_fulltext_index()

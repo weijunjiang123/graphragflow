@@ -10,7 +10,8 @@ from langchain.schema import Document
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 from src.config import MODEL
-from src.core.graph_retrieval import GraphRetriever
+# Fix: Import GraphRetriever from the right location - avoid circular import issue
+from src.core.text2cypher import GraphRetriever
 
 logger = logging.getLogger(__name__)
 
