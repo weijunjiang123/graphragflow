@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GraphRAGFlow 前端说明
 
-## Getting Started
+本项目前端基于 [Next.js](https://nextjs.org) 构建，使用 `create-next-app` 脚手架初始化，具备现代化开发体验和高效的页面渲染能力。
 
-First, run the development server:
+## 前端更新内容
+
+- 使用 Next.js 进行前端开发，支持服务端渲染和静态生成
+- 页面结构优化，提升用户体验
+- 集成 [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) 自动优化字体加载，默认使用 [Geist](https://vercel.com/font)
+- 支持热更新，开发效率高
+- 代码结构清晰，便于扩展和维护
+
+## 快速开始
+
+1. 安装依赖：
+
+```bash
+npm install
+# 或
+yarn install
+# 或
+pnpm install
+# 或
+bun install
+```
+
+2. 启动开发服务器：
 
 ```bash
 npm run dev
-# or
+# 或
 yarn dev
-# or
+# 或
 pnpm dev
-# or
+# 或
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+页面代码位于 `app/page.tsx`，支持热更新。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 项目截图
 
-## Learn More
+![示例截图1](../asset/frontend1.png)
+![示例截图2](../asset/frontend2.png)
 
-To learn more about Next.js, take a look at the following resources:
+## 了解更多
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js 官方文档](https://nextjs.org/docs)
+- [Next.js 教程](https://nextjs.org/learn)
+- [Next.js GitHub 仓库](https://github.com/vercel/next.js)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 部署
 
-## Deploy on Vercel
+推荐使用 [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) 平台一键部署。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+更多部署方式请参考 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying)。
