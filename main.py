@@ -178,10 +178,10 @@ def main():
         # Initialize appropriate LLM based on configured provider
         llm = None
         try:
-            if MODEL.PROVIDER == "ollama":
+            if MODEL.MODEL_PROVIDER == "ollama":
                 llm = ModelProvider.get_llm(
                     provider="ollama",
-                    model_name=DOCUMENT.OLLAMA_LLM_MODEL,
+                    model_name=MODEL.OLLAMA_LLM_MODEL,
                     base_url=MODEL.OLLAMA_BASE_URL,
                     temperature=0
                 )
@@ -195,19 +195,19 @@ def main():
                 )
                 
             if not llm:
-                raise ValueError(f"Failed to initialize LLM with provider {MODEL.PROVIDER}")
+                raise ValueError(f"Failed to initialize LLM with provider {MODEL.MODEL_PROVIDER}")
         except Exception as e:
             logger.error(f"Error initializing LLM: {str(e)}")
             print(f"❌ Error initializing LLM: {str(e)}")
             print("Attempting to fall back to a different provider...")
             
             # Try the other provider as a fallback
-            fallback_provider = "openai" if MODEL.PROVIDER == "ollama" else "ollama"
+            fallback_provider = "openai" if MODEL.MODEL_PROVIDER == "ollama" else "ollama"
             try:
                 if fallback_provider == "ollama":
                     llm = ModelProvider.get_llm(
                         provider="ollama",
-                        model_name=DOCUMENT.OLLAMA_LLM_MODEL,
+                        model_name=MODEL.OLLAMA_LLM_MODEL,
                         base_url=MODEL.OLLAMA_BASE_URL,
                         temperature=0
                     )
@@ -255,29 +255,29 @@ def main():
         
         # STAGE 6: Create vector index and fulltext index
         progress.update("Creating vector and fulltext indices")
-        try:
-            # Initialize embeddings based on configured provider
-            embeddings_manager = EmbeddingsManager()
-            embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.PROVIDER)
+        # try:
+        #     # Initialize embeddings based on configured provider
+        #     embeddings_manager = EmbeddingsManager()
+        #     embeddings = embeddings_manager.get_working_embeddings(provider=MODEL.MODEL_PROVIDER)
             
-            if embeddings:
-                vector_retriever = embeddings_manager.create_vector_index(
-                    embeddings=embeddings,
-                    neo4j_url=DATABASE.URI, 
-                    neo4j_user=DATABASE.USERNAME, 
-                    neo4j_password=DATABASE.PASSWORD, 
-                    index_name="document_vector",
-                    recreate=False
-                )
-                if vector_retriever:
-                    print("✓ Vector index created successfully")
-            else:
-                logger.warning("No working embeddings model found")
-                print("⚠️ Could not initialize embeddings model, skipping vector index creation")
-        except Exception as e:
-            logger.error(f"Vector index creation failed: {str(e)}")
-            print(f"❌ Vector index creation failed: {str(e)}")
-            print("Continuing without vector retrieval...")
+        #     if embeddings:
+        #         vector_retriever = embeddings_manager.create_vector_index(
+        #             embeddings=embeddings,
+        #             neo4j_url=DATABASE.URI, 
+        #             neo4j_user=DATABASE.USERNAME, 
+        #             neo4j_password=DATABASE.PASSWORD, 
+        #             index_name="document_vector",
+        #             recreate=False
+        #         )
+        #         if vector_retriever:
+        #             print("✓ Vector index created successfully")
+        #     else:
+        #         logger.warning("No working embeddings model found")
+        #         print("⚠️ Could not initialize embeddings model, skipping vector index creation")
+        # except Exception as e:
+        #     logger.error(f"Vector index creation failed: {str(e)}")
+        #     print(f"❌ Vector index creation failed: {str(e)}")
+        #     print("Continuing without vector retrieval...")
 
         # Create fulltext index
         index_result = neo4j_manager.create_fulltext_index()

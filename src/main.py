@@ -13,12 +13,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 from neo4j import GraphDatabase
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.graphs import Neo4jGraph
+from langchain_neo4j import Neo4jGraph  # Updated import to use the new package
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Neo4jVector
-from langchain_community.document_loaders import TextLoader
+# Document loader imports are now handled dynamically in load_and_process_documents function
 from src.utils import save_graph_documents
-from src.config import DATABASE, DOCUMENT, MODEL  # Import the new config classes
+from src.config import APP, DATABASE, DOCUMENT, MODEL  # Import the new config classes
 from src.core.embeddings import EmbeddingsManager
 
 
@@ -132,8 +132,41 @@ def load_and_process_documents(file_path, chunk_size=CHUNK_SIZE, chunk_overlap=C
         logger.error(f"File not found: {file_path}")
         raise FileNotFoundError(f"Document not found: {file_path}")
     
+    # Select the appropriate loader based on file extension
+    file_ext = os.path.splitext(file_path)[1].lower()
+    
+    if file_ext == '.pdf':
+        # Import PDF loader for PDF files
+        try:
+            from langchain_community.document_loaders import PyPDFLoader
+            loader = PyPDFLoader(file_path=file_path)
+            logger.info(f"Using PyPDFLoader for {file_ext} file")
+        except ImportError:
+            from langchain_community.document_loaders import PDFMinerLoader
+            loader = PDFMinerLoader(file_path=file_path)
+            logger.info(f"Using PDFMinerLoader for {file_ext} file")
+    elif file_ext in ['.docx', '.doc']:
+        # Import Word document loader
+        from langchain_community.document_loaders import Docx2txtLoader
+        loader = Docx2txtLoader(file_path=file_path)
+        logger.info(f"Using Docx2txtLoader for {file_ext} file")
+    elif file_ext in ['.txt', '.md', '.py', '.java', '.js', '.html', '.css']:
+        # For text files, use TextLoader with explicit UTF-8 encoding
+        from langchain_community.document_loaders import TextLoader
+        loader = TextLoader(file_path=file_path, encoding='utf-8')
+        logger.info(f"Using TextLoader with utf-8 encoding for {file_ext} file")
+    else:
+        # Default to TextLoader with explicit UTF-8 encoding for unknown types
+        from langchain_community.document_loaders import TextLoader
+        try:
+            loader = TextLoader(file_path=file_path, encoding='utf-8')
+            logger.info(f"Using TextLoader with utf-8 encoding for {file_ext} file")
+        except Exception:
+            # If UTF-8 fails, try with latin-1 which can read any byte sequence
+            loader = TextLoader(file_path=file_path, encoding='latin-1')
+            logger.info(f"Using TextLoader with latin-1 encoding for {file_ext} file")
+    
     # Load document
-    loader = TextLoader(file_path=file_path)
     docs = loader.load()
     logger.info(f"Loaded document with {len(docs)} pages")
     
@@ -279,78 +312,78 @@ def create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name="vecto
     print("Creating vector index in Neo4j...")
 
     # Initialize EmbeddingsManager
-    embeddings_manager = EmbeddingsManager()
-    embeddings = embeddings_manager.get_working_embeddings()
+    # embeddings_manager = EmbeddingsManager()
+    # embeddings = embeddings_manager.get_working_embeddings()
 
     # Create vector index with progress updates
-    logger.info("Creating vector index in Neo4j")
-    try:
-        # First, check if index exists and needs to be dropped
-        if recreate:
-            try:
-                # Connect to Neo4j and drop the index if it exists
-                driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
-                with driver.session() as session:
-                    # Check if index exists
-                    result = session.run(
-                        f"SHOW VECTOR INDEXES WHERE name = $name",
-                        name=index_name
-                    ).single()
+    # logger.info("Creating vector index in Neo4j")
+    # try:
+    #     # First, check if index exists and needs to be dropped
+    #     if recreate:
+    #         try:
+    #             # Connect to Neo4j and drop the index if it exists
+    #             driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
+    #             with driver.session() as session:
+    #                 # Check if index exists
+    #                 result = session.run(
+    #                     f"SHOW VECTOR INDEXES WHERE name = $name",
+    #                     name=index_name
+    #                 ).single()
 
-                    if result:
-                        print(f"Found existing vector index '{index_name}' - dropping it...")
-                        session.run(f"DROP VECTOR INDEX {index_name}")
-                        print(f"✓ Dropped existing vector index '{index_name}'")
+    #                 if result:
+    #                     print(f"Found existing vector index '{index_name}' - dropping it...")
+    #                     session.run(f"DROP VECTOR INDEX {index_name}")
+    #                     print(f"✓ Dropped existing vector index '{index_name}'")
 
-            except Exception as e:
-                logger.warning(f"Error when trying to drop vector index: {str(e)}")
-                print(f"Warning: Could not drop existing index: {str(e)}")
+    #         except Exception as e:
+    #             logger.warning(f"Error when trying to drop vector index: {str(e)}")
+    #             print(f"Warning: Could not drop existing index: {str(e)}")
 
-        if embeddings:
-            # Now create the vector index
-            # Use index_name parameter for the index name
-            vector_index = Neo4jVector.from_existing_graph(
-                embeddings,
-                url=neo4j_url,
-                username=neo4j_user,
-                password=neo4j_password,
-                index_name=index_name,  # Use custom index name
-                search_type="hybrid",
-                node_label="Document",
-                text_node_properties=["text"],
-                embedding_node_property="embedding"
-            )
-            print(f"✓ Vector index '{index_name}' created successfully")
-            return vector_index.as_retriever()
-        else:
-            logger.error("Failed to initialize embeddings")
-            print("❌ Failed to initialize embeddings")
-            return None
-    except ValueError as e:
-        # Handle dimension mismatch error
-        if "dimensions do not match" in str(e):
-            logger.error(f"Vector dimension mismatch: {str(e)}")
-            print("\n❌ Vector dimension mismatch detected. Trying to recreate index...")
+        # if embeddings:
+        #     # Now create the vector index
+        #     # Use index_name parameter for the index name
+        #     vector_index = Neo4jVector.from_existing_graph(
+        #         embeddings,
+        #         url=neo4j_url,
+        #         username=neo4j_user,
+        #         password=neo4j_password,
+        #         index_name=index_name,  # Use custom index name
+        #         search_type="hybrid",
+        #         node_label="Document",
+        #         text_node_properties=["text"],
+        #         embedding_node_property="embedding"
+        #     )
+        #     print(f"✓ Vector index '{index_name}' created successfully")
+        #     return vector_index.as_retriever()
+        # else:
+        #     logger.error("Failed to initialize embeddings")
+        #     print("❌ Failed to initialize embeddings")
+        #     return None
+    # except ValueError as e:
+    #     # Handle dimension mismatch error
+    #     if "dimensions do not match" in str(e):
+    #         logger.error(f"Vector dimension mismatch: {str(e)}")
+    #         print("\n❌ Vector dimension mismatch detected. Trying to recreate index...")
 
-            # Get driver instance and drop index
-            driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
-            with driver.session() as session:
-                try:
-                    session.run(f"DROP VECTOR INDEX {index_name}")
-                    print(f"✓ Dropped existing vector index '{index_name}'")
-                except Exception as inner_e:
-                    logger.error(f"Failed to drop index: {str(inner_e)}")
+    #         # Get driver instance and drop index
+    #         driver = Neo4jConnectionManager.get_instance(neo4j_url, (neo4j_user, neo4j_password))
+    #         with driver.session() as session:
+    #             try:
+    #                 session.run(f"DROP VECTOR INDEX {index_name}")
+    #                 print(f"✓ Dropped existing vector index '{index_name}'")
+    #             except Exception as inner_e:
+    #                 logger.error(f"Failed to drop index: {str(inner_e)}")
 
-            # Try again with recreate=False since we've manually dropped the index
-            return create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name, recreate=True)
-        else:
-            logger.error(f"Error creating vector index: {str(e)}")
-            print(f"❌ Failed to create vector index: {str(e)}")
-            raise
-    except Exception as e:
-        logger.error(f"Error creating vector index: {str(e)}")
-        print(f"❌ Failed to create vector index: {str(e)}")
-        raise
+    #         # Try again with recreate=False since we've manually dropped the index
+    #         return create_vector_index(neo4j_url, neo4j_user, neo4j_password, index_name, recreate=True)
+    #     else:
+    #         logger.error(f"Error creating vector index: {str(e)}")
+    #         print(f"❌ Failed to create vector index: {str(e)}")
+    #         raise
+    # except Exception as e:
+    #     logger.error(f"Error creating vector index: {str(e)}")
+    #     print(f"❌ Failed to create vector index: {str(e)}")
+    #     raise
 
 
 def setup_entity_extraction(llm):
@@ -399,9 +432,16 @@ def main():
         progress.update("Initializing Neo4j graph")
         graph = Neo4jGraph(NEO4J_URL, NEO4J_USER, NEO4J_PASSWORD)
         print("✓ Neo4j graph initialized")
-        
-        # STAGE 5: Add graph documents to Neo4j
+          # STAGE 5: Add graph documents to Neo4j
         progress.update("Adding graph documents to Neo4j")
+        
+        # Fix the source attribute in graph documents to prevent the 'str' has no attribute 'id' error
+        for doc in graph_documents:
+            # Check if the source needs to be converted to a compatible format
+            if "source" in doc and isinstance(doc["source"], str):
+                # Create a simple object with an id attribute to satisfy the Neo4jGraph requirements
+                doc["source"] = {"id": doc["source"], "page_content": ""}
+        
         graph.add_graph_documents(
             graph_documents,
             baseEntityLabel=True,
@@ -413,10 +453,10 @@ def main():
         progress.update("Creating vector and fulltext indices")
         try:
             vector_retriever = create_vector_index(
-                NEO4J_URL, 
-                NEO4J_USER, 
-                NEO4J_PASSWORD, 
-                index_name="document_vector",  # 使用新的索引名称
+                NEO4J_URL,
+                NEO4J_USER,
+                NEO4J_PASSWORD,
+                index_name=APP.VECTOR_INDEX_NAME,  # 使用新的索引名称
                 recreate=False  # 首次尝试不删除已有索引
             )
             print("✓ Vector index created successfully")

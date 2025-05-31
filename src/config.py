@@ -113,6 +113,7 @@ class AppSettings(BaseSettings):
     LOG_DIR: Path = Field(default=PROJECT_ROOT / 'logs')
     DATA_DIR: Path = Field(default=PROJECT_ROOT / "data")
     OUTPUT_DIR: Path = Field(default=PROJECT_ROOT / "results")
+    RESULTS_DIR: Path = Field(default=PROJECT_ROOT / "results")
 
     # 日志配置
     LOG_LEVEL: str = Field(default="INFO")
@@ -122,6 +123,7 @@ class AppSettings(BaseSettings):
     # 应用模式
     DEBUG_MODE: bool = Field(default=False, description="Enable debug mode")
     TEST_MODE: bool = Field(default=False)
+    VECTOR_INDEX_NAME: str = Field(default="document_vector")
 
     @field_validator("DATA_DIR", "OUTPUT_DIR", "LOG_DIR", mode='before')
     def parse_path(cls, v):

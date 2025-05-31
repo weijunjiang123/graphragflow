@@ -59,7 +59,7 @@ services:
 docker-compose up -d
 ```
 
-3. Access the Neo4j Browser at http://localhost:7474 to verify the installation
+3. Access the Neo4j Browser at <http://localhost:7474> to verify the installation
 
 ### Requirements
 
@@ -78,18 +78,19 @@ docker-compose up -d
   - uvciorn
   - pypdf
 
-
 ### Installation
 
 recomend using uv for package management
 
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/weijunjiang123/GraphRAG-with-Ollama.git
 cd GraphRAG-with-Ollama
 ```
 
 2. Install required packages with uv:
+
 ```bash
 uv sync
 ```
@@ -113,10 +114,9 @@ copy the .env.example to .env
 cp .env.example .env
 ```
 
-Modify the following variables in `.env` to match your environment: 
+Modify the following variables in `.env` to match your environment:
 
 checkout [this](/.env.example) for detail
-
 
 ### Usage
 
@@ -127,6 +127,7 @@ uv run main.py
 ```
 
 The process includes:
+
 1. Loading and processing documents
 2. Converting documents to graph format
 3. Saving extracted graph documents
@@ -178,8 +179,9 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ## Reference
 
-https://github.com/Coding-Crashkurse/GraphRAG-with-Llama-3.1
+<https://github.com/Coding-Crashkurse/GraphRAG-with-Llama-3.1>
 
 ## License
 
 [MIT]
+
